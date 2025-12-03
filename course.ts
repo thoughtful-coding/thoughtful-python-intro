@@ -9,7 +9,7 @@ const courseManifest: CourseManifest = {
   title: "Introduction to Python",
   description:
     "Learn Python programming from scratch with interactive lessons and exercises",
-  image: "images/python-logo.svg",
+  image: "images/course_icon_intro_python.svg",
   difficulty: "beginner",
   units: [
     "00_intro",
