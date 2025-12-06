@@ -25,7 +25,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "The more ways you can see, hear, touch, or smell what you're learning, the more likely you are to remember it. Interacting with new information in different ways is a technique called **dual encoding** and it's one of the best ways to form strong connections in your brain.\n\nFor this reason, where applicable, we've included images and videos to augment the lessons. In this case, the video below talks about variables and explains how they hold different data types in \"slots\" of memory in the computer. You can almost view variables as labels for the memory holding the data you want to store.",
+            "The more ways you can see, hear, touch, or smell what you're learning, the more likely you are to remember it. Interacting with new information in different ways is a technique called **dual encoding** and it's one of the best ways to form strong connections in your brain.\n\nFor this reason, where applicable, we've included images and videos to augment the lessons. In this case, the video below talks about variables and explains how they hold different data types in \"slots\" of memory in the computer. You can almost view variables as labels for the containers holding the data you want to store.",
         },
         {
           kind: "video",

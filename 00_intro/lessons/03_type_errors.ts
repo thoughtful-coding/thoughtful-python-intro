@@ -56,7 +56,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Getting errors while you're writing a program is very common. You saw a `SyntaxError` in the lesson about single and double quotes. Here you're seeing a `TypeError`. Learning how to interpret errors will save you **a ton of time** later.\n\nThe error above is trying to tell you two things: where and what the issue is.\n- Where\n    - The second to last line of the error shows what line of code has the problem\n    - The error above says \"line 3\", which makes sense this was the line that was added\n- What\n    - The last line of the error shows was the actual problem is\n    - The error above says the problem is that we're the `+` operation can't handle two different data types",
+            "Encountering errors while you're programming is very common. You saw a `SyntaxError` in the lesson about single and double quotes. Here you're seeing a `TypeError`. Learning how to interpret errors will save you **a ton of time** later.\n\nThe error above is trying to tell you two things: where and what the issue is.\n- Where\n    - The second to last line of the error shows what line of code has the problem\n    - The error above says \"line 3\", which makes sense this was the line that was added\n- What\n    - The last line of the error shows what the actual problem is\n    - The error above says the problem is that the `+` operation can't handle two different data types",
         },
       ],
     } as InformationSectionData,
@@ -163,7 +163,7 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'\n\`\`\``,
         {
           kind: "text",
           value:
-            "Congratulations on the lesson on errors in Python. As stated above, it is a major source of confusion and frustration. If you ever see a `TypeError`, take your time and think about what line the error is identifying as the problem and what data types are on that line.",
+            "Congratulations on completing the lesson on errors in Python. As stated above, it is a major source of confusion and frustration. If you ever see a `TypeError`, take your time and think about what line the error is identifying as the problem and what data types are on that line.",
         },
       ],
     } as InformationSectionData,

@@ -22,7 +22,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Using variables is necessary for pretty much all programs. Therefore, it's necessary to know how to handle errors that are \"raised\" when you accidentally use them incorrectly. As stated in the previous lesson on `TypeErrors`, errors are one of the most common reasons new programmers feel overwhelmed. In this lesson, you'll learn to understand variable errors in order to make you a more confident, able programmer.",
+            "Using variables is necessary for pretty much all programs. Therefore, it's important to know how to handle errors that are \"raised\" when you accidentally use them incorrectly. As stated in the previous lesson on `TypeErrors`, errors are one of the most common reasons new programmers feel overwhelmed. In this lesson, you'll learn to understand variable errors in order to make you a more confident, capable programmer.",
         },
       ],
     } as InformationSectionData,

@@ -129,7 +129,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Because computers are mindlessly literal, they\'re perfectly happy running "useless" instructions. Below is an example of this. There are a bunch of `print()` statements without anything in them. First, predict what you think the code will do when you run it and then see if your prediction is correct. Finally, use the feedback from AI to correct/refine your mental model.',
+            "Because computers are mindlessly literal, they're perfectly happy running \"useless\" instructions. Below is an example of this. There are a bunch of `print()` statements without anything in them.\n\nFirst, predict what you think the code will do when you run it. Try to be as specific as possible with your prediction because this increases your chances of remembering the content (even if you're initially wrong). Then, run the program and use the feedback from AI to correct/refine your mental model.",
         },
       ],
       example: {

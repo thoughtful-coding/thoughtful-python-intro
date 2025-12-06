@@ -75,7 +75,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Ok, now for the tricky part! It\'s important to understand the difference between strings and integers because the computers **operate on them differently**. In particular the **string** `"5"` is not the same as the **integer** `5`.\n\nBelow is a simple Python program that showcases this difference. First, predict what you think the code will do and then investigate whether your prediction was correct. Be sure to read the AI response very carefully if your prediction was incorrect.',
+            'Ok, now for the tricky part! It\'s important to understand the difference between strings and integers because computers **operate on them differently**. In particular the **string** `"5"` is not the same as the **integer** `5`.\n\nBelow is a simple Python program that showcases this difference. First, predict what you think the code will do and then investigate whether your prediction was correct. Be sure to read the AI response very carefully if your prediction was incorrect.',
         },
       ],
       example: {

@@ -17,8 +17,8 @@ const lessonData: Lesson = {
   sections: [
     {
       kind: "Information",
-      id: "python-history",
-      title: "The History of Python",
+      id: "strings-introduction",
+      title: "Introduction",
       content: [
         {
           kind: "text",
@@ -35,7 +35,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "The first thing to appreciate about all programming languages is that they're primarily used to operate on data. Therefore, understanding the _type of data_ you're operating on is very important. The first **data type** we're going to cover are **strings**. Strings are lists of characters that can form words, sentences, and paragraphs. They are composed of letters, spaces, punctuation, and even numerical characters.\n\nStrings are most often denoted by being inside double quotes. This means they start with a `\"` and end with a `\"`. Based on this definition, select the **two** options below that are valid strings.",
+            "The first thing to appreciate about all programming languages is that they're primarily used to operate on data. Therefore, understanding the _type of data_ you're operating on is very important. The first **data type** we're going to cover are **strings**. Strings are sequences of characters that can form words, sentences, and paragraphs. They are composed of letters, spaces, punctuation, and even numerical characters.\n\nStrings are most often denoted by being inside double quotes. This means they start with a `\"` and end with a `\"`. Based on this definition, select the **two** options below that are valid strings.",
         },
       ],
       options: [
@@ -59,7 +59,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Now it\'s your turn to write your first bit of code! The program below says `"Hello, World"`, but it\'s missing the expected exclamation point. Add **a single character** to the program so that it outputs `"Hello, World!"` instead. Once you think you\'ve made the right change:\n1. Verify that your program works by clicking the `Run Code` button\n2. Click the `Run Tests` button to "grade" your answer\n\nWhen you click the `Run Tests` button, the website will double check that your program produces the exactly correct output. If the generated output matches expectations, the entire section will be marked complete. If your change wasn\'t quite right, fix the error, and then rerun the tests.',
+            'Now it\'s your turn to write your first bit of code! The program below says `"Hello, World"`, but it\'s missing the expected exclamation point. Add **a single character** to the program so that it outputs `"Hello, World!"`. Once you think you\'ve made the right change:\n1. Verify that your program works by clicking the `Run Code` button\n2. Click the `Run Tests` button to "grade" your answer\n\nWhen you click the `Run Tests` button, the website will double check that your program produces the exactly correct output. If the generated output matches expectations, the entire section will be marked complete. If your change wasn\'t quite right, fix the error, and then rerun the tests.',
         },
       ],
       example: {
@@ -84,7 +84,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Below is a Python program that attempts to print a famous quote. Unfortunately, there's a problem.\n\nFirst, predict what you think the code will do when you run it and then see if your prediction is correct. Finally, use the feedback from AI to correct/refine your mental model.",
+            "Below is a Python program that attempts to print a famous quote. Unfortunately, there's a problem.\n\nFirst, predict what you think the code will do when you run it. Remember, the more specific your prediction the more likely you are to learn the content. Then, run to program to see if your prediction is correct and use the feedback from AI to correct/refine your mental model.",
         },
       ],
       example: {
@@ -173,7 +173,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Congratulations on completing your first lesson. In the process you should have learned how to create and use strings to output information to the user. In the next section we will learn about a new type of data and how to distinguish between them.",
+            "Congratulations on completing your second lesson. In the process you should have learned how to create and use strings to output information to the user. In the next section we will learn about a new type of data and how to distinguish between them.",
         },
       ],
     } as InformationSectionData,

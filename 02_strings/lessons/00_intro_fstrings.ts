@@ -74,7 +74,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Now let's practice predicting what f-strings will output. Remember: Python replaces everything inside `{}` with the actual value of the variable. Predict what each line will print, then run the code to check.",
+            "Now let's practice predicting what f-strings will output. Remember: Python replaces everything inside `{}` with the string representation of the variable. Predict what each line will print, then run the code to check.",
         },
       ],
       example: {
