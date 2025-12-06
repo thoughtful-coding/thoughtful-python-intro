@@ -9,7 +9,7 @@ import type {
   CoverageSectionData,
   PredictionSectionData,
   TestingSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Accumulator Pattern Unit Challenge",

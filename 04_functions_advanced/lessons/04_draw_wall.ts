@@ -8,7 +8,7 @@ import type {
   MultipleChoiceSectionData,
   MultipleSelectionSectionData,
   MatchingSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "The Brick Wall",

@@ -9,7 +9,7 @@ import type {
   MatchingSectionData,
   ReflectionSectionData,
   MultipleChoiceSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "The Neighborhood",

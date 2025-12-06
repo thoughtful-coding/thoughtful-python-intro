@@ -5,7 +5,7 @@ import type {
   ObservationSectionData,
   SectionId,
   TestingSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   guid: "test-visual-turtle-lesson" as LessonId,

@@ -9,7 +9,7 @@ import type {
   MultipleSelectionSectionData,
   TestingSectionData,
   DebuggerSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Patterns Within Patterns",

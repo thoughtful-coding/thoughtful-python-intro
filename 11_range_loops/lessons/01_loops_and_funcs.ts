@@ -10,7 +10,7 @@ import type {
   DebuggerSectionData,
   MatchingSectionData,
   ReflectionSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Loop-Powered Functions",

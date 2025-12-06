@@ -8,7 +8,7 @@ import type {
   ReflectionSectionData,
   SectionId,
   TestingSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Functions and Computers",

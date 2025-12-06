@@ -6,7 +6,7 @@ import type {
   PredictionSectionData,
   SectionId,
   TestingSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Returning to Functions",

@@ -9,7 +9,7 @@ import type {
   MatchingSectionData,
   MultipleSelectionSectionData,
   ParsonsSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Multiple Data Streams",

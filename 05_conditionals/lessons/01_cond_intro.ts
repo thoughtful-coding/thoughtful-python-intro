@@ -10,7 +10,7 @@ import type {
   ReflectionSectionData,
   MatchingSectionData,
   DebuggerSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Making Decisions",

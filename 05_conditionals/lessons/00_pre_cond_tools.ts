@@ -10,7 +10,7 @@ import type {
   MultipleSelectionSectionData,
   PredictionSectionData,
   ReflectionSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Asking Questions About Strings",

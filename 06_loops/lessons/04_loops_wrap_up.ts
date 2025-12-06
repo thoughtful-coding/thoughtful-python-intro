@@ -10,7 +10,7 @@ import type {
   CoverageSectionData,
   CoverageTableRow,
   InputParam,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Loops Unit Challenge",

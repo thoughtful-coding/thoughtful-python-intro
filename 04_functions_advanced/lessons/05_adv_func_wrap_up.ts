@@ -9,7 +9,7 @@ import type {
   MultipleSelectionSectionData,
   TestingSectionData,
   ReflectionSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Advanced Functions Wrap Up",

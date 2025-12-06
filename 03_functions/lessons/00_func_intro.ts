@@ -8,7 +8,7 @@ import type {
   ParsonsSectionData,
   PRIMMSectionData,
   SectionId,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Introduction to Functions",

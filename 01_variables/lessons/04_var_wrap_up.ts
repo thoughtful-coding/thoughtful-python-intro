@@ -7,7 +7,7 @@ import type {
   MultipleSelectionSectionData,
   TestingSectionData,
   ParsonsSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Variable Unit Challenge",

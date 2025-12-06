@@ -6,7 +6,7 @@ import type {
   TestingSectionData,
   ReflectionSectionData,
   ParsonsSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Variable Errors",

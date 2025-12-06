@@ -8,7 +8,7 @@ import type {
   TestingSectionData,
   MatchingSectionData,
   CoverageSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Conditionals Unit Challenge",

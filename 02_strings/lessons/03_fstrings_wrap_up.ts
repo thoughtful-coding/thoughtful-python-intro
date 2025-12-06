@@ -8,7 +8,7 @@ import type {
   MatchingSectionData,
   TestingSectionData,
   ParsonsSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "F-Strings Unit Challenge",

@@ -8,7 +8,7 @@ import type {
   MultipleChoiceSectionData,
   MatchingSectionData,
   TestingSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Format Strings",

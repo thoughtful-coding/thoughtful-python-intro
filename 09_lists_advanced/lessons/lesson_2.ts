@@ -1,4 +1,4 @@
-import type { Lesson } from "../../../../types/data";
+import type { Lesson } from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "TODO",

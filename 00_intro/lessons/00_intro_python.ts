@@ -9,7 +9,7 @@ import type {
   DebuggerSectionData,
   MultipleChoiceSectionData,
   MatchingSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Python Basics",

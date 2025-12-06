@@ -10,7 +10,7 @@ import type {
   MultipleChoiceSectionData,
   CoverageSectionData,
   DebuggerSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Pattern Recognition",

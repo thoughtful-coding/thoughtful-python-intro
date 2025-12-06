@@ -8,7 +8,7 @@ import type {
   MultipleSelectionSectionData,
   ObservationSectionData,
   MultipleChoiceSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Shapes and Patterns",

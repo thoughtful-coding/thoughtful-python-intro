@@ -3,7 +3,7 @@ import type {
   MultipleChoiceSectionData,
   ObservationSectionData,
   PRIMMSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Grocery Lists",

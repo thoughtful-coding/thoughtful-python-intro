@@ -11,7 +11,7 @@ import type {
   TestingSectionData,
   ReflectionSectionData,
   MultipleChoiceSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Processing Data",

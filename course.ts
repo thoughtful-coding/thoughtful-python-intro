@@ -23,7 +23,6 @@ const courseManifest: CourseManifest = {
     "08_lists_intro",
     "09_lists_advanced",
     "10_functions_return",
-    "12_end_to_end_tests",
   ],
 };
 

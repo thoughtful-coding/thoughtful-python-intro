@@ -7,7 +7,7 @@ import type {
   MultipleSelectionSectionData,
   PRIMMSectionData,
   TestingSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Python Basics",

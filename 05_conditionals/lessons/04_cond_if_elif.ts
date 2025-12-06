@@ -12,7 +12,7 @@ import type {
   CoverageSectionData,
   MultipleSelectionSectionData,
   DebuggerSectionData,
-} from "../../../../types/data";
+} from "../../../../src/types/data";
 
 const lessonData: Lesson = {
   title: "Multiple Paths: Elif",
