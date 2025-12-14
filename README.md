@@ -1,10 +1,13 @@
 # Thoughtful Python
 
-An introductory Python course designed for the [Thoughtful Coding](https://thoughtful-coding.github.io) platform.
+An introductory Python course designed for the [Thoughtful Coding](https://thoughtful-coding.github.io)
+platform.
 
 ## About
 
-This course teaches Python fundamentals through interactive, browser-based lessons. Students learn by working through structured exercises with immediate feedback, no installation required.
+This course teaches Python fundamentals through interactive, browser-based
+lessons. Students learn by working through structured exercises with immediate
+feedback, no installation required.
 
 ## Course Structure
 
@@ -13,14 +16,15 @@ The course covers:
 - String manipulation
 - Functions and parameters
 - Conditionals and control flow
-- Loops and iteration
-- Lists and data structures
+- Basic for loops
 
-Each unit contains lessons with multiple section types: Information, Observation, Testing, Prediction, PRIMM, and more.
+Each unit contains lessons with multiple section types: Information, Observation,
+Testing, Prediction, PRIMM, and more.
 
 ## Integration
 
-This course is used by the main [thoughtful-coding.github.io](https://github.com/thoughtful-coding/thoughtful-coding.github.io) platform for content. The platform handles:
+This course is used by the main [thoughtful-coding.github.io](https://github.com/thoughtful-coding/thoughtful-coding.github.io)
+platform for content. The platform handles:
 - Pyodide runtime for browser-based Python execution
 - Progress tracking and authentication
 - Rendering and navigation
