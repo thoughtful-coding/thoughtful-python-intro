@@ -84,7 +84,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Below is a Python program that attempts to print a famous quote. Unfortunately, there's a problem.\n\nFirst, predict what you think the code will do when you run it. Remember, the more specific your prediction the more likely you are to learn the content. Then, run to program to see if your prediction is correct and use the feedback from AI to correct/refine your mental model.",
+            "Below is a Python program that attempts to print a famous quote. Unfortunately, there's a problem.\n\nFirst, predict what you think the code will do when you run it. Remember, the more specific your prediction the more likely you are to learn the content. Then, run the program to see if your prediction is correct and use the feedback from AI to correct/refine your mental model.",
         },
       ],
       example: {
@@ -126,6 +126,7 @@ const lessonData: Lesson = {
         },
       ],
       options: [
+        'print("Hello")',
         "print",
         '"print"',
         "\"Hello, World!'",
@@ -134,7 +135,7 @@ const lessonData: Lesson = {
         "'bye!'",
         '"It\'s a trap"',
       ],
-      correctAnswers: [1, 5, 6],
+      correctAnswers: [2, 6, 7],
       feedback: {
         correct:
           "Correct! Strings start and stop with the same quotation character and don't have any other instance of that character between them.",

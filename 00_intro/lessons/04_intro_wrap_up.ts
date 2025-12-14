@@ -88,7 +88,7 @@ const lessonData: Lesson = {
       correctAnswer: 0,
       feedback: {
         correct:
-          "Correct! The **data type** determines what the operations does (and if it can be used).",
+          "Correct! The **data type** determines what the operation does (and if it can be used).",
       },
     } as MultipleChoiceSectionData,
     {
@@ -109,7 +109,7 @@ const lessonData: Lesson = {
     mod = compile(source, filename, mode, flags | ast.PyCF_ONLY_AST)
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "<exec>", line 5
-SyntaxError: '(' was never closed for print("hi"`,
+SyntaxError: '(' was never closed for print("hi"\`\`\``,
         },
       ],
       options: [

@@ -13,7 +13,7 @@ const lessonData: Lesson = {
   title: "Interpreting Errors",
   guid: "933ff0c7-8c35-4786-86eb-649c02be6a3c" as LessonId,
   description:
-    "Learn to inerpret the errors that Python finds in your code so you can easily fix it.",
+    "Learn to interpret the errors that Python finds in your code so you can easily fix it.",
   sections: [
     {
       kind: "Information",
@@ -44,7 +44,7 @@ const lessonData: Lesson = {
           'print(3 + 3)\nprint("a" + "b")\nprint(3 + "4")\nprint("All done!")\n',
       },
       predictPrompt:
-        "We are trying to do use the `+` operator on a string and an integer. What do you think will happen when you run the code?",
+        "We are trying to use the `+` operator on a string and an integer. What do you think will happen when you run the code?",
       conclusion:
         "Error messages can be overwhelming! Read the next section carefully for how to approach them.",
     } as PRIMMSectionData,
@@ -102,7 +102,7 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'\n\`\`\``,
     mod = compile(source, filename, mode, flags | ast.PyCF_ONLY_AST)
           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "<exec>", line 2
-    SyntaxError: unterminated string literal print('hi)`,
+    SyntaxError: unterminated string literal print('hi)\`\`\``,
         },
       ],
       options: [

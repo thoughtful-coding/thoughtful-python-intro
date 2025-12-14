@@ -25,7 +25,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Python was first released in 1991. Since then, it has become a very popular language because of its clean syntax and the way that well-written Python programs almost read like English prose.",
+            "Python is a popular language used by companies like Google and NASA. It is a very popular language because of its clean syntax and the way that well-written Python programs almost read like English prose.",
         },
         {
           kind: "image",
@@ -65,7 +65,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "The first, and perhaps most important thing to understand is that computers are **mindlessly literal**. They don't \"understand\" your code; they just follow your instructions one line at a time.\n\nTo see this in action, we'll use the **Debugger**. The debugger is one of the most important tools in programming. It lets you watch the computer execute your program step-by-step.\n\nClick the `Enter Debug Mode` button and use the `Step` button to run each line of the program. Pay attention to:\n- How the `Program Output` panel only changes *after* a `print` line is executed\n- How the computer goes executes each line of code in order",
+            "The first, and perhaps most important thing to understand is that computers are **mindlessly literal**. They don't \"understand\" your code; they just follow your instructions one line at a time.\n\nTo see this in action, we'll use the **Debugger**. The debugger is one of the most important tools in programming. It lets you watch the computer execute your program step-by-step.\n\nClick the `Enter Debug Mode` button and use the `Step` button to run each line of the program. Pay attention to:\n- How the `Program Output` panel only changes *after* a `print` line is executed\n- How the computer executes each line of code in order",
         },
       ],
       example: {
