@@ -10,6 +10,7 @@ import type {
   ReflectionSectionData,
   MatchingSectionData,
   DebuggerSectionData,
+  ParsonsSectionData,
 } from "../../../../src/types/data";
 
 const lessonData: Lesson = {
@@ -26,7 +27,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'So far, every function you\'ve written acts in a very predictable way. Given the same input, the function will produce the same output. But real programs need to make decisions. For example, what if you want to program a clock that says "Good morning" and "Good night" at the proper times?\n\nThat\'s where `if` statements come in. An `if` statement lets your program choose which lines of code to run based on the situation. It\'s like teaching your functions to react to the real world.',
+            'So far, every function you\'ve written acts in a very predictable way. But real programs need to make decisions. For example, what if you want to program a clock that says "Wake Up!" in the morning and "Go To Sleep" at night?\n\nThat\'s where `if` statements come in. An `if` statement lets your program choose which lines of code to run based on the situation. It\'s like teaching your functions to react to the world around it.',
         },
       ],
     } as InformationSectionData,
@@ -38,7 +39,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Below is a `check_temp()` function that contains an `if` statement. The function is then called three times with different inputs. Take a few minutes to read the code and then predict what will happen:",
+            "Below is a `check_temp()` function that contains an `if` statement. The function is called three times with different inputs. Take a few minutes to read the code and then predict what will happen:",
         },
       ],
       example: {
@@ -48,7 +49,7 @@ const lessonData: Lesson = {
       },
       predictPrompt: "Which function calls will print `It's hot outside!`?",
       conclusion:
-        "When the condition is True, the indented code runs. When False, Python skips it.",
+        "When the condition is `True`, the indented code runs. When `False`, Python skips it.",
     } as PRIMMSectionData,
     {
       kind: "MultipleChoice",
@@ -70,7 +71,7 @@ const lessonData: Lesson = {
       correctAnswer: 2,
       feedback: {
         correct:
-          "Correct! The `if` statement checks `if temp > 30`. When this condition is True, the indented code runs. When it's False, Python skips it!",
+          "Correct! The `if` statement checks `if temp > 30`. When this condition is `True`, the indented code runs. When it's `False`, Python skips it!",
       },
     } as MultipleChoiceSectionData,
     {
@@ -98,7 +99,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Something interesting happened in the previous few examples. Basically, the values of different variables were "compared" to determine if a bit of code should run or not. If `temp > 30` and if `attempt == "cheese"` were **true**, then the code indented under the `if` statement **was run**. If `temp > 30` and if `attempt == "cheese"` were **not true**, then the code indented under the `if` statement **was skipped**. \n\nPython gives you a bunch of different ways to compare data (you\'ve already seen two). See if you can match the "comparisons" with what they mean:',
+            'Something interesting happened in the previous few examples. Basically, the values of different variables were "compared" to determine if a bit of code should run or not. If `temp > 30` and if `attempt == "cheese"` were `True`, then the code indented under the `if` statement **was run**. If `temp > 30` and if `attempt == "cheese"` were `False`, then the code indented under the `if` statement **was skipped**. \n\nPython gives you a bunch of different ways to compare data (you\'ve already seen two). See if you can match the "comparisons" with what they mean:',
         },
       ],
       prompts: [
@@ -158,7 +159,7 @@ const lessonData: Lesson = {
         { '```if x = y:\n  print("Equal")```': 'Incorrect "equality" check' },
         {
           '```If x == y\n  print("Equal")```':
-            "Improperly capitalize if statement",
+            "Improperly capitalized if statement",
         },
         {
           'if x == y:\nprint("Equal")': "Incorrect indentation",
@@ -169,7 +170,7 @@ const lessonData: Lesson = {
       ],
     } as MatchingSectionData,
     {
-      kind: "Matching",
+      kind: "Parsons",
       id: "age-checker" as SectionId,
       title: "Challenge: Age Checker",
       content: [
@@ -179,14 +180,39 @@ const lessonData: Lesson = {
             "Now it's time to see if you can create your own function that uses conditionals. Since it's your first attempt, we'll provide the code and then leave it up to you to put the lines in the proper order.\n\nCreate a function `check_voting_age(age)` that:\n1. Prints the person's age\n2. If the age is 18 or greater, prints 'You can vote!'\n3. Always prints 'Thank you for checking'",
         },
       ],
-      prompts: [
-        { "Line 1": "def check_voting_age(age):" },
-        { "Line 2": "print(age)" },
-        { "Line 3": "if age >= 18:" },
-        { "Line 4": "  print('You can vote!')" },
-        { "Line 5": 'print("Thank you for checking")' },
+      puzzle: {
+        visualization: "console",
+        codeBlocks: [
+          ["def check_voting_age(age):"],
+          ["  print(age)"],
+          ['  print("Thank you for checking")'],
+          ['    print("You can vote!")'],
+          ["  if age >= 18:"],
+          ["check_voting_age(15)"],
+          ["check_voting_age(18)"],
+          ["check_voting_age(21)"],
+        ],
+      },
+      testMode: "procedure",
+      functionToTest: "check_voting_age",
+      testCases: [
+        {
+          input: [15],
+          expected: "15\nThank you for checking",
+          description: "Test less than 18",
+        },
+        {
+          input: [18],
+          expected: "18\nYou can vote!\nThank you for checking",
+          description: "Test 18",
+        },
+        {
+          input: [25],
+          expected: "25\nYou can vote!\nThank you for checking",
+          description: "Test over 18",
+        },
       ],
-    } as MatchingSectionData,
+    } as ParsonsSectionData,
     {
       kind: "MultipleSelection",
       id: "greater-equal-check",
@@ -195,7 +221,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "If a function has the line `if score >= 90:`, which of these function calls will trigger the `if` statement? Select all that apply.",
+            "If a function has the line `if score >= 90:`, which of these function calls will trigger the `if` statement? Select all that apply:",
         },
       ],
       options: [
@@ -226,7 +252,7 @@ const lessonData: Lesson = {
       example: {
         visualization: "console",
         initialCode:
-          'def check_temp(temp):\n    # Always print the temp\n    \n    # Check for if it\'s cold (< 32)\n    \n    # Always print encouragement\n    pass\n\n# Test your function\ncheck_temp(75)\nprint("---")\ncheck_temp(30)\nprint("---")\ncheck_temp(-44)',
+          'def check_temp(temp):\n    # Always print the temp\n    \n    # Check for if it\'s cold (< 32)\n    \n    # Always print that the check\'s complete\n\n# Test your function\ncheck_temp(75)\nprint("---")\ncheck_temp(30)\nprint("---")\ncheck_temp(-44)',
       },
       testCases: [
         {
@@ -257,7 +283,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "`if` statements let your functions make decisions. The code inside an `if` statement only runs when the condition is True. You can use `if` statements to add optional behavior, check boundaries, or respond differently to different inputs.\n\nCreate a simple example with at least one `if` statement in a function and explain how it controls which code runs. Remember to use the phrase 'as seen in the example above'.",
+            '`if` statements let your functions make decisions. The code inside an `if` statement only runs when the condition is True. You can use `if` statements to add optional behavior, check boundaries, or respond differently to different inputs.\n\nCreate a simple example with at least one `if` statement in a function and explain how it controls which code runs. Remember to use the phrase "as seen in the example above".',
         },
       ],
       topic: "How If Statements Control Code",

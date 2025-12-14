@@ -25,7 +25,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'In this unit, you\'ll learn how to have your programs make decisions. Before we jump into this new topic, however, we\'re going to pause and have a "mini-unit" on how to use Python to ask questions about the data stored within the program. The reason we\'re doing this is you can\'t create a program that decides "is this password valid?" unless you can first *ask questions* like: "How long is the password?" and "Does the password contain a capital letter?"\n\nThis lesson will let you explore Python\'s "question answering toolkit" — a set of built-in tools for inspecting your data.',
+            'In this unit, you\'ll learn how to have your programs make decisions. Before we jump into this new topic, however, we\'re going to pause and have a "mini-unit" on how to use Python to ask questions about the data stored within programs. We\'re doing this because you can\'t create a program that decides "is this password valid?" unless you can first *ask questions* like: "How long is the password?" and "Does the password contain a capital letter?"\n\nThis lesson will let you explore Python\'s "question answering toolkit" - a set of built-in tools for inspecting your data.',
         },
       ],
     } as InformationSectionData,
@@ -75,12 +75,12 @@ const lessonData: Lesson = {
     {
       kind: "PRIMM",
       id: "in-primm" as SectionId,
-      title: "Tool 2: Is This *in* There?",
+      title: "Tool 2: Is This in That?",
       content: [
         {
           kind: "text",
           value:
-            'The `in` operator is the next member of our "question answering toolkit". It checks if one string is *inside* (aka a substring of) another and gives back one of two special keywords: `True` or `False`.',
+            'The `in` operator is the next member of our "question answering toolkit". It checks if one string is *inside* (aka a substring of) another string and gives back one of two special values: `True` or `False`.',
         },
       ],
       example: {
@@ -118,12 +118,12 @@ const lessonData: Lesson = {
     {
       kind: "PRIMM",
       id: "methods-primm" as SectionId,
-      title: "Tool 3: What *Kind* of String Is This?",
+      title: "Tool 3: What Kind of String Is This?",
       content: [
         {
           kind: "text",
           value:
-            'The final member(s) of our "question answering toolkit" are the special functions that strings have "attached" to them. For example, we can ask questions of the string `"Hi"` by doing things like `"Hi".islower()`. This would be `False` since `"Hi"` has an uppercase `"H"`.\n\nThe fact that strings are similar to the `math` library in that you can access functions with a `.` is definitely a little surprising. In all honesty, there are functions hiding everywhere in Python (if you know where to look), but for now we\'re just going to limit it to three you\'ll have to remember: `islower()`, `isuppoer()` and `isdigit()`.',
+            'The final member(s) of our "question answering toolkit" are the special functions that strings have "attached" to them. For example, we can ask questions of the string `"Hi"` by doing things like `"Hi".islower()`. This would be `False` since `"Hi"` has an uppercase `"H"`.\n\nThe fact that strings are similar to the `math` library in that you can access functions with a `.` is definitely a little surprising. There are functions hiding everywhere in Python (if you know where to look), but for now we\'re just going to limit it to three you\'ll have to remember: `.islower()`, `.isuppoer()` and `.isdigit()`.',
         },
         {
           kind: "image",
@@ -150,7 +150,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Given `text = 'Hi 5'`, which of the following expressions would produce `True`? Select all **three**:",
+            'Assume we set a variable with the line `text = "Hi 5"`. Given this, select all **three** expressions that would produce `True`:',
         },
       ],
       options: [
@@ -182,7 +182,7 @@ const lessonData: Lesson = {
       example: {
         visualization: "console",
         initialCode:
-          'def analyze_text(text):\n    print(f"Checking text: \'{text}\'")\n    print(f"  len(text) > 5:   {len(text) > 5}")\n    print(f"  \'a\' in text:     {\'a\' in text}")\n    print(f"  text.isupper():  {text.isupper()}")\n',
+          'def analyze_text(text):\n  var_a = len(text)\n  var_b = "a" in text\n  var_c = text.isupper()\n  print(f"{var_a}, {var_b}, {var_c}")\n',
       },
       testMode: "procedure",
       functionToTest: "analyze_text",
@@ -205,15 +205,14 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "You now have a toolkit for asking questions. You can check length (`len`), membership (`in`), and type (`.isupper()`).",
+            'You now have a completed your "question answering toolkit". You can check length of a string, you can see if one string is inside another string, and you can see the cases of the letters inside a string.\n\nNow it\'s time to reflect to formalize your knowledge. Create a 3-4 line example that uses *at least two* of the new tools to check a variable (e.g., `password = ...`) and write 3-4 sentences explaining how the example works.',
         },
       ],
       topic: "How `len`, `in`, and methods help you make decisions",
       isTopicPredefined: true,
-      code: "Create a 3-4 line example that uses *at least two* of the new tools to check a variable (e.g., 'password = ...').",
+      code: "Create a simple example that demonstrates this topic",
       isCodePredefined: false,
-      explanation:
-        "Explain what questions your code is asking and what the `True`/`False` or number answers would be. How would this be useful in an `if` statement you might write in the next lesson?",
+      explanation: "Explain how your example works (3-4 sentences)",
       isExplanationPredefined: false,
     } as ReflectionSectionData,
 
@@ -225,7 +224,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Excellent work! You've *explored* Python's 'question toolkit' instead of just reading about it. You've discovered how to ask about:\n- **Length:** `len(password)`\n- **Membership:** `'!' in password`\n- **Type:** `char.isupper()` or `char.isdigit()`\n\nYou also saw that these tools give you back numbers (like `5`) or `True`/`False` values. These are the *exact* answers an `if` statement needs to work.\n\nIn the next lesson, you'll finally use `if` to make your program *act* on these answers.",
+            "Excellent work! You've explored Python's \"question answering toolkit\". You've discovered how to ask about:\n- **Length:** `len(password)`\n- **Membership:** `'!' in password`\n- **Type:** `char.isupper()` or `char.isdigit()`\n\nYou also saw that these tools give you back numbers (like `5`) or `True`/`False` values. These are the exact kind of questions you need to be able to ask in order to have your program make decisions.In the next few lessons, you'll use this knowledge to make your program react to the world around it.",
         },
       ],
     } as InformationSectionData,

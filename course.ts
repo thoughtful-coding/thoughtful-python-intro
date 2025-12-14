@@ -1,7 +1,7 @@
-import type { CourseManifest, CourseId } from "../../../types/data";
+import type { CourseManifest, CourseId } from "../../src/types/data";
 
 /**
- * Introduction to Python course manifest.
+ * "Introduction to Python" course manifest.
  * Contains course metadata and unit ordering.
  */
 const courseManifest: CourseManifest = {
@@ -9,7 +9,7 @@ const courseManifest: CourseManifest = {
   title: "Introduction to Python",
   description:
     "Learn Python programming from scratch with interactive lessons and exercises",
-  image: "images/course_icon_intro_python.svg",
+  image: "images/course_icon_python_intro.svg",
   difficulty: "beginner",
   units: [
     "00_intro",
@@ -19,10 +19,6 @@ const courseManifest: CourseManifest = {
     "04_functions_advanced",
     "05_conditionals",
     "06_loops",
-    "07_loops_advanced",
-    "08_lists_intro",
-    "09_lists_advanced",
-    "10_functions_return",
   ],
 };
 
