@@ -5,7 +5,7 @@ const unitManifest: UnitManifest = {
   title: "Python Format Strings",
   image: "images/unit_icon_strings.svg",
   description:
-    "Explore string manipulation, f-strings, type casting, and create fun projects like Mad Libs.",
+    "Explore string manipulation and f-strings and use them to create Mad Libs templates.",
   lessons: [
     "lessons/00_intro_fstrings",
     "lessons/01_fstring_practice",

@@ -24,7 +24,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "In previous lessons, you learned about the string and integer data types. You learned how to create variables that store these different data types. However, there's something we've carefully avoided talking about up until this point: printing integers and strings together **on the same line**.\n\nFor example, if you have a variable `age` that holds the integer `15` (`age = 15`)\n- We've **have** shown you how to print `age` by itself\n- We **haven't** shown you how to print `You are 15 years old` where the integer is combined with a string.\n\nIn this lesson, we'll show you different ways to try and do this and how to debug any errors you encounter along the way.",
+            "In previous lessons, you learned about the string and integer data types. You learned how to create variables that store these different data types. However, there's something we've carefully avoided talking about up until this point: printing integers and strings together **on the same line**.\n\nFor example, if you have a variable `age` that holds the integer `15` (`age = 15`)\n- We **have** shown you how to print `age` by itself\n- We **haven't** shown you how to print `You are 15 years old` where the integer is combined with a string.\n\nIn this lesson, we'll show you different ways to try and do this and how to debug any errors you encounter along the way.",
         },
       ],
     } as InformationSectionData,

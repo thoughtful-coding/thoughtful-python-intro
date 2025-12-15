@@ -24,7 +24,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "In the last lesson, you learned how to use f-strings. You discovered that f-strings let you easily mix text and variables without worrying about data types. In this lesson, you'll learn how to do calculations directly inside the curly braces to create rich, informative output. This will prepare you to create complex programs where many pieces of information need to come together.",
+            "In the last lesson, you learned how to use f-strings. You discovered that f-strings let you easily mix text and variables without worrying about data types. In this lesson, you'll learn how to do calculations directly inside the curly braces to create rich, informative output. This will prepare you to create complex programs where many pieces of information come together.",
         },
       ],
     } as InformationSectionData,
@@ -97,7 +97,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Let's practice predicting what happens when you put calculations inside f-strings. The code below uses expressions with addition and multiplication:",
+            "Let's practice predicting what happens when you put calculations inside f-strings. Try to predict what the following program will output on the final line:",
         },
       ],
       example: {
@@ -106,9 +106,9 @@ const lessonData: Lesson = {
           'price = 10\nquantity = 5\n\nprint(f"Each item costs ${price}")\nprint(f"You are buying {quantity} items")\nprint(f"Your total is ${price * quantity}")',
       },
       predictPrompt:
-        "Look carefully at the expressions inside the curly braces. What calculation will Python do for each one?",
+        "Look carefully at the expressions inside the curly braces of the final line. What will be printed out?",
       conclusion:
-        "Python evaluates the expression first (does the math), then inserts the result into the string. So {price * quantity} becomes {10 * 5} which becomes {50}, and '50' appears in the output.",
+        "Python evaluates does the math first, then inserts the result into the f-string. So {price * quantity} becomes {10 * 5} which becomes {50}, and '50' appears in the output.",
     } as PRIMMSectionData,
     {
       kind: "Testing",
@@ -118,7 +118,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "You goal in this section is to create a shopping cart calculator. In the program below, we have already given you three variables: `item`, `price`, and `quantity`.\n\nYour program should use f-strings to exactly the follow four lines:\n```\nItem: Widget\nPrice per item: $15\nQuantity: 4\nTotal cost: $60\n```",
+            "You goal in this section is to create a shopping cart calculator. In the program below, we have already given you three variables: `item`, `price`, and `quantity`.\n\nYour program should use f-strings to print the following four lines exactly:\n```\nItem: Widget\nPrice per item: $15\nQuantity: 4\nTotal cost: $60\n```",
         },
       ],
       example: {
@@ -145,7 +145,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "F-strings are powerful because they let you create informative, readable output that combines different data types seamlessly. Now it's time to reflect on what you've learned. Create a simple example (3-4 lines) that uses at least three variables and at least one complex f-string. Then write 3-4 sentences explaining how your f-strings make the output clear and informative. Remember to use the phrase 'as seen in the example above'.",
+            "F-strings are powerful because they let you create informative, readable output that combines different data types seamlessly. The handle the tricky bit of combining strings and integers.\n\nNow it's time to reflect on what you've learned. Create a simple example (3-4 lines) that uses at least three variables and at least one complex f-string. Then write 3-4 sentences explaining how your f-strings make the output clear and informative. Remember to use the phrase \"as seen in the example above\".",
         },
       ],
       topic: "How F-Strings Make Output Clear",

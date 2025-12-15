@@ -24,7 +24,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Did you ever play Mad Libs as a kid? They\'re fill-in-the-blank stories where you provide random words (like "purple", "elephant", or "dance") without knowing the story. Then those words get plugged into a template, creating unexpected results. The image below shows an example of what Mad Libs look like.',
+            'Did you ever play Mad Libs as a kid? They\'re fill-in-the-blank stories where you provide random words (like "purple", "elephant", or "dance"). These words then get plugged into holes in the story, creating unexpected results. The image below shows an example of what Mad Libs look like.',
         },
         {
           kind: "image",
@@ -85,7 +85,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Now it\'s your turn to create a Mad Lib! Below is a story template with some variables already defined. Add the missing variables and print statements to complete the story.\n\nYou need to:\n1. Create a variable `action` with the value "screamed"\n2. Create a variable `number` with the integer 42\n3. Print: `Suddenly, [hero_name] [action] very loudly!`\n4. Print: `The [creature] ran away at [number] miles per hour!`\n\nMake sure to use f-strings for your print statements!',
+            'Now it\'s your turn to create a Mad Lib! Below is a story template with some variables already defined. Add the missing variables and print statements to complete the story.\n\nYou need to:\n1. Create a variable `action` with the value "screamed"\n2. Create a variable `number` with the integer 42\n3. First print: `Suddenly, [hero_name] [action] very loudly!`\n4. Then print: `The [creature] ran away at [number] miles per hour!`\n\nMake sure to use f-strings for your print statements!',
         },
       ],
       example: {
@@ -162,7 +162,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Mad Libs are fun, but they also reveal something profound about how computers work.\n\nThink about what happens when you run a Mad Libs program:\n1. The computer stores raw data in variables (just words and numbers)\n2. The f-string acts as a template - a pattern for how to present that data\n3. The output combines the data with context to create meaning\n\nThe computer transforms raw data into something humans can understand and enjoy. This is what all computer programs do - they take data and present it in ways that make sense to people.",
+            "Mad Libs are fun, but they also reveal something profound about how computers work. Think about what happens when you run a Mad Libs program:\n1. The computer stores raw data in variables (just words and numbers)\n2. The f-strings act as a template - a pattern for how to present that data\n3. The output combines the data with context to create meaning\n\nThe computer doesn't know it is telling a story; it is simply merging data into slots. You (the human) provide the meaning; the computer provides the processing.",
         },
       ],
     },
@@ -174,7 +174,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Now it\'s your turn to reflect on this idea. Create a simple example (3-5 lines of code) that shows raw data being transformed into meaningful, human-understandable output using f-strings. Then write 4-5 sentences reflecting on these questions:\n- Why is this translation from data to meaning important?\n- How does it make programs more useful?\n- What would happen if programs only showed raw data?\n- How does this connect to the Mad Libs you created?\n\nRemember to use the phrase "as seen in the example above" in your reflection.',
+            'Now it\'s your turn to reflect on this idea. Create a simple example (3-5 lines of code) that shows raw data being transformed into meaningful, human-understandable output using f-strings. Then write 4-5 sentences reflecting on these questions:\n- Why is this translation from data to meaning important?\n- How does it make programs more useful?\n- What would happen if programs only showed raw data?\n\nRemember to use the phrase "as seen in the example above" in your reflection.',
         },
       ],
       topic: "How F-Strings Bridge Computers and Humans",
