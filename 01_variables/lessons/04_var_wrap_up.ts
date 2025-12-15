@@ -23,7 +23,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "You've learned a lot in the previous lessons: how to work with strings and integers, how operations affect data types differently, and how to store values in variables. What's more, these topics build on each other in varying and subtle ways. Therefore, this review uses a learning technique called **interleaving** to help solidify your understanding of all these interrelated topics.\n\nInterleaving is technique where you answer questions about everything you've encountered so far - not just the most recent unit. It forces you to utilize prior knowledge while simultaneously reviewing what you just learned. This approach helps your brain make stronger connections between concepts and mirrors how real programming works.",
+            "You've learned a lot in the previous lessons: how to work with strings and integers, how operations affect data types differently, and how to store values in variables. These topics build on each other in varying and subtle ways. Therefore, this review uses a learning technique called **interleaving** to help solidify your understanding of all these interrelated topics.\n\nInterleaving is technique where you answer questions about everything you've encountered so far - not just the most recent unit. It forces you to utilize prior knowledge while simultaneously reviewing what you just learned. This approach helps your brain make stronger connections between concepts and mirrors how real programming works.",
         },
       ],
     } as InformationSectionData,
@@ -89,7 +89,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Which of the following lines of code would result the following error being raised:\n```\nError:\n\nExecution Error: Traceback (most recent call last):\n  File "/lib/python311.zip/_pyodide/_base.py", line 573, in eval_code_async\n    await CodeRunner(\n  File "/lib/python311.zip/_pyodide/_base.py", line 393, in run_async\n    coroutine = eval(self.code, globals, locals)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "<exec>", line 2, in <module>\nNameError: name \'num\' is not defined\n```\n',
+            'Which of the following lines of code would result the in following error being raised:\n```\nError:\n\nExecution Error: Traceback (most recent call last):\n  File "/lib/python311.zip/_pyodide/_base.py", line 573, in eval_code_async\n    await CodeRunner(\n  File "/lib/python311.zip/_pyodide/_base.py", line 393, in run_async\n    coroutine = eval(self.code, globals, locals)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "<exec>", line 2, in <module>\nNameError: name \'num\' is not defined\n```\n',
         },
       ],
       options: [
@@ -111,8 +111,7 @@ const lessonData: Lesson = {
       content: [
         {
           kind: "text",
-          value:
-            "Which of the following that are integers? Select all that apply.",
+          value: "Which of the following are integers? Select all that apply.",
         },
       ],
       options: ["42", '"forty two"', "0", '"hello"', "999", "'999'", "-5"],
@@ -264,7 +263,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Excellent job working through these interleaved practice problems! By mixing questions about strings, integers, and variables together, your brain had to actively recall and apply different concepts rather than just reproducing a single pattern. This type of practice - where you switch between related topics - has been proven to create stronger, more durable learning.\n\nYou've demonstrated your understanding of all the foundational concepts and you're ready to move on to more advanced topics!",
+            "Excellent job working through these interleaved practice problems! By mixing questions about strings, integers, and variables together, your brain had to actively recall and apply different concepts rather than just reproducing a single pattern. This type of practice - where you switch between related topics - has been proven to create stronger, more durable learning.\n\nYou've demonstrated your understanding of variables and you're ready to move on to more advanced topics!",
         },
       ],
     } as InformationSectionData,

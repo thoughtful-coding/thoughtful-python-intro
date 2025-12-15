@@ -8,6 +8,7 @@ import type {
   DebuggerSectionData,
   MultipleChoiceSectionData,
   MatchingSectionData,
+  ParsonsSectionData,
 } from "../../../../src/types/data";
 
 const lessonData: Lesson = {
@@ -177,6 +178,41 @@ const lessonData: Lesson = {
           "Correct! The variable `points` is set to `10` on the first line. Then that value is read and used over and over.",
       },
     } as MultipleChoiceSectionData,
+    {
+      kind: "Parsons",
+      id: "variable-practice" as SectionId,
+      title: "Challenge: Personal Information",
+      content: [
+        {
+          kind: "text",
+          value:
+            'Now it\'s your turn to pull all the pieces together! Create a program that:\n1. Creates a variable called `favorite_color` and stores the color `"green"` in it\n2. Creates a variable called `lucky_number` that stores the number `7` in it\n3. Prints out the color\n4. Prints out the lucky number\n5. Prints out the lucky number plus 10',
+        },
+      ],
+      puzzle: {
+        codeBlocks: [
+          ['fav_color = "green"'],
+          ['favorite_color = "green"'],
+          ["lucky_number = 7"],
+          ["7 = lucky_number"],
+          ["lucky_number + 10"],
+          ["print(favorite_color)"],
+          ["print(lucky_number)"],
+          ["print(number + 10)"],
+          ["print(lucky_number + 10)"],
+        ],
+        visualization: "console",
+      },
+      testMode: "procedure",
+      functionToTest: "__main__",
+      testCases: [
+        {
+          input: [null],
+          expected: "green\n7\n17",
+          description: "Test with favorite_color='green' and lucky_number=7",
+        },
+      ],
+    } as ParsonsSectionData,
     {
       kind: "Information",
       id: "variables-conclusion",

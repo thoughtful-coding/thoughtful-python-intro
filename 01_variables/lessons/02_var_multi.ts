@@ -58,8 +58,10 @@ const lessonData: Lesson = {
       puzzle: {
         codeBlocks: [
           ["students_count = 1000"],
-          ["print(students_count)"],
+          ["sstudents_count + 16"],
+          ["sstudents_count = 16"],
           ["students_count = students_count + 16"],
+          ["print(students_count)"],
         ],
         visualization: "console",
       },
@@ -120,16 +122,17 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Your goal for this section is to order the lines of code so that the program outputs `10`, then `11`, then `15`. In the space below you have seven lines of code that you can arrange to try and output the correct numbers. Once you think you have placed them correctly, click the `Run Code` button to see what the output would be. Once you're happy with the output, click `Run Tests` to have the website verify you did everything correctly.",
+            "Your goal for this section is to order the lines of code so that the program outputs `10`, then `11`, then `16`. In the space below you have seven lines of code that you can arrange to try and output the correct numbers. Once you think you have placed them correctly, click the `Run Code` button to see what the output would be. Once you're happy with the output, click `Run Tests` to have the website verify you did everything correctly.",
         },
       ],
       puzzle: {
         codeBlocks: [
           ["print(var)"],
           ["print(var)"],
-          ["print(var + 1)"],
+          ["print(var)"],
           ["var = 10"],
           ["var = var + 1"],
+          ["var = var + 2"],
           ["var = var + 3"],
         ],
         visualization: "console",
@@ -139,8 +142,8 @@ const lessonData: Lesson = {
       testCases: [
         {
           input: [null],
-          expected: "10\n11\n15",
-          description: "Test multiple prints",
+          expected: "10\n11\n16",
+          description: "Test print 10, 11, 16",
         },
       ],
     } as ParsonsSectionData,

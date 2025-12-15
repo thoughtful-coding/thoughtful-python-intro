@@ -184,7 +184,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Great job! You have now seen the core ways that variables are used in programs. They can be **set** and *read**. They can also be reset with new values - even using their old values in the process. In the next lesson you'll learn how to use multiple variables in a single program.",
+            "Great job! You have now seen the core ways that variables are used in programs. They can be **set** and **read**. They can also be reset with new values - even using their old values in the process. In the next lesson you'll learn how to use multiple variables in a single program.",
         },
       ],
     } as InformationSectionData,

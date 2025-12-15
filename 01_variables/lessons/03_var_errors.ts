@@ -6,6 +6,7 @@ import type {
   TestingSectionData,
   ReflectionSectionData,
   ParsonsSectionData,
+  PRIMMSectionData,
 } from "../../../../src/types/data";
 
 const lessonData: Lesson = {
@@ -22,10 +23,30 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Using variables is necessary for pretty much all programs. Therefore, it's important to know how to handle errors that are \"raised\" when you accidentally use them incorrectly. As stated in the previous lesson on `TypeErrors`, errors are one of the most common reasons new programmers feel overwhelmed. In this lesson, you'll learn to understand variable errors in order to make you a more confident, capable programmer.",
+            "Using variables is necessary for pretty much all programs. Therefore, it's important to know how to handle errors that are \"raised\" when you accidentally use them incorrectly.\n\nAs stated in the previous lesson on `TypeErrors`, errors are one of the most common reasons new programmers feel overwhelmed. In this lesson, you'll learn to understand variable errors in order to make you a more confident, capable programmer.",
         },
       ],
     } as InformationSectionData,
+    {
+      kind: "PRIMM",
+      id: "primm-name-errors" as SectionId,
+      title: "Errors While Using Variables",
+      content: [
+        {
+          kind: "text",
+          value:
+            "Below is what seems to be a fairly simple program that looks a lot like code you've seen previously. Unfortunately, there's a problem. First, predict what you think the problem is **and** what the code will do when you run it. Then, run the program to see if your prediction is correct. Remember, to be as specific as possible with your prediction; it will help you learn the content.",
+        },
+      ],
+      example: {
+        visualization: "console",
+        initialCode: "number = 10\nprint(numbr)\n",
+      },
+      predictPrompt:
+        "What is the problem and what will happen when you run the code?",
+      conclusion:
+        "`NameError` messages can be overwhelming! Read the next section for how to approach them.",
+    } as PRIMMSectionData,
     {
       kind: "Information",
       id: "name-errors" as SectionId,
@@ -34,13 +55,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "When you misspell a word in a string, you get a typo. When you misspell a variable name, you get a `NameError`. `NameErrors` have the same format as the previous errors that we've encountered; the key information is in the last two lines. For example, assume you tried to run the code below.",
-        },
-        { kind: "code", value: "number = 10\nprint(numbr)\n" },
-        {
-          kind: "text",
-          value:
-            'This would result in the following `NameError`:\n```\nNameError: Traceback (most recent call last):\n  File "/lib/python311.zip/_pyodide/_base.py", line 573, in eval_code_async\n    await CodeRunner(\n  File "/lib/python311.zip/_pyodide/_base.py", line 393, in run_async\n    coroutine = eval(self.code, globals, locals)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "<exec>", line 2, in <module>\nNameError: name \'numbr\' is not defined\n```\nThe error is saying is that the computer failed because it couldn\'t find a variable named `numbr` on line 2. This makes sense because the program misspelled the variable `number` that was created on the previous line.',
+            'When you misspell a word in a string, you get a typo. When you misspell a variable name, you get a `NameError`. Luckily, `NameErrors` have the same format as the previous errors that we\'ve encountered; the key information is in the last two lines. Let\'s examine the `NameError` from the previous section carefully:\n```\nNameError: Traceback (most recent call last):\n  File "/lib/python311.zip/_pyodide/_base.py", line 573, in eval_code_async\n    await CodeRunner(\n  File "/lib/python311.zip/_pyodide/_base.py", line 393, in run_async\n    coroutine = eval(self.code, globals, locals)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "<exec>", line 2, in <module>\nNameError: name \'numbr\' is not defined\n```\nThe error is saying that the computer failed because it couldn\'t find a variable named `numbr` on line 2. This makes sense because the program misspelled the variable `number` that was created on the previous line.',
         },
       ],
     } as InformationSectionData,
@@ -52,7 +67,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "There is a misspelling in the simple program below. Click the `Run Code` button to run the program. Then, use the `NameError` that is raised to find and fix the bug - a misspelled variable - in the program. Finally, click the `Run Tests` button to verify you fixed it as expected.",
+            'The whole point of error messages is to give programmers enough information to fix any problems that pop up. Your goal in this section it to use the `NameError` that is "raised" by the computer to fix the misspelling in the simple program below.\n\nFirst, click the `Run Code` button to run the program. Then, carefully read the `NameError` that is raised to find and fix the bug - a misspelled variable - in the program. Finally, click the `Run Tests` button to verify you fixed it as expected.',
         },
       ],
       example: {
@@ -109,62 +124,27 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Hopefully, now you can fully appreciate how a computer actually works. A computer goes line by line through the program. Every time it sees a line with a `=`, it calculates the value of the stuff on the right and stores it into the variable on the left. Every time a variable is read, the computer accesses its memory for the value stored inside it. If a variable by that name hasn\'t been created before, then the computer "raises" a `NameError`. If the operation between the data isn\'t possible, then it "raises" a `TypeError`. Finally, if there\'s something like a missing parentheses or quotation mark, it "raises" a `SyntaxError`.\n\nThis is basically how your computer is working right now. It\'s executing billions of lines of code a second, reading values in memory and using those values to calculate new things. The overall effect is a machine that seamlessly responds to your clicks and keystrokes.',
+            'Hopefully, now you can fully appreciate how a computer actually works. A computer simply executes programs line-by-line Every time it sees a line with a `=`, it calculates the value of the stuff on the right and stores it into the variable on the left. Every time a variable is read, the computer accesses its memory for the value stored inside it. If a variable by that name hasn\'t been created before, then the computer "raises" a `NameError`. If the operation between the data isn\'t possible, then it "raises" a `TypeError`.\n\nThis is basically how your computer is working right now. It\'s executing billions of lines of code a second, reading values in memory and using those values to calculate new things. The overall effect is a machine that seamlessly responds to your clicks and keystrokes.',
         },
       ],
     } as InformationSectionData,
     {
-      kind: "Parsons",
-      id: "variable-practice" as SectionId,
-      title: "Challenge: Personal Information",
+      kind: "Reflection",
+      id: "variables-errors-reflection" as SectionId,
+      title: "Reflection: Reading Errors",
       content: [
         {
           kind: "text",
           value:
-            'Now it\'s your turn to pull all the pieces together! Create a program that:\n1. Creates a variable called `favorite_color` and stores the color `"green"` in it\n2. Creates a variable called `lucky_number` that stores the number `7` in it\n3. Prints out the color\n4. Prints out the lucky number\n5. Prints out the lucky number plus 10',
+            'Using the information in errors to fix your code is the sign of a mature programmer. While verbose, errors messages contain a lot of information to help you figure out how to fix your program.\n\nNow it\'s time to reflect in order to formalize your knowledge. We have provided an example of `NameError` that might pop up during a program. Write 3-4 sentences explaining how to interpret the error message and what the error is that might have caused the problem. As always, remember to use the phrase "as seen in the example above".',
         },
       ],
-      puzzle: {
-        codeBlocks: [
-          ['favorite_color = "green"'],
-          ['fav_color = "green"'],
-          ["lucky_number = 7"],
-          ["lucky_number = 10"],
-          ["print(favorite_color)"],
-          ["print(lucky_number)"],
-          ["print(lucky_number + 1)"],
-          ["print(number)"],
-          ["print(number + 10)"],
-          ["lucky_number + 10"],
-          ["lucky_number = lucky_number + 9"],
-        ],
-        visualization: "console",
-      },
-      testMode: "procedure",
-      functionToTest: "__main__",
-      testCases: [
-        {
-          input: [null],
-          expected: "green\n7\n17",
-          description: "Test with favorite_color='green' and lucky_number=7",
-        },
-      ],
-    } as ParsonsSectionData,
-    {
-      kind: "Reflection",
-      id: "variables-errors-reflection" as SectionId,
-      title: "Variable Errors Reflection",
-      content: [
-        {
-          kind: "text",
-          value: "blah blah blah",
-        },
-      ],
-      topic: "Blah blah",
+      topic: "Reading Error Messages",
       isTopicPredefined: true,
-      code: "Create an example showing blah blah",
-      isCodePredefined: false,
-      explanation: "Explain how the code in example works (3-4 sentences)",
+      code: 'NameError: Traceback (most recent call last):\n  File "/lib/python311.zip/_pyodide/_base.py", line 573, in eval_code_async\n    await CodeRunner(\n  File "/lib/python311.zip/_pyodide/_base.py", line 393, in run_async\n    coroutine = eval(self.code, globals, locals)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "<exec>", line 25, in <module>\nNameError: name \'x\' is not defined\n',
+      isCodePredefined: true,
+      explanation:
+        "Write 3-4 sentences explaining how to read an error message.",
       isExplanationPredefined: false,
     } as ReflectionSectionData,
     {
@@ -175,7 +155,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Congratulations on learning about variables! You now understand how to set, read, and even update a variable's value throughout your programs. Variables are the foundation for creating programs that can respond to complex problems.\n\nYou should feel proud. Over the previous four lessons, you've learned some of the most important concepts in programming. They will come up over and over again. In the next lesson, we'll pause and test ourselves on everything we've learned so far.",
+            "Congratulations on learning about how to handle errors associated with variables! You have now seen all the things that variables can do. You understand how to set, read, and update a variable's value throughout your programs. You also understand what to do if/when errors arise.\n\nYou should feel proud. Over the previous four lessons, you've learned some of the most important concepts in programming. In the next lesson, we'll pause and test ourselves on everything we've learned so far.",
         },
       ],
     } as InformationSectionData,
