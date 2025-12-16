@@ -5,6 +5,7 @@ import type {
   LessonId,
   MatchingSectionData,
   MultipleChoiceSectionData,
+  MultipleSelectionSectionData,
   PRIMMSectionData,
   ReflectionSectionData,
   SectionId,
@@ -16,6 +17,18 @@ const lessonData: Lesson = {
   description: "Learn how to make functions more flexible with inputs",
   sections: [
     {
+      kind: "Information",
+      id: "function-refresher",
+      title: "Function Refresher",
+      content: [
+        {
+          kind: "text",
+          value:
+            'In the previous lesson, you dug into how functions help make your code more compact by removing repetition. Finding these types of patterns is critical for making your programs easier to read and understand. The only trouble with the functions we showed you is that they did the same thing every time they ran. In this lesson, you\'ll learn how to make functions "customizable" to different situations.',
+        },
+      ],
+    } as InformationSectionData,
+    {
       kind: "PRIMM",
       id: "primm-greet-person-function" as SectionId,
       title: "Functions with Inputs",
@@ -23,7 +36,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Ok, now it\'s time to learn how to make functions a little more "general". Below is some Python code that **defines** and **calls** the `greet_person()` function. Notice that there is now a variable *between the parentheses*. Predict what the code below will output, then run it to check your prediction.',
+            "Below is some Python code that **defines** and **calls** the `greet_person()` function. There are two key differences between this function and the one you've seen before:\n1. There is a variable between the parentheses in the function definition\n2. There are values between the parentheses in the function calls\n\nPredict what the code below will output, then run it to check your prediction.",
         },
       ],
       example: {
@@ -41,7 +54,7 @@ const lessonData: Lesson = {
       content: [
         {
           kind: "text",
-          value: `As you saw above, you can pass different values (inputs) to a function and have the function act differently. What happens is the following:\n1. You define the function with \`def\` and the name\n2. Inside the parentheses, you state the inputs/variables the function should take\n3. You call the function, passing the inputs in via the call\n\nBased on what you observed in the previous section, what will be printed out if you call the function with the code \`greet_person("Bill")\`?`,
+          value: `As you saw above, you can pass different values (inputs) to a function and have the function act differently. What happens is the following:\n1. You define the function with \`def\` and the name of the function\n2. Inside the parentheses, you state the variables the function should take (called parameters)\n3. You call the function, passing the value the function should use via the call (called arguments)\n\nBased on what you observed in the previous section, what will be printed out if you call the function with the code \`greet_person("Bill")\`?`,
         },
       ],
       options: [
@@ -53,7 +66,7 @@ const lessonData: Lesson = {
       correctAnswer: 1,
       feedback: {
         correct:
-          'Correct! The value `"Bill"` gets stored in the functions `name` input variable',
+          'Correct! The value `"Bill"` gets stored in the functions `name` parameter',
       },
     } as MultipleChoiceSectionData,
     {
@@ -64,7 +77,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Let\'s revisit the parts of a function from the previous lesson... mostly because we lied to you a bit. There\'s really **five** pieces:\n1. `def` starts "defining" the function\n2. `greet_person` is name of the function\n3. The **input variables** inside the parentheses are variables, waiting to be set by the function call\n4. The indented code below the `def greet_person(name):` is the code the function will run\n5. The unindented `greet_person()` "calls" the function with particular **input values**',
+            'Let\'s revisit the parts of a function from the previous lesson... mostly because we lied to you a bit. There\'s really **five** pieces:\n1. `def` starts "defining" the function\n2. `greet_person` is name of the function\n3. The **parameters** are variable inside the parentheses, waiting to be set by the function call\n4. The indented code below the `def greet_person(name):` is the code the function will run\n5. The unindented `greet_person()` "calls" the function with particular **arguments**',
         },
       ],
     } as InformationSectionData,
@@ -86,8 +99,8 @@ const lessonData: Lesson = {
       ],
       prompts: [
         { "Function name": "favorite" },
-        { "Function input variable": "animal" },
-        { "Function input value": '"cat"' },
+        { "Function parameter": "animal" },
+        { "Function argument": '"cat"' },
       ],
     } as MatchingSectionData,
     {
@@ -98,13 +111,13 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Let's dive into how a function call **with inputs** work. Below is a small program where we greet Bill with three different phrases. Step through each line of the program. The most important thing to notice is every time a function is called, the input value of the function call gets stored into the function's `phrase` input variable. In total, you go in and out of the function three times, each time with a different input value.",
+            "Let's dive into how a function call with parameters and arguments work. Below is a small program where we greet Bill with three different phrases. Step through each line of the program. The most important thing to notice is every time a function is called, the argument of the function call gets stored into the function's `phrase` parameter. In total, you go in and out of the function three times, each time with the parameter being set to a different argument.",
         },
       ],
       example: {
         visualization: "console",
         initialCode:
-          'def greet_bill(phrase):\n  print(phrase + " Bill!")\n\ngreet_bill("Yo")\ngreet_bill("What up")\ngreet_bill("Hi")\nprint("All done")',
+          'def greet_bill(phrase):\n    print(phrase + " Bill!")\n\ngreet_bill("Yo")\ngreet_bill("What up")\ngreet_bill("Hi")\nprint("All done")',
       },
       advancedControls: false,
     } as DebuggerSectionData,
@@ -137,12 +150,12 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "You aren't limited to a single input variable for functions. You can actually use as many as you would like. For example, in the program below, the function has three input variables: `x`, `y`, and `z` input variables . The **function call** then provides three input values for these input variables:\n- `5` -> `x`\n- `2` -> `y`\n- `3` -> `z`.\n\nBased on this explanation, what would the following program print out?",
+            "Functions aren't limited to a single parameter between the parentheses. You can actually use as many as you would like. For example, in the program below, the function has three parameters: `x`, `y`, and `z` input variables . The **function call** then provides three arguments for these input variables:\n- `5` -> `x`\n- `2` -> `y`\n- `3` -> `z`.\n\nBased on this explanation, what would the following program print out?",
         },
         {
           kind: "code",
           value:
-            "def math_stuff(x, y, z):\n    a = x * y * z\n    print(z)\n\nmath_stuff(5, 2, 3)",
+            "def math_stuff(x, y, z):\n    a = x * y * z\n    print(a)\n\nmath_stuff(5, 2, 3)",
         },
       ],
       options: ["13", "15", "30", "100"],
@@ -151,6 +164,34 @@ const lessonData: Lesson = {
         correct: "Correct!",
       },
     } as MultipleChoiceSectionData,
+    {
+      kind: "MultipleSelection",
+      id: "function-param-arg-question",
+      title: "Function Facts",
+      content: [
+        {
+          kind: "text",
+          value:
+            "All of the different terminology that is used to describe the different parts of functions can be confusing. It's important to understand the fundamental concepts, however, and then build from there.\n\nAt their core, functions are repeated bits of code. If they run the same way each time they are called, then they don't take any parameters/arguments. You can add parameters/arguments if you want to allow the function to be more general and do different things. Parameters are the variables inside the parentheses in the function definition. Arguments are the values put inside a function call that a particular function call will use.\n\nBased on this explanation, analyze the code below. Select all the true statements.",
+        },
+        {
+          kind: "code",
+          value:
+            'def say_stuff(name, age, home):\n    print(f"Say hi to {name}!")\n    print(f"{name} is {age} years old and lives in {home}")\n\nval_1 = "Ben"\nval_2 = 13\nval_3 = "New York"\nsay_stuff(val_1, val_2, val_3)\n',
+        },
+      ],
+      options: [
+        "The function `say_stuff` has four parameters",
+        'One of the parameters to `say_stuff` is "New York"',
+        'One of the arguments to `say_stuff` is "New York"',
+        "One of the function parameters is named `home`",
+        "One of the function arguments is named `age`",
+      ],
+      correctAnswers: [2, 3],
+      feedback: {
+        correct: "Correct!",
+      },
+    } as MultipleSelectionSectionData,
     {
       kind: "Reflection",
       id: "function-with-inputs-reflection" as SectionId,

@@ -5,6 +5,7 @@ import type {
   LessonId,
   MatchingSectionData,
   MultipleChoiceSectionData,
+  MultipleSelectionSectionData,
   ReflectionSectionData,
   SectionId,
   TestingSectionData,
@@ -57,7 +58,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'We\'ve used the word "indentation" a lot, but now let\'s define what we mean by that. Indentation means using **two spaces** before you start typing the actual code. This indentation of two spaces shows that a bit of code is "inside" or "within" something else. Note: indentation is an important concept that will come up later.\n\nLet\'s return to the "Happy Birthday" program from before. In this case, your goal is to do the following:\n1. Fix the indentation errors in the functions below\n2. Call the `verse()` and `chorus()` functions to "sing" happy birthday to Alex',
+            'We\'ve used the word "indentation" a lot, but now let\'s define what we mean by that. Indentation means using **four spaces** before you start typing the actual code. This indentation of four spaces shows that a bit of code is "inside" or "within" something else. Note: indentation is an important concept that will come up later.\n\nLet\'s return to the "Happy Birthday" program from before. In this case, your goal is to do the following:\n1. Fix the indentation errors in the functions below\n2. Call the `verse()` and `chorus()` functions to "sing" happy birthday to Alex',
         },
       ],
       example: {
@@ -84,7 +85,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "The video below is another explanation of how functions work. It does a very nice job of showing how functions can help shrink the size of your program if you can identify repeating patterns within your code. Pay particular attention to how 12 lines of code is shrunk to just seven lines via functions.",
+            "The video below is another explanation of how functions work. It does a very nice job of showing how functions can help shrink the size of a program if you can identify repeating patterns within your code. Pay particular attention to how 12 lines of code is shrunk to just seven lines via functions.",
         },
         {
           kind: "video",
@@ -100,6 +101,30 @@ const lessonData: Lesson = {
       ],
     } as InformationSectionData,
     {
+      kind: "MultipleSelection",
+      id: "functions-folding-quiz",
+      title: "Folding Functions",
+      content: [
+        {
+          kind: "text",
+          value:
+            'When a computer runs a program, it goes line-by-line. When it encounters a function, it goes "inside" the function and runs every line inside the function. Once the computer finishes the function, it returns back to the line that called the function and continues.\n\nGiven this explanation of how a function works, which of the following statements are true? Select all that apply:',
+        },
+      ],
+      options: [
+        "Evaluating a function is easier for a computer and results in more accurate answers",
+        "Identifying places where code is used repeatedly helps your code run faster",
+        "Calling a function is the same as simply running the code inside the function",
+        "Computers must remember where they're called from in order to run properly from start to finish",
+        "Finding and reusing common patterns helps you shrink your program",
+      ],
+      correctAnswers: [2, 3, 4],
+      feedback: {
+        correct:
+          "Correct! Identifying repeated patterns allows you to reuse code and make the program smaller",
+      },
+    } as MultipleSelectionSectionData,
+    {
       kind: "Debugger",
       id: "function-debugging" as SectionId,
       title: "Watching Functions Be Called",
@@ -107,7 +132,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'When a computer runs a program, it goes line-by-line. When it encounters a function, it goes "inside" the function and runs every line inside the function. Once the computer finishes the function, it returns back to the line that called the function and continues.\n\nThe program below allows you to slowly "step" through the program from the video and see how it is equivalent to the original 12-line program from the video. Use the debugger to step through each line of the program. The most important thing to notice is that three things happen every time a function is called:\n1. The computer remembers where the function call is\n2. The computer runs all the code inside the function\n3. The computer returns to right after the remembered function call\n\nThis process of calling, running, and returning to the call location is how seven lines of code can become the equivalent of 12.',
+            "Just like with variables, functions are such an important concept that it's worth slowing down what's happening with the aid of the debugger. This section allows you to \"step\" through the final program from the video and see how it is equivalent to the original 12-line version. The most important thing to notice is that three things happen every time a function is called:\n1. The computer remembers where the function call is\n2. The computer runs all the code inside the function\n3. The computer returns to right after the remembered function call\n\nThis process of calling, running, and returning to the call location is how seven lines of code can become the equivalent of 12.",
         },
       ],
       example: {
@@ -137,7 +162,7 @@ const lessonData: Lesson = {
       correctAnswer: 2,
       feedback: {
         correct:
-          "Correct! Calling a two line function three times is equivalent to 6 lines of code.",
+          "Correct! Calling a two line function four times is equivalent to 8 lines of code.",
       },
     } as MultipleChoiceSectionData,
     {
@@ -164,7 +189,7 @@ const lessonData: Lesson = {
       correctAnswer: 1,
       feedback: {
         correct:
-          "Correct! Function definitions always end with a colon `:`, and function calls always require parentheses `()`",
+          "Correct! Function definitions always have parentheses followed by a colon `:``",
       },
     } as MultipleChoiceSectionData,
     {
@@ -175,7 +200,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Now it\'s your turn to work with functions! Create a program that uses the minimal number of function calls to print the word "banana". Hint: you can do it with **just four** function calls.',
+            'Now it\'s your turn to work with functions! Create a program that uses the minimal number of function calls to print the word "banana".\n\nHint: `fn_4()` is special because it calls _other functions_ inside of it. You can use it to solve this problem with **just four** function calls.',
         },
       ],
       example: {

@@ -23,7 +23,7 @@ const lessonData: Lesson = {
       content: [
         {
           kind: "text",
-          value: `So far, you've been writing programs that run line-by-line from top to bottom. That's great, but as your programs get more complex, you'll need to break them up into understandable chunks. That's where **functions** come in!\n\nThink of functions like teaching someone a new skill. Once they learn it, you can just say "do that thing we practiced" instead of explaining it all over again.\n\nFunctions let you:\n - **Reuse code** without copying and pasting\n- **Organize** your programs into logical chunks\n- **Avoid mistakes** by writing tricky code just once`,
+          value: `So far, you've been writing programs that run line-by-line from top to bottom. That's great, but as your programs get more complex, you'll need to break them up into understandable chunks. That's where **functions** come in!\n\nThink of functions like teaching someone a new skill. Once they learn the skill, you can just say "do that thing we practiced" instead of explaining it all over again. Functions let you:\n - **Reuse code** without copying and pasting\n- **Organize** your programs into logical chunks\n- **Avoid mistakes** by writing tricky code just once`,
         },
       ],
     } as InformationSectionData,
@@ -43,7 +43,7 @@ Run the code and see what happens!`,
       ],
       example: {
         visualization: "console",
-        initialCode: `def greet():\n  print("Hello there!")\n  print("Welcome to Python!")\n\ngreet()`,
+        initialCode: `def greet():\n    print("Hello there!")\n    print("Welcome to Python!")\n\ngreet()`,
       },
     } as ObservationSectionData,
     {
@@ -83,7 +83,7 @@ Run the code and see what happens!`,
       example: {
         visualization: "console",
         initialCode:
-          'def greet():\n  print("Hello there!")\n  print("Welcome to Python!")\n\ngreet()\ngreet()\ngreet()',
+          'def greet():\n    print("Hello there!")\n    print("Welcome to Python!")\n\ngreet()\ngreet()\ngreet()',
       },
       predictPrompt: "What do you think will happen when you run the code?",
       conclusion:
@@ -196,7 +196,7 @@ Run the code and see what happens!`,
           ["chorus()"],
           ["def verse:", '    print("Happy birthday to you")'],
           ["def verse():", '    print("Happy birthday to you")'],
-          ["def chorus():", '   print("Happy birthday dear Alex")'],
+          ["def chorus():", '    print("Happy birthday dear Alex")'],
           ["def chorus():", 'print("Happy birthday dear Alex")'],
         ],
         visualization: "console",

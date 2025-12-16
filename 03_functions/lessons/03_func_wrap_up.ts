@@ -7,7 +7,6 @@ import type {
   LessonId,
   MatchingSectionData,
   MultipleChoiceSectionData,
-  PredictionSectionData,
   SectionId,
   TestingSectionData,
 } from "../../../../src/types/data";
@@ -26,7 +25,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "You've learned a lot in the previous three lessons: how to create functions, how to call functions, and how to use function input values. As with the previous review section, this lesson uses **interleaving** to help solidify your understanding. By pulling in everything you've learned so far and asking questions about it in a mixed-up order, your brain will be able to make stronger connections between the concepts. Be sure to take your time and think carefully about each problem!",
+            "You've learned a lot in the past few lessons: how to create functions, how to call functions, and how to use function parameters and arguments. As with the previous review sections, this lesson uses **interleaving** to help solidify your understanding. By pulling in everything you've learned so far and asking questions about it in a mixed-up order, your brain will be able to make stronger connections between the concepts. Be sure to take your time and think carefully about each problem!",
         },
       ],
     } as InformationSectionData,
@@ -77,19 +76,44 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'\n\`\`\``,
       },
     } as MultipleChoiceSectionData,
     {
+      kind: "Matching",
+      id: "ordering-function-pieces" as SectionId,
+      title: "Function Pieces",
+      content: [
+        {
+          kind: "text",
+          value:
+            "Match each part of the function that is being pointed at with its technical name.",
+        },
+        {
+          kind: "image",
+          src: "images/function_pieces.png",
+          maxWidthPercentage: 70,
+        },
+      ],
+      prompts: [
+        { A: "Starts defining a function" },
+        { B: "Function name" },
+        { C: "Function parameters" },
+        { D: 'Code "inside" function' },
+        { E: "Function call" },
+        { F: "Function arguments" },
+      ],
+    } as MatchingSectionData,
+    {
       kind: "Coverage",
-      id: "simple-coverage-single1",
+      id: "simple-add-coverage",
       title: "Different Inputs",
       content: [
         {
           kind: "text",
-          value: "Provide inputs that will produce the desired output.",
+          value:
+            "For functions that have parameters, you can control what functions output just by changing the arguments. The table below highlights this by asking you to provide the arguments that will produce different outputs. For each row of the table, provide the function argument that will produce the desired output.",
         },
       ],
       example: {
         visualization: "console",
-        initialCode:
-          "def do_math(x):\n  y = x + x\n  z = y + y\n  print(z)\n\n",
+        initialCode: "def do_math(x):\n    z = x + 3\n    print(z)\n\n",
       },
       testMode: "procedure",
       functionToTest: "do_math",
@@ -103,18 +127,18 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'\n\`\`\``,
         rows: [
           {
             fixedInputs: {},
-            expectedOutput: "12",
-            hint: "12 = ? + ? + ? + ?",
+            expectedOutput: "7",
+            hint: "7 = ? + 3",
           } as CoverageTableRow,
           {
             fixedInputs: {},
-            expectedOutput: "4",
-            hint: "4 = ? + ? + ? + ?",
+            expectedOutput: "22",
+            hint: "22 = ? + 3",
           } as CoverageTableRow,
           {
             fixedInputs: {},
-            expectedOutput: "28",
-            hint: "28 = ? + ? + ? + ?",
+            expectedOutput: "1",
+            hint: "1 = ? + 3",
           },
         ],
       },
@@ -130,10 +154,16 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'\n\`\`\``,
             "Naming functions is a really important part of programming because it helps you understand what a function _does_. What would be a better name for the function in the program above?",
         },
       ],
-      options: ["`double()`", "`quadruple()`", "`square()`", "`cube()`"],
+      options: [
+        "`subtract_negative()`",
+        "`add_three()`",
+        "`do_something()`",
+        "`change_number()`",
+      ],
       correctAnswer: 1,
       feedback: {
-        correct: "Correct! The input is made four times bigger.",
+        correct:
+          "Correct! Using the function name `add_three` tells you exactly what the code inside does.",
       },
     } as MultipleChoiceSectionData,
     {
@@ -156,7 +186,7 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'\n\`\`\``,
       correctAnswer: 3,
       feedback: {
         correct:
-          "Correct! The input is cubed because it is multiple by itself three times.",
+          "Correct! The input is cubed because it is multiplied by itself three times.",
       },
     } as MultipleChoiceSectionData,
     {
@@ -166,64 +196,81 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'\n\`\`\``,
       content: [
         {
           kind: "text",
-          value:
-            "Having experimented with different data types and different operations in the previous section, match each of the following bits of code with their output:",
+          value: "Match each of the following bits of code with their output:",
         },
       ],
       prompts: [
         { "4 + 7": "11" },
         { '"4" + "7"': '"47"' },
         { '4 + "7"': "TypeError: unsupported operand type(s) for +" },
-        { "4 - 7": "-2" },
+        { "4 - 7": "-3" },
         { '4 - "7"': "TypeError: unsupported operand type(s) for -" },
       ],
     } as MatchingSectionData,
     {
-      kind: "Matching",
-      id: "ordering-function-pieces" as SectionId,
-      title: "Function Pieces",
+      kind: "Coverage",
+      id: "quad-coverage",
+      title: "Different Inputs",
       content: [
         {
           kind: "text",
-          value:
-            "Let's revisit the parts of a function from the previous lesson. Match up each part of the function with the order they come in when you're defining and calling a function.",
-        },
-        {
-          kind: "image",
-          src: "images/function_pieces.png",
-          maxWidthPercentage: 70,
-        },
-      ],
-      prompts: [
-        { A: "Starts defining a function" },
-        { B: "Function name" },
-        { C: "Inputs to function" },
-        { D: 'Code "inside" function' },
-        { E: "Function call" },
-        { F: "Function input values" },
-      ],
-    } as MatchingSectionData,
-    {
-      kind: "Prediction",
-      id: "multi-output-testing" as SectionId,
-      title: "Predict the Outputs",
-      content: [
-        {
-          kind: "text",
-          value: "Guess what the outputs will be",
+          value: "Provide inputs that will produce the desired output.",
         },
       ],
       example: {
         visualization: "console",
-        initialCode: "def fn(x):\n  print(x)",
+        initialCode: "def do_math(h, w):\n    z = h * w\n    print(z)\n\n",
       },
       testMode: "procedure",
-      functionToTest: "fn",
-      predictionTable: {
-        columns: [{ variableName: "x", variableType: "number" }],
-        rows: [{ inputs: [2] }, { inputs: [4] }, { inputs: [6] }],
+      functionToTest: "do_math",
+      coverageTable: {
+        columns: [
+          {
+            variableName: "h",
+            variableType: "number",
+          } as InputParam,
+          {
+            variableName: "w",
+            variableType: "number",
+          } as InputParam,
+        ],
+        rows: [
+          {
+            fixedInputs: {},
+            expectedOutput: "12",
+            hint: "12 = ? * ?",
+          } as CoverageTableRow,
+          {
+            fixedInputs: {},
+            expectedOutput: "4",
+            hint: "",
+          } as CoverageTableRow,
+          {
+            fixedInputs: {},
+            expectedOutput: "28",
+            hint: "",
+          },
+        ],
       },
-    } as PredictionSectionData,
+    } as CoverageSectionData,
+    {
+      kind: "MultipleChoice",
+      id: "quad-naming-1",
+      title: "Function Naming Again",
+      content: [
+        {
+          kind: "text",
+          value:
+            "What would be a better name for the function in the program above?",
+        },
+      ],
+      options: ["`get_height()`", "`add_numbers()`", "`square()`", "`area()`"],
+      correctAnswer: 3,
+      feedback: {
+        correct:
+          "Correct! `area` is a good name since we're multiplying height * width.",
+      },
+    } as MultipleChoiceSectionData,
     {
       kind: "Testing",
       id: "multi-input-testing" as SectionId,
@@ -232,7 +279,7 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'\n\`\`\``,
         {
           kind: "text",
           value:
-            "Create a function that takes two inputs, adds them together, and then prints their result. To be very clear, this is what inputs should lead to which outputs:\n- 2 and 2 prints 4\n- 4 and 2 prints 6\n- 4 and 1 prints 5\n- 2 and 6 prints 8",
+            "Create a function that takes two inputs, adds them together, and then prints their result. To be very precise, this is what inputs should lead to which outputs:\n- 2 and 2 prints 4\n- 4 and 2 prints 6\n- 4 and 1 prints 5\n- 2 and 6 prints 8",
         },
       ],
       example: {
@@ -260,7 +307,7 @@ TypeError: unsupported operand type(s) for +: 'int' and 'str'\n\`\`\``,
         {
           input: [2, 6],
           expected: "8",
-          description: "Test 6, 1 -> 8",
+          description: "Test 2, 6 -> 8",
         },
       ],
       testMode: "procedure",
