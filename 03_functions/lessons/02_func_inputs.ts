@@ -200,7 +200,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Having functions with input variables allows them to become much more useful. This, in turn, means that they provide you with many more opportunities to "fold" your program: assuming you can find the repeating patterns. \n\nNow it\'s time to reflect to formalize your knowledge. Create a simple 3-4 line code example that demonstrates how a function with one (or multiple) input variables works and then write 3-4 sentences explaining how your program works. Remember to use the phrase "as seen in the example above".',
+            'Having functions with input variables allows them to become much more useful. This, in turn, means that they provide you with many more opportunities to "fold" your program: assuming you can find the repeating patterns. \n\nNow it\'s time to reflect to formalize your knowledge. Create a simple 3-4 line code example that demonstrates how a function with one (or multiple) input variables works and then write 3-4 sentences explaining how your program works. Remember to use the phrase "as seen in the example".',
         },
       ],
       topic: "Functions With Inputs",

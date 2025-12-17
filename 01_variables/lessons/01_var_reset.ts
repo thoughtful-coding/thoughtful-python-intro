@@ -166,7 +166,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Variables are fundamental to programming because they allow programs to set, read, and reset data. Without variables, every bit of data would have to be written directly into the code, making programs inflexible and hard to maintain.\n\nNow it\'s time to reflect in order to formalize your knowledge. Create a simple 3-4 line code example that demonstrates how variables can make a program more useful and write 3-4 sentences explaining how your program works. Remember to use the phrase "as seen in the example above".',
+            'Variables are fundamental to programming because they allow programs to set, read, and reset data. Without variables, every bit of data would have to be written directly into the code, making programs inflexible and hard to maintain.\n\nNow it\'s time to reflect in order to formalize your knowledge. Create a simple 3-4 line code example that demonstrates how variables can make a program more useful and write 3-4 sentences explaining how your program works. Remember to use the phrase "as seen in the example".',
         },
       ],
       topic: "Why Variables Matter",

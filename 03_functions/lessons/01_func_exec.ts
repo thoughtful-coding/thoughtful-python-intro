@@ -226,7 +226,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Functions are fundamental to programming because they allow you to break your program up into understandable chunks. Without functions, every program would be one large blob of code. Functions allow you to "fold" your code to make it smaller and easier to understand.\n\nNow it\'s time to reflect to formalize your knowledge. Create a simple 3-4 line code example that demonstrates how functions work. Then, write 3-4 sentences explaining how your program works, pointing out key parts such as the function definition and function call. Remember to use the phrase "as seen in the example above".',
+            'Functions are fundamental to programming because they allow you to break your program up into understandable chunks. Without functions, every program would be one large blob of code. Functions allow you to "fold" your code to make it smaller and easier to understand.\n\nNow it\'s time to reflect to formalize your knowledge. Create a simple 3-4 line code example that demonstrates how functions work. Then, write 3-4 sentences explaining how your program works, pointing out key parts such as the function definition and function call. Remember to use the phrase "as seen in the example".',
         },
       ],
       topic: "How Functions Work",

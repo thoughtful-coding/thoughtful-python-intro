@@ -136,7 +136,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Using the information in errors to fix your code is the sign of a mature programmer. While verbose, errors messages contain a lot of information to help you figure out how to fix your program.\n\nNow it\'s time to reflect in order to formalize your knowledge. We have provided an example of `NameError` that might pop up during a program. Write 3-4 sentences explaining how to interpret the error message and what the error is that might have caused the problem. As always, remember to use the phrase "as seen in the example above".',
+            'Using the information in errors to fix your code is the sign of a mature programmer. While verbose, errors messages contain a lot of information to help you figure out how to fix your program.\n\nNow it\'s time to reflect in order to formalize your knowledge. We have provided an example of `NameError` that might pop up during a program. Write 3-4 sentences explaining how to interpret the error message and what the error is that might have caused the problem. As always, remember to use the phrase "as seen in the example".',
         },
       ],
       topic: "Reading Error Messages",

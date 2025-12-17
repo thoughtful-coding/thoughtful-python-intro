@@ -211,7 +211,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "You just built a wall using a hierarchy: `draw_wall` called `draw_row`, which called `draw_brick`, which called `turtle.forward`.\n\nWhy is this better than just writing 100 lines of `turtle.forward` commands inside one giant function? Use the phrase 'as seen in the example above'.",
+            'You just built a wall using a hierarchy: `draw_wall` called `draw_row`, which called `draw_brick`, which called `turtle.forward`.\n\nWhy is this better than just writing 100 lines of `turtle.forward` commands inside one giant function? Use the phrase "as seen in the example".',
         },
       ],
       topic: "Hierarchical Abstraction",

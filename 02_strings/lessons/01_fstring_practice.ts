@@ -145,7 +145,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "F-strings are powerful because they let you create informative, readable output that combines different data types seamlessly. The handle the tricky bit of combining strings and integers.\n\nNow it's time to reflect on what you've learned. Create a simple example (3-4 lines) that uses at least three variables and at least one complex f-string. Then write 3-4 sentences explaining how your f-strings make the output clear and informative. Remember to use the phrase \"as seen in the example above\".",
+            "F-strings are powerful because they let you create informative, readable output that combines different data types seamlessly. The handle the tricky bit of combining strings and integers.\n\nNow it's time to reflect on what you've learned. Create a simple example (3-4 lines) that uses at least three variables and at least one complex f-string. Then write 3-4 sentences explaining how your f-strings make the output clear and informative. Remember to use the phrase \"as seen in the example\".",
         },
       ],
       topic: "How F-Strings Make Output Clear",

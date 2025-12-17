@@ -174,7 +174,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Now it\'s your turn to reflect on this idea. Create a simple example (3-5 lines of code) that shows raw data being transformed into meaningful, human-understandable output using f-strings. Then write 4-5 sentences reflecting on these questions:\n- Why is this translation from data to meaning important?\n- How does it make programs more useful?\n- What would happen if programs only showed raw data?\n\nRemember to use the phrase "as seen in the example above" in your reflection.',
+            'Now it\'s your turn to reflect on this idea. Create a simple example (3-5 lines of code) that shows raw data being transformed into meaningful, human-understandable output using f-strings. Then write 4-5 sentences reflecting on these questions:\n- Why is this translation from data to meaning important?\n- How does it make programs more useful?\n- What would happen if programs only showed raw data?\n\nRemember to use the phrase "as seen in the example" in your reflection.',
         },
       ],
       topic: "How F-Strings Bridge Computers and Humans",

@@ -290,7 +290,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "If/else statements create exactly two paths through your function. Every input must take exactly one path - never both, never neither. This guarantees complete coverage of all possibilities.\n\nCreate a simple function with an if/else statement and explain how it ensures every input gets exactly one response. Remember to use the phrase 'as seen in the example above'.",
+            'If/else statements create exactly two paths through your function. Every input must take exactly one path - never both, never neither. This guarantees complete coverage of all possibilities.\n\nCreate a simple function with an if/else statement and explain how it ensures every input gets exactly one response. Remember to use the phrase "as seen in the example".',
         },
       ],
       topic: "How If/Else Guarantees One Path",

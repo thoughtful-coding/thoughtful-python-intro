@@ -283,7 +283,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            '`if` statements let your functions make decisions. The code inside an `if` statement only runs when the condition is True. You can use `if` statements to add optional behavior, check boundaries, or respond differently to different inputs.\n\nCreate a simple example with at least one `if` statement in a function and explain how it controls which code runs. Remember to use the phrase "as seen in the example above".',
+            '`if` statements let your functions make decisions. The code inside an `if` statement only runs when the condition is True. You can use `if` statements to add optional behavior, check boundaries, or respond differently to different inputs.\n\nCreate a simple example with at least one `if` statement in a function and explain how it controls which code runs. Remember to use the phrase "as seen in the example".',
         },
       ],
       topic: "How If Statements Control Code",

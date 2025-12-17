@@ -223,7 +223,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Loops transform repetitive code into elegant patterns. Create a simple example that shows how loops eliminate repetition and explain the pattern that is being repeated inside the loop. Remember to use the phrase "as seen in the example above".',
+            'Loops transform repetitive code into elegant patterns. Create a simple example that shows how loops eliminate repetition and explain the pattern that is being repeated inside the loop. Remember to use the phrase "as seen in the example".',
         },
       ],
       topic: "How Loops Create Patterns",

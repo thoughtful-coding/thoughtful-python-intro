@@ -311,7 +311,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "`elif` statements let you create multiple paths through your code. Python checks each condition in order and runs the FIRST one that's True, then skips the rest.\n\nCreate a function with at least 3 different paths (`if`, at least one `elif`, and `else`) and explain how the order of conditions matters. Remember to use the phrase 'as seen in the example above'.",
+            '`elif` statements let you create multiple paths through your code. Python checks each condition in order and runs the FIRST one that\'s True, then skips the rest.\n\nCreate a function with at least 3 different paths (`if`, at least one `elif`, and `else`) and explain how the order of conditions matters. Remember to use the phrase "as seen in the example".',
         },
       ],
       topic: "How `elif` Creates Multiple Branches",
