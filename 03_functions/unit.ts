@@ -1,4 +1,4 @@
-import { UnitId, UnitManifest } from "../../../types/data";
+import { UnitId, UnitManifest } from "../../../src/types/data";
 
 const unitManifest: UnitManifest = {
   id: "intro_functions" as UnitId,

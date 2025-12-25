@@ -1,4 +1,4 @@
-import { UnitId, UnitManifest } from "../../../types/data";
+import { UnitId, UnitManifest } from "../../../src/types/data";
 
 const unitManifest: UnitManifest = {
   id: "advanced_functions" as UnitId,
@@ -9,9 +9,9 @@ const unitManifest: UnitManifest = {
   lessons: [
     "lessons/00_func_libraries",
     "lessons/01_func_turtles",
-    "lessons/02_draw_house",
-    "lessons/03_draw_suburbs",
-    "lessons/04_draw_wall",
+    "lessons/02_building_houses",
+    "lessons/03_building_suburbs",
+    "lessons/04_drawing_walls",
     "lessons/05_adv_func_wrap_up",
   ],
 };

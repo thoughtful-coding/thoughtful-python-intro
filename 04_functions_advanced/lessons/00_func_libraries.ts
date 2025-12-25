@@ -13,7 +13,7 @@ const lessonData: Lesson = {
   title: "Functions Everywhere",
   guid: "ab95ab6a-a2ff-46af-b63c-1066b16fce49" as LessonId,
   description:
-    "Discover how Python's built-in functions work and learn to use libraries to extend your programming power.",
+    "Discover how Python's built-in functions work and learn to use them to extend your programming power.",
   sections: [
     {
       kind: "Information",
@@ -23,7 +23,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "In the previous unit you learned how to create and use your own functions, but you've actually been **using functions from the very beginning**: namely `print()`. The `print()` function's job is to display the inputs given on the computer screen. \"Inside\" the `print()` function there's a lot of code, including calls to sub-functions that in turn call their own sub-sub-functions. In practice, a single call to `print()` is an incredible cascade; layers upon layers of functions are used to interact with the deepest parts of the computer to change all the right pixels on your monitor.",
+            "In the previous unit you learned how to create and use your own functions, but you've actually been **using functions from the very beginning**: namely `print()`. The `print()` function's job is to display the arguments passed to it on the computer screen. \"Inside\" the `print()` function there's a lot of code, including calls to sub-functions that in turn call their own sub-sub-functions. In practice, a single call to `print()` is an incredible cascade; layers upon layers of functions are used to interact with the deepest parts of the computer to change all the right pixels on your monitor.",
         },
       ],
     } as InformationSectionData,
@@ -58,7 +58,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'How many instructions end up being executed by a simple `print("Hello, World")` call?',
+            'Based on what you read, how many instructions end up being executed by a simple `print("Hello, World")` call?',
         },
       ],
       options: [
@@ -75,13 +75,13 @@ const lessonData: Lesson = {
     } as MultipleChoiceSectionData,
     {
       kind: "Information",
-      id: "functions-into-libraries",
-      title: "Libraries of Functions",
+      id: "toolboxes-of-functions",
+      title: "Toolboxes of Functions",
       content: [
         {
           kind: "text",
           value:
-            'In addition to `print()`, Python provides hundreds of different functions for free. These functions are packaged into "libraries" of related functions and are the building blocks of all Python programs.\n\nThere are two steps in using a function from a library:\n1. **Import** the library so its functions are available to use\n2. **Use** one of the functions in the library.',
+            'In addition to `print()`, Python provides hundreds of other functions. They are packaged into "libraries". You can think of these libraries as specialized skillsets holding the skills that the computer knows how to do.\n\nThere are two steps in using a function (skill) from a library (skillset):\n1. **Import** the library so its functions are available to use\n2. **Use** one of the functions in the library',
         },
       ],
     } as InformationSectionData,
@@ -132,7 +132,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Based on what you saw in the program above, how many inputs does the `random.randint()` function take?",
+            "Based on what you saw in the program above, how many arguments does the `random.randint()` function require?",
         },
       ],
       options: ["0", "1", "2", "3"],
@@ -206,7 +206,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Congratulations! You've learned that functions aren't just things you create - they're everywhere in Python. From the humble `print()` to the powerful `random` and `math` libraries, functions are the building blocks that let you create amazing programs.\n\nIn the next lesson, we'll explore a library called `turtle` that lets you create graphics by commanding a virtual turtle to move around the screen!",
+            "In this lesson, you've learned that functions aren't just things you create - they're everywhere in Python. From the simple `print()` statement to the powerful `random` and `math` libraries, functions let you perform complex operations without needing to write the logic yourself. No matter what library you're using, the pattern is always the same: import the library, then use its functions\n\nIn the next lesson, we'll explore a library called `turtle` that lets you create graphics by commanding a virtual turtle to move around the screen!",
         },
       ],
     } as InformationSectionData,

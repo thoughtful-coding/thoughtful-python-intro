@@ -6,8 +6,8 @@ import type {
   ObservationSectionData,
   MultipleChoiceSectionData,
   PRIMMSectionData,
-  TestingSectionData,
   ReflectionSectionData,
+  ParsonsSectionData,
 } from "../../../../src/types/data";
 
 const lessonData: Lesson = {
@@ -35,7 +35,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Drawing libraries are wonderful tool for learning programming because you can see what each line of code does. With this foundation, you can build up to more and more complex shapes.",
+            "Drawing libraries are wonderful tools for learning programming because you can see what each line of code does. With this foundation, you can build up to more and more complex shapes.",
         },
       ],
     } as InformationSectionData,
@@ -53,7 +53,7 @@ const lessonData: Lesson = {
       example: {
         visualization: "turtle",
         initialCode:
-          "import turtle\n\ndef make_T():\n  turtle.forward(100)\n  turtle.right(90)\n  turtle.forward(100)\n  turtle.left(180)\n  turtle.forward(200)\n\nmake_T()",
+          "import turtle\n\ndef make_T():\n    turtle.forward(100)\n    turtle.right(90)\n    turtle.forward(100)\n    turtle.left(180)\n    turtle.forward(200)\n\nmake_T()",
         allowImageDownload: true,
       },
     } as ObservationSectionData,
@@ -64,7 +64,7 @@ const lessonData: Lesson = {
       content: [
         {
           kind: "text",
-          value: "In the code above, what does `t.right(90)` function do?",
+          value: "In the code above, what does `turtle.right(90)` function do?",
         },
       ],
       options: [
@@ -87,13 +87,13 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Now let's try a more complex shape. The code below has three main parts. First, the `turtle` library is imported, giving us the ability to draw. Second, there's a `make_shape()` function that has the turtle draw some mysterious shape. Finally, there's a `make_shape()` function call that results in the shape being drawn once. Given all this, predict what shape will be drawn, then run the program to check your prediction.",
+            "Now let's try a more complex shape. The code below has three main parts. First, the `turtle` library is imported, giving us the ability to draw. Second, there's a `make_shape()` function definition that has the turtle draw some mysterious shape. Finally, there's a `make_shape()` function call that results in the shape being drawn once. Given all this, predict what shape will be drawn, then run the program to check your prediction.",
         },
       ],
       example: {
         visualization: "turtle",
         initialCode:
-          "import turtle\n\ndef make_shape():\n  turtle.forward(100)\n  turtle.right(90)\n  turtle.forward(100)\n  turtle.right(90)\n  turtle.forward(100)\n  turtle.right(90)\n  turtle.forward(100)\n\nmake_shape()",
+          "import turtle\n\ndef make_shape():\n    turtle.forward(100)\n    turtle.right(90)\n    turtle.forward(100)\n    turtle.right(90)\n    turtle.forward(100)\n    turtle.right(90)\n    turtle.forward(100)\n    turtle.right(90)\n\nmake_shape()",
       },
       predictPrompt:
         "Look at the pattern of `forward()` and `right()` function calls. What shape do you think this will draw?",
@@ -109,34 +109,44 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "The code below is very similar to the program above. There's only one difference: we call the function four times. Given this change, predict what shape will be drawn, then run the program to check your prediction.",
+            "The code below is very similar to the program above. There's only one difference: we call the function four times and turn right between each function call. Given this change, predict what shape will be drawn, then run the program to check your prediction.",
         },
       ],
       example: {
         visualization: "turtle",
         initialCode:
-          "import turtle\n\ndef make_shape():\n  turtle.forward(100)\n  turtle.right(90)\n  turtle.forward(100)\n  turtle.right(90)\n  turtle.forward(100)\n  turtle.right(90)\n  turtle.forward(100)\n\nmake_shape()\nmake_shape()\nmake_shape()\nmake_shape()\n",
+          "import turtle\n\ndef make_shape():\n    turtle.forward(100)\n    turtle.right(90)\n    turtle.forward(100)\n    turtle.right(90)\n    turtle.forward(100)\n    turtle.right(90)\n    turtle.forward(100)\n    turtle.right(90)\n\nmake_shape()\nturtle.right(90)\nmake_shape()\nturtle.right(90)\nmake_shape()\nturtle.right(90)\nmake_shape()\n",
       },
       predictPrompt:
         "Look at the pattern of `forward()` and `right()` functions. What shape do you think this will draw?",
       conclusion:
-        "It draws a square! Each `right(90)` makes a 90-degree turn, and four 90-degree turns bring you back to where you started.",
+        "The same square-drawing code ran four times. Without the function, you'd need 32 lines of turtle commands instead of 4 function calls. This is why we package code into functions.",
     } as PRIMMSectionData,
     {
-      kind: "Testing",
+      kind: "Parsons",
       id: "draw-triangle" as SectionId,
       title: "Challenge: Draw a Triangle",
       content: [
         {
           kind: "text",
           value:
-            "Now it's your turn! Write a program that draws an equilateral triangle (all sides the same length). We have provided a lot of the code for you already; you just need to fill in the function's code. If you're confused about exactly what commands to use, look at the programs above for inspiration.\n\nHint: The exterior angles add up to 360 degrees.",
+            "Now it's your turn! Write a program that draws an equilateral triangle (all sides the same length). Since this is your first time creating a turtle program from scratch, we've provided all the code for you; you just need to place the blocks in the right order. If you're confused about exactly what commands to use, look at the programs above for inspiration.\n\nHint: The exterior angles add up to 360 degrees.",
         },
       ],
-      example: {
+      puzzle: {
+        codeBlocks: [
+          ["import turtle"],
+          ["def make_triangle():"],
+          ["    turtle.left(120)"],
+          ["    turtle.right(120)"],
+          ["    turtle.right(120)"],
+          ["    turtle.right(120)"],
+          ["    turtle.forward(100)"],
+          ["    turtle.forward(100)"],
+          ["    turtle.forward(100)"],
+          ["make_triangle()"],
+        ],
         visualization: "turtle",
-        initialCode:
-          "import turtle\n\ndef make_triangle():\n  # Each side should be 100 pixels\n\nmake_triangle()",
       },
       testMode: "procedure",
       functionToTest: "make_triangle",
@@ -149,7 +159,7 @@ const lessonData: Lesson = {
           referenceImage: "images/turtle_triangle.png",
         },
       ],
-    } as TestingSectionData,
+    } as ParsonsSectionData,
     {
       kind: "Reflection",
       id: "library-reflection" as SectionId,
@@ -158,7 +168,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Libraries are collections of functions that extend Python\'s capabilities. Without libraries, you\'d have to write every function from scratch. The word "library" was chosen very deliberately: the `import` statement is like checking out a book from a library - it gives you access to all the functions inside.\n\nCreate a simple 3-4 line example that uses the `random`, `math`, or `turtle` library, and explain how libraries make programming more powerful. Remember to use the phrase "as seen in the example".',
+            "Libraries are collections of functions that extend Python's capabilities. Without libraries, you'd have to write every program from scratch. When you `import` a library, it's like you're loading a specific skillset - it gives you access to all the skills (functions) inside.\n\nWrite a simple 3-4 line example that imports and uses a function from the `random` or `math` library (seen in the previous lesson). Then, in 3-4 sentences, explain how libraries make programming more powerful. Use the phrase \"as seen in the example above\".",
         },
       ],
       topic: "Using Python Libraries",
