@@ -51,29 +51,6 @@ const lessonData: Lesson = {
       },
     } as MultipleSelectionSectionData,
     {
-      kind: "MultipleChoice",
-      id: "function-complexity",
-      title: "Inside of Functions",
-      content: [
-        {
-          kind: "text",
-          value:
-            'Based on what you read, how many instructions end up being executed by a simple `print("Hello, World")` call?',
-        },
-      ],
-      options: [
-        "Just 1 - the print statement itself",
-        "About 10-20 instructions",
-        "Hundreds or thousands of instructions",
-        "Millions or billions of instructions",
-      ],
-      correctAnswer: 3,
-      feedback: {
-        correct:
-          "Correct! A print() call triggers an enormous cascade of operations. Computers do billions of operations per second, and even 'simple' tasks involve staggering complexity.",
-      },
-    } as MultipleChoiceSectionData,
-    {
       kind: "Information",
       id: "toolboxes-of-functions",
       title: "Toolboxes of Functions",
