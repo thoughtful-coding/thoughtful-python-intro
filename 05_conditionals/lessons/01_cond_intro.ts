@@ -39,13 +39,13 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Below is a `check_temp()` function that contains an `if` statement. The function is called three times with different inputs. Take a few minutes to read the code and then predict what will happen:",
+            "Below is a `check_if_hot()` function that contains an `if` statement. The function is called three times with different inputs. Take a few minutes to read the code and then predict what will happen:",
         },
       ],
       example: {
         visualization: "console",
         initialCode:
-          'def check_temp(temp):\n    print(f"The temp is {temp} degrees")\n    if temp > 30:\n        print("It\'s hot outside!")\n    print("Temp check complete")\n\ncheck_temp(35)\nprint("-+-+-+-+-+-")\ncheck_temp(20)\nprint("-+-+-+-+-+-")\ncheck_temp(31)',
+          'def check_if_hot(temp):\n    print(f"The temp is {temp} degrees")\n    if temp > 90:\n        print("It\'s hot outside!")\n    print("Temp check complete")\n\ncheck_if_hot(95)\nprint("-+-+-+-+-+-")\ncheck_if_hot(70)\nprint("-+-+-+-+-+-")\ncheck_if_hot(91)',
       },
       predictPrompt: "Which function calls will print `It's hot outside!`?",
       conclusion:
@@ -65,13 +65,13 @@ const lessonData: Lesson = {
       options: [
         "Every time the function is called",
         "Never - it's just there for show",
-        "Only when `temp` is greater than 30",
-        "Only when `temp` equals exactly 30",
+        "Only when `temp` is greater than 90",
+        "Only when `temp` equals exactly 90",
       ],
       correctAnswer: 2,
       feedback: {
         correct:
-          "Correct! The `if` statement checks `if temp > 30`. When this condition is `True`, the indented code runs. When it's `False`, Python skips it!",
+          "Correct! The `if` statement checks `if temp > 90`. When this condition is `True`, the indented code runs. When it's `False`, Python skips it!",
       },
     } as MultipleChoiceSectionData,
     {
@@ -82,7 +82,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "`if` statements work by only running code under certain conditions. If the conditions match expectations, then the indented code under the `if` statement is run. Otherwise, the indented code is skipped and the computer jumps to the code after the indentation.\n\nBelow is a small program that checks whether you have the proper password. Use the debugger to step through each line of the program. The most important thing to notice is how the computer goes down different paths depending on the input.",
+            "`if` statements work by only running code under certain conditions. If the conditions match expectations, then the indented code under the `if` statement is run. Otherwise, the indented code is skipped and the computer jumps to the code after the indentation.\n\nBelow is a small program that checks whether you have the proper password. Use the debugger to step through each line of the program. The most important thing to notice is how the computer goes down **different paths** depending on the input.",
         },
       ],
       example: {
@@ -99,7 +99,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Something interesting happened in the previous few examples. Basically, the values of different variables were "compared" to determine if a bit of code should run or not. If `temp > 30` and if `attempt == "cheese"` were `True`, then the code indented under the `if` statement **was run**. If `temp > 30` and if `attempt == "cheese"` were `False`, then the code indented under the `if` statement **was skipped**. \n\nPython gives you a bunch of different ways to compare data (you\'ve already seen two). See if you can match the "comparisons" with what they mean:',
+            'Something interesting happened in the previous few examples. Basically, the values of different variables were "compared" to determine if a bit of code should run or not. If `temp > 90` and if `attempt == "cheese"` were `True`, then the code indented under the `if` statement **was run**. If `temp > 90` and if `attempt == "cheese"` were `False`, then the code indented under the `if` statement **was skipped**. \n\nPython gives you a bunch of different ways to compare data (you\'ve already seen two). See if you can match the "comparisons" with what they mean:',
         },
       ],
       prompts: [
@@ -114,7 +114,7 @@ const lessonData: Lesson = {
       ],
       feedback: {
         correct:
-          'Perfect! Conditionals all you to determine under which conditions code "within" an `if` statement should run.',
+          'Perfect! Conditionals allow you to determine under which conditions code "within" an `if` statement should run.',
       },
     } as MatchingSectionData,
     {
@@ -148,24 +148,25 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            '`if` statements have a very particular syntax. Similar to functions, they have some code "within" them (indented) that only runs under certain conditions. See if you can match the `if` statement attempts below with the common mistake they illustrate:',
+            '`if` statements have a very particular syntax. Similar to functions, they have some code "within" them (indented four spaces) that only runs under certain conditions. See if you can match the `if` statement attempts below with the common mistake they illustrate:',
         },
       ],
       prompts: [
         {
-          '```if x == y\n  print("Equal")```':
+          '```if x == y\n    print("Equal")```':
             "Missing colon at the end of the `if` statement",
         },
-        { '```if x = y:\n  print("Equal")```': 'Incorrect "equality" check' },
+        { '```if x = y:\n    print("Equal")```': 'Incorrect "equality" check' },
         {
-          '```If x == y\n  print("Equal")```':
+          '```If x == y\n    print("Equal")```':
             "Improperly capitalized if statement",
         },
         {
-          'if x == y:\nprint("Equal")': "Incorrect indentation",
+          '```if x == y:\nprint("Equal")```': "Incorrect indentation",
         },
         {
-          'if x > x:\n  print("Equal")': "Incorrect comparison of variables",
+          '```if x == x:\n    print("Equal")```':
+            "Comparing a number to itself is always `True`",
         },
       ],
     } as MatchingSectionData,
@@ -184,10 +185,10 @@ const lessonData: Lesson = {
         visualization: "console",
         codeBlocks: [
           ["def check_voting_age(age):"],
-          ["  print(age)"],
-          ['  print("Thank you for checking")'],
-          ['    print("You can vote!")'],
-          ["  if age >= 18:"],
+          ["    print(age)"],
+          ['    print("Thank you for checking")'],
+          ['        print("You can vote!")'],
+          ["    if age >= 18:"],
           ["check_voting_age(15)"],
           ["check_voting_age(18)"],
           ["check_voting_age(21)"],
@@ -246,13 +247,13 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Now it's time to see if you can write a function with conditionals without any help. Create a function `check_temp(temp)` that:\n1. Always prints `The temp is [temp] degrees`\n2. If the temp is **less than** 32, also prints `It's cold outside!`\n3. Always prints `Temp check complete`\n\nWhile you're writing your program, remember to indent the code inside the `if` statement and to include `:` in the proper places.",
+            "Now it's time to see if you can write a function with conditionals without any help. Create a function `check_if_cold(temp)` that:\n1. Always prints `The temp is [temp] degrees`\n2. If the temp is **less than** 32, also prints `It's cold outside!`\n3. Always prints `Temp check complete`\n\nWhile you're writing your program, remember to indent the code inside the `if` statement and to include `:` in the proper places.",
         },
       ],
       example: {
         visualization: "console",
         initialCode:
-          'def check_temp(temp):\n    # Always print the temp\n    \n    # Check for if it\'s cold (< 32)\n    \n    # Always print that the check\'s complete\n\n# Test your function\ncheck_temp(75)\nprint("---")\ncheck_temp(30)\nprint("---")\ncheck_temp(-44)',
+          'def check_if_cold(temp):\n    # Always print the temp\n    \n    # Check for if it\'s cold (< 32)\n    \n    # Always print that the check\'s complete\n\n# Test your function\ncheck_if_cold(75)\nprint("---")\ncheck_if_cold(30)\nprint("---")\ncheck_if_cold(-44)',
       },
       testCases: [
         {
@@ -273,7 +274,7 @@ const lessonData: Lesson = {
         },
       ],
       testMode: "procedure",
-      functionToTest: "check_temp",
+      functionToTest: "check_if_cold",
     } as TestingSectionData,
     {
       kind: "Reflection",
@@ -302,7 +303,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Great work! You've learned how to make your functions think and decide. You discovered:\n- If statements check a condition and run code only when it's True\n- The == operator checks if two things are exactly equal\n- The >= and > operators compare numbers\n- Indentation shows what code belongs inside the if statement\n\nSo far, your functions can make decisions about what TO do. But what if you want to choose between doing one thing OR another? That's what we'll explore in the next lesson with if/else statements!",
+            "Great work! You've learned how to make your functions think and decide. You discovered:\n- If statements check a condition and run code only when it's True\n- The == operator checks if two things are exactly equal\n- The >= and > operators compare numbers\n- Indentation shows what code belongs inside the if statement\n\nSo far, your functions can make decisions about what to do. But what if you want to choose between doing one thing OR another? That's what we'll explore in the next lesson with if/else statements!",
         },
       ],
     } as InformationSectionData,

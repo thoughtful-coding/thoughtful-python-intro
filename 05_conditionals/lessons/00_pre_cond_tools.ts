@@ -25,24 +25,19 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'In this unit, you\'ll learn how to have your programs make decisions. Before we jump into this new topic, however, we\'re going to pause and have a "mini-unit" on how to use Python to ask questions about the data stored within programs. We\'re doing this because you can\'t create a program that decides "is this password valid?" unless you can first *ask questions* like: "How long is the password?" and "Does the password contain a capital letter?"\n\nThis lesson will let you explore Python\'s "question answering toolkit" - a set of built-in tools for inspecting your data.',
+            'In this unit, you\'ll learn how to have your programs make decisions. Before we jump into this new topic, however, we\'re going to pause and have a "mini-unit" on how to use Python to ask questions about the data stored within programs. We\'re doing this because you can\'t create a program makes decisions like "is this password valid?" unless you can first *ask questions* like: "how long is the password?" and "does the password contain a capital letter?"\n\nThis lesson will let you explore Python\'s "question answering toolkit" - a set of built-in tools for inspecting your data.',
         },
       ],
     } as InformationSectionData,
     {
       kind: "PRIMM",
       id: "len-primm" as SectionId,
-      title: "Tool 1: How Long Is It?",
+      title: "Tool 1: How Long?",
       content: [
         {
           kind: "text",
           value:
-            'The first element of our "question answering toolkit" is the `len()` function. It answers the question "How many characters are in this string?". Just like functions from the `math` library, the `len()` function *gives you back a number*. Let\'s see it in action.',
-        },
-        {
-          kind: "image",
-          src: "data/05_conditionals/images/len_function_diagram.png",
-          alt: "A diagram showing 'Hello' going into a len() function and the number 5 coming out",
+            'The first element of our "question answering toolkit" is the `len()` function. It answers the question "how many characters are in this string?". Just like functions from the `math` library, the `len()` function *gives you back a number*. Let\'s see it in action.',
         },
       ],
       example: {
@@ -50,10 +45,9 @@ const lessonData: Lesson = {
         initialCode:
           'x = len("Hi!")\ny = len("abc123")\nz = len("a b c")\nprint(f"{x}, {y}, {z}")',
       },
-      predictPrompt:
-        "What number will be printed out? Pay close attention to the last one!",
+      predictPrompt: "What numbers will be printed out?",
       conclusion:
-        "It prints 3, 6, and 5. `len()` gives you back a *number* representing the total count of *all* characters, including spaces and punctuation.",
+        "It prints 3, 6, and 5. `len()` gives you back a *number* representing the total count of *all characters*, including spaces and punctuation.",
     } as PRIMMSectionData,
     {
       kind: "MultipleChoice",
@@ -62,7 +56,8 @@ const lessonData: Lesson = {
       content: [
         {
           kind: "text",
-          value: "What is the value of `len('Hi there!')`?",
+          value:
+            "What is the value of `x` after running `x = len('Hi there!')`?",
         },
       ],
       options: ["8", "9", "10", "Hi there!"],
@@ -80,13 +75,13 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'The `in` operator is the next member of our "question answering toolkit". It checks if one string is *inside* (aka a substring of) another string and gives back one of two special values: `True` or `False`.',
+            'The `in` operator is the next member of our "question answering toolkit". It checks if one string is *inside* another string. Another way to phrase this is it checks in one string is a substring of another string. The operator gives back one of two special values depending on the situation: `True` or `False`.',
         },
       ],
       example: {
         visualization: "console",
         initialCode:
-          'word = "apple"\n\nhas_a = "a" in word\nhas_A = "A" in word\nhas_pl = "pl" in word\n\nprint(f\'Has "a", {has_a}, Has "A", {has_A}, Has "pl", {has_pl}")',
+          'word = "apple"\n\nhas_a = "a" in word\nhas_A = "A" in word\nhas_pl = "pl" in word\n\nprint(f\'Has "a", {has_a}, Has "A", {has_A}, Has "pl", {has_pl}\')',
       },
       predictPrompt:
         "What combination of `True` and `False` will the print statement output? Pay close attention to case sensitivity!",
@@ -123,12 +118,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'The final member(s) of our "question answering toolkit" are the special functions that strings have "attached" to them. For example, we can ask questions of the string `"Hi"` by doing things like `"Hi".islower()`. This would be `False` since `"Hi"` has an uppercase `"H"`.\n\nThe fact that strings are similar to the `math` library in that you can access functions with a `.` is definitely a little surprising. There are functions hiding everywhere in Python (if you know where to look), but for now we\'re just going to limit it to three you\'ll have to remember: `.islower()`, `.isuppoer()` and `.isdigit()`.',
-        },
-        {
-          kind: "image",
-          src: "data/05_conditionals/images/string_method_syntax.png",
-          alt: "Syntax diagram showing 'A'.isupper()",
+            'The final member(s) of our "question answering toolkit" are the special functions that strings have "attached" to them. For example, we can ask questions of the string `"hi"` by doing things like `"hi".islower()`. This would be `True` since `"hi"` only has lower case letters.\n\nThe fact that strings are similar to the `math` library in that you can access functions with a `.` is definitely a little surprising. There are functions hiding everywhere in Python (if you know where to look), but for now you just have to remember three: `.islower()`, `.isupper()` and `.isdigit()`.',
         },
       ],
       example: {
@@ -137,11 +127,10 @@ const lessonData: Lesson = {
           'word = "HI"\n\nvar_1 = word.isupper()\nvar_2 = word.islower()\nvar_3 = word.isdigit()\n\nprint(f"isupper(), {var_1}, islower(), {var_2}, isdigit(), {var_3}")',
       },
       predictPrompt:
-        "For each of the four `print` statements, predict the `True`/`False` output.",
+        "Predict the three `True`/`False` values that will be printed.",
       conclusion:
-        "These methods let you ask specific questions. Notice that 'X' is uppercase, but it's *not* lowercase! `.isupper()`, `.islower()`, and `.isdigit()` are powerful tools for checking characters.",
+        'These methods let you ask specific questions. Notice that `"HI"` is uppercase, but it\'s *not* lowercase! `.isupper()`, `.islower()`, and `.isdigit()` are powerful tools for checking characters.',
     } as PRIMMSectionData,
-
     {
       kind: "MultipleSelection",
       id: "methods-quiz" as SectionId,
@@ -154,17 +143,19 @@ const lessonData: Lesson = {
         },
       ],
       options: [
+        '"h" in text',
+        "'i' in text",
+        '" " in text',
         "text.isupper()",
         "text.islower()",
         "text.isdigit()",
-        "'i' in text",
-        "len(text) == 4",
-        '"5".isdigit()',
+        '"Hi 5" in text',
+        '"Hi 5!" in text',
       ],
-      correctAnswers: [3, 4, 5],
+      correctAnswers: [1, 2, 6],
       feedback: {
         correct:
-          "Correct! `text` itself is not all upper, all lower, or all digits.",
+          'Correct! The in operator is case-sensitive (`"h"` does not equal `"H"`), and a string is always a substring of itself. Meanwhile, text contains mixed case and a space, so it fails all three `is...()` methods.',
       },
     } as MultipleSelectionSectionData,
 
@@ -205,10 +196,10 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'You now have a completed your "question answering toolkit". You can check length of a string, you can see if one string is inside another string, and you can see the cases of the letters inside a string.\n\nNow it\'s time to reflect to formalize your knowledge. Create a 3-4 line example that uses *at least two* of the new tools to check a variable (e.g., `password = ...`) and write 3-4 sentences explaining how the example works.',
+            'You now have a completed your "question answering toolkit". You can check length of a string, you can see if one string is a substring of another, and you can see the cases of the letters inside a string.\n\nNow it\'s time to reflect to formalize your knowledge. Create a 3-4 line example that uses *at least two* of the new tools to check a variable (e.g., `password = ...`) and write 3-4 sentences explaining how the example works.',
         },
       ],
-      topic: "How `len`, `in`, and methods help you make decisions",
+      topic: "How `len()`, `in`, and methods help you make decisions",
       isTopicPredefined: true,
       code: "Create a simple example that demonstrates this topic",
       isCodePredefined: false,
@@ -224,7 +215,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Excellent work! You've explored Python's \"question answering toolkit\". You've discovered how to ask about:\n- **Length:** `len(password)`\n- **Membership:** `'!' in password`\n- **Type:** `char.isupper()` or `char.isdigit()`\n\nYou also saw that these tools give you back numbers (like `5`) or `True`/`False` values. These are the exact kind of questions you need to be able to ask in order to have your program make decisions.In the next few lessons, you'll use this knowledge to make your program react to the world around it.",
+            "Excellent work! You've explored Python's \"question answering toolkit\". You've discovered how to ask about:\n- **Length:** `len(password)`\n- **Membership:** `'!' in password`\n- **Type:** `char.isupper()` or `char.isdigit()`\n\nYou also saw that these tools give you back integers or `True`/`False` values. These are the exact kind of questions you need to be able to ask in order to have your program make decisions.In the next few lessons, you'll use this knowledge to make your program react to the world around it.",
         },
       ],
     } as InformationSectionData,

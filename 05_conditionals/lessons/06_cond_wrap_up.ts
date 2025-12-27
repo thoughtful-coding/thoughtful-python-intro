@@ -24,7 +24,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Over the past lessons, you've learned how to make your programs make decisions:\n- Single `if` statements for optional code\n- Multiple `if` statements for independent checks\n- `if/else` for choosing between two paths\n- `elif` for choosing among many paths\n- Boolean operators (`and`, `or`) for combining conditions\n\nThis wrap-up uses **interleaving** to mix conditionals with everything you've learned in previous units: variables, data types, f-strings, and functions. By switching between concepts, your brain actively recalls and connects ideas rather than following a single pattern.\n\nTake your time with each question. These are designed to be challenging!",
+            "Over the past lessons, you've learned how to make your programs make decisions:\n- Single `if` statements for optional code\n- Multiple `if` statements for independent checks\n- `if/else` for choosing between two paths\n- `elif` for choosing among many paths\n- Boolean operators (`and`, `or`) for combining conditions\n\nAs always, this wrap-up uses **interleaving** to mix conditionals with everything you've learned in previous units: variables, data types, f-strings, and functions. By switching between concepts, your brain actively recalls and connects ideas rather than following a single pattern.\n\nTake your time with each question. These are designed to be challenging!",
         },
       ],
     } as InformationSectionData,
@@ -62,16 +62,16 @@ const lessonData: Lesson = {
         },
       ],
       options: [
-        "5 > 3 is True",
-        '"5" == 5 is True',
-        "5 == 5 is True",
-        '"hello" == "hello" is True',
-        '"Hello" == "hello" is True',
+        "`5 > 3`",
+        '`"5" == 5`',
+        "`5 == 5`",
+        '`"hello" == "hello"`',
+        '`"Hello" == "hello"`',
       ],
       correctAnswers: [0, 2, 3],
       feedback: {
         correct:
-          'Perfect! Integers compare numerically (5 > 3). Strings compare alphabetically ("5" > "3"). But you cannot compare different types ("5" == 5 is False). Case matters for strings!',
+          'Perfect! Integers compare numerically (`5 > 3`). Strings compare alphabetically (`"5" > "3"`). But you cannot compare different types (`"5" == 5` is False).',
       },
     } as MultipleSelectionSectionData,
     {
@@ -104,19 +104,14 @@ const lessonData: Lesson = {
             hint: "Must be 21+ AND have ID",
           },
           {
-            fixedInputs: {},
+            fixedInputs: { age: 22 },
             expectedOutput: "Access denied",
             hint: "Old enough but no ID",
           },
           {
-            fixedInputs: {},
+            fixedInputs: { has_id: true },
             expectedOutput: "Access denied",
             hint: "Has ID but too young",
-          },
-          {
-            fixedInputs: {},
-            expectedOutput: "Access denied",
-            hint: "Neither condition met",
           },
         ],
       },
@@ -129,7 +124,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "One of the most common sources of confusion: multiple `if` statements check ALL conditions independently, while `elif` chains stop at the FIRST True condition. This changes how many messages can print.\n\nConsider two versions of a score checker. Version A uses multiple ifs, Version B uses elif. For score = 85, how many milestone messages print in Version A?",
+            "Conditionals are tricky. There's lots of rules and things to remember. One of the most common sources of confusion is that multiple `if` statements check ALL conditions independently, while `elif` chains stop at the FIRST True condition. This changes how many messages can print.\n\nConsider two versions of a score checker. Version A uses multiple ifs, Version B uses elif. For score = 85, how many milestone messages print in Version A vs Bersion B?",
         },
         {
           kind: "code",
@@ -204,6 +199,16 @@ const lessonData: Lesson = {
           description: "Test B grade",
         },
         {
+          input: ["Diana", 75],
+          expected: "Diana earned a C with score 75",
+          description: "Test C grade",
+        },
+        {
+          input: ["Eve", 65],
+          expected: "Eve earned a D with score 65",
+          description: "Test D grade",
+        },
+        {
           input: ["Charlie", 58],
           expected: "Charlie earned an F with score 58",
           description: "Test F grade",
@@ -220,71 +225,23 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Understanding how Boolean operators evaluate is key to writing correct conditions. Python evaluates in a specific order: parentheses first, then comparisons, then `and`, then `or`.\n\nGiven age = 16 and is_student = True, select all conditions that evaluate to True:",
+            'Understanding how Boolean operators evaluate is key to writing correct conditions. Given `age = 16` and `role = "student"`, select all conditions that evaluate to True:',
         },
       ],
       options: [
-        "age >= 18",
-        "age >= 13 and is_student",
-        "age >= 18 or is_student",
-        "age >= 13 and age < 18",
-        "not (age >= 18)",
-        "age >= 18 and is_student",
+        "`age >= 18`",
+        "`age < 18`",
+        '`age == 13 and role == "student"`',
+        '`age >= 18 or role == "student"`',
+        "`age >= 13 and age < 18`",
+        '`age >= 18 and role == "student"`',
       ],
-      correctAnswers: [1, 2, 3, 4],
+      correctAnswers: [1, 3, 4],
       feedback: {
         correct:
-          "Perfect! age >= 18 is False. age >= 13 and is_student is True AND True = True. age >= 18 or is_student is False OR True = True. age >= 13 and age < 18 is True (16 is between 13 and 18). not (age >= 18) is not False = True.",
+          "Perfect! Tracking all of the values can be difficult, so take your time and be careful.",
       },
     } as MultipleSelectionSectionData,
-    {
-      kind: "Coverage",
-      id: "complex-boolean-coverage" as SectionId,
-      title: "Complex Boolean Conditions",
-      content: [
-        {
-          kind: "text",
-          value:
-            "After practicing Boolean operators, let's test your understanding with a more complex condition combining `and` and `or`. This function gives free admission if you're a young child OR if you're a member (regardless of age). Provide input combinations for each output:",
-        },
-      ],
-      example: {
-        visualization: "console",
-        initialCode:
-          'def can_enter_free(age, has_ticket, is_member):\n    if (age < 5 and has_ticket) or is_member:\n        print("Welcome - free entry!")\n    else:\n        print("Please purchase a ticket")',
-      },
-      testMode: "procedure",
-      functionToTest: "can_enter_free",
-      coverageTable: {
-        columns: [
-          { variableName: "age", variableType: "number" },
-          { variableName: "has_ticket", variableType: "boolean" },
-          { variableName: "is_member", variableType: "boolean" },
-        ],
-        rows: [
-          {
-            fixedInputs: {},
-            expectedOutput: "Welcome - free entry!",
-            hint: "Young child with ticket, not member",
-          },
-          {
-            fixedInputs: {},
-            expectedOutput: "Welcome - free entry!",
-            hint: "Adult who is member (ticket doesn't matter)",
-          },
-          {
-            fixedInputs: {},
-            expectedOutput: "Please purchase a ticket",
-            hint: "Young child without ticket, not member",
-          },
-          {
-            fixedInputs: {},
-            expectedOutput: "Please purchase a ticket",
-            hint: "Adult without membership",
-          },
-        ],
-      },
-    } as CoverageSectionData,
     {
       kind: "MultipleChoice",
       id: "function-behavior",
@@ -314,6 +271,34 @@ const lessonData: Lesson = {
       },
     } as MultipleChoiceSectionData,
     {
+      kind: "MultipleChoice",
+      id: "elif-order-bug",
+      title: "Spot the Bug: Condition Order",
+      content: [
+        {
+          kind: "text",
+          value:
+            "A student wrote this function to assign shipping costs based on package weight. They tested it with a 25-pound package and expected to see 'Medium: $10' but instead got 'Light: $5'. What's wrong?",
+        },
+        {
+          kind: "code",
+          value:
+            'def shipping_cost(weight):\n    if weight > 5:\n        print("Light: $5")\n    elif weight > 20:\n        print("Medium: $10")\n    elif weight > 50:\n        print("Heavy: $20")\n    else:\n        print("Free shipping!")',
+        },
+      ],
+      options: [
+        "The `else` should come before the `elif`s",
+        "The conditions are in the wrong order - larger thresholds should be checked first",
+        "The function should use multiple `if` statements instead of `elif`",
+        "The `>` operator should be `>=` instead",
+      ],
+      correctAnswer: 1,
+      feedback: {
+        correct:
+          "Correct! A 25-pound package matches `weight > 5` (the first condition), so Python never checks the others. The conditions should be ordered from highest to lowest: check `> 50` first, then `> 20`, then `> 5`. Remember: with elif chains, the FIRST True condition wins!",
+      },
+    } as MultipleChoiceSectionData,
+    {
       kind: "Testing",
       id: "password-validator" as SectionId,
       title: "Challenge: Password Validator",
@@ -321,34 +306,34 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Create a function `validate_password(password, username)` that checks if a password is valid:\n\n1. Password must be at least 8 characters long\n2. Password must NOT equal the username\n3. Password must not contain spaces\n\nIf ALL conditions pass, print 'Password is valid'\nIf ANY condition fails, print 'Password is invalid'\n\nHints:\n- Use `len(password)` for length\n- Use `' ' in password` to check for spaces (note the space between quotes)\n- Use `and` to require all three conditions",
+            'Create a function `validate_password(password, username)` that checks if a password is valid:\n\n1. Passwords must be at least 8 characters long\n2. Passwords must be at most 16 characters\n3. Password must contain the username\n\nIf ALL conditions pass, print `"Password is valid"`\nIf ANY condition fails, print `"Password is invalid"`\n\nHints:\n- Use `len(password)` for length\n- Use `in` to check for substrings\n- Use `and` to require all three conditions',
         },
       ],
       example: {
         visualization: "console",
         initialCode:
-          'def validate_password(password, username):\n    # Check: length >= 8 AND not equal to username AND no spaces\n    pass\n\n# Test your function\nvalidate_password("securepass", "alice")\nprint("---")\nvalidate_password("short", "bob")\nprint("---")\nvalidate_password("charlie", "charlie")\nprint("---")\nvalidate_password("has space", "diana")',
+          'def validate_password(password, username):\n    # Check: length and substrings \n    pass\n\n# Test your function\nvalidate_password("alice_is_cool", "alice")\nprint("---")\nvalidate_password("i_bob", "bob")\nprint("---")\nvalidate_password("chuck_is_cool", "charlie")\nprint("---")\nvalidate_password("verylongpassword_diana_password", "diana")',
       },
       testCases: [
         {
-          input: ["securepass", "alice"],
+          input: ["alice_is_cool", "alice"],
           expected: "Password is valid",
           description: "Valid password",
         },
         {
-          input: ["short", "bob"],
+          input: ["i_bob", "bob"],
           expected: "Password is invalid",
           description: "Too short",
         },
         {
-          input: ["charlie", "charlie"],
+          input: ["chuck_is_cool", "charlie"],
           expected: "Password is invalid",
-          description: "Same as username",
+          description: "Missing username",
         },
         {
-          input: ["has space", "diana"],
+          input: ["verylongpassword_diana_password", "diana"],
           expected: "Password is invalid",
-          description: "Contains space",
+          description: "Too long",
         },
       ],
       testMode: "procedure",
@@ -397,7 +382,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Excellent work! You've mastered conditionals and demonstrated how they integrate with everything you've learned: variables, data types, f-strings, and functions.\n\nYour programs can now make intelligent decisions based on data. They can check conditions, choose between paths, and respond differently to different inputs. This is a huge milestone.\n\nBut there's still something your programs can't do: repeat actions. What if you need to print something 100 times? Or process every item in a list? Or keep asking for input until the user gets it right?\n\nThat's what you'll learn next: **loops**. Loops let your programs repeat code efficiently, and they're the final piece you need to write truly powerful programs. Get ready!",
+            "Excellent work! You've mastered conditionals and demonstrated how they integrate with everything you've learned: variables, data types, f-strings, and functions. Your programs can now make intelligent decisions based on data. They can check conditions, choose between paths, and respond differently to different inputs.\n\nIn the next unit, we'll cover the final major topic in programming: loops. Loops let your programs repeat code efficiently, and they're the final piece you need to write truly powerful programs. Get ready!",
         },
       ],
     } as InformationSectionData,

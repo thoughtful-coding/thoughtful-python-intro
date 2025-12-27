@@ -17,7 +17,7 @@ const lessonData: Lesson = {
   title: "Combining Conditions",
   guid: "e5b6f823-4d71-4a92-bc58-9f2e6d8a7c31" as LessonId,
   description:
-    "Learn how to combine multiple conditions using and, or, and not to create sophisticated decision-making.",
+    "Learn how to combine multiple conditions using and / or to create sophisticated decision-making.",
   sections: [
     {
       kind: "Information",
@@ -27,7 +27,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "So far, your conditionals have checked one thing at a time: `if age >= 18:` or `if score > 90:`. But sometimes you need to check multiple things at once.\n\nThink about a roller coaster: you need to be tall enough AND old enough to ride. Or think about movie theater discounts: you get a discount if you're a student OR a senior citizen.\n\nThat's where **Boolean operators** come in. They let you combine conditions:\n- `and`: BOTH conditions must be True\n- `or`: AT LEAST ONE condition must be True\n- `not`: Flips True to False (and False to True)\n\nThese operators let your functions make complex decisions based on multiple factors.",
+            "So far, your conditionals have checked one thing at a time: `if age >= 18:` or `if score > 90:`. But sometimes you need to check multiple things at once.\n\nThink about a roller coaster: you need to be tall enough AND old enough to ride. Or think about movie theater discounts: you get a discount if you're a student OR a senior citizen.\n\nThat's where **Boolean operators** come in. They let you combine conditions:\n- `and`: BOTH conditions must be True\n- `or`: AT LEAST ONE condition must be True\n\nThese operators let your functions make complex decisions based on multiple factors.",
         },
       ],
     } as InformationSectionData,
@@ -45,10 +45,10 @@ const lessonData: Lesson = {
       example: {
         visualization: "console",
         initialCode:
-          'def check_movie(rating, length_minutes):\n    if rating == "PG" and length_minutes <= 120:\n        print("Perfect for family movie night!")\n    else:\n        print("Let\'s find a different movie")\n\nprint("Movie 1:")\ncheck_movie("PG", 90)\n\nprint("\\nMovie 2:")\ncheck_movie("PG", 180)\n\nprint("\\nMovie 3:")\ncheck_movie("R", 90)\n\nprint("\\nMovie 4:")\ncheck_movie("R", 180)',
+          'def check_movie(rating, length_minutes):\n    if rating == "PG" and length_minutes <= 120:\n        print("Perfect for family movie night!")\n    else:\n        print("Let\'s find a different movie")\n\nprint("Movie 1:")\ncheck_movie("PG", 90)\n\nprint("Movie 2:")\ncheck_movie("PG", 180)\n\nprint("Movie 3:")\ncheck_movie("R", 90)\n\nprint("Movie 4:")\ncheck_movie("R", 180)',
       },
       predictPrompt:
-        "The condition checks TWO things with `and`. Which movies will print 'Perfect for family movie night!'? Think about what BOTH conditions need to be.",
+        'The condition checks TWO things with `and`. Which movies will print `"Perfect for family movie night!"`?',
       conclusion:
         "The `and` operator requires BOTH conditions to be True. Movie 1 works (PG rating AND short length). Movies 2, 3, and 4 fail because at least one condition is False.",
     } as PRIMMSectionData,
@@ -185,7 +185,7 @@ const lessonData: Lesson = {
           {
             fixedInputs: { has_membership: true },
             expectedOutput: "Free entry!",
-            hint: "Adult with membership",
+            hint: "If have membership, age doesn't matter",
           },
           {
             fixedInputs: { age: 45 },
@@ -193,9 +193,9 @@ const lessonData: Lesson = {
             hint: "Adult without membership",
           },
           {
-            fixedInputs: { age: 6 },
+            fixedInputs: { age: 3 },
             expectedOutput: "Free entry!",
-            hint: "Young child with membership (both True!)",
+            hint: "If young child, membership status doesn't matter",
           },
         ],
       },
@@ -273,52 +273,6 @@ const lessonData: Lesson = {
       },
     } as MatchingSectionData,
     {
-      kind: "Testing",
-      id: "game-access" as SectionId,
-      title: "Challenge: Game Access Rules",
-      content: [
-        {
-          kind: "text",
-          value:
-            "Create a function `can_play_game(age, has_permission, is_weekend)` with complex access rules.\n\nYou CAN play if:\n- You're 18 or older (no other requirements)\nOR\n- You're 13-17 AND have permission AND it's the weekend\nOR  \n- You're under 13 AND have permission (any day)\n\nPrint 'You can play!' or 'Not right now'\n\nThis is challenging! Think carefully about how to combine the conditions. You'll need multiple `and` and `or` operators with parentheses.",
-        },
-      ],
-      example: {
-        visualization: "console",
-        initialCode:
-          "def can_play_game(age, has_permission, is_weekend):\n    # Adults (18+) can always play\n    # Teens (13-17) need permission AND weekend\n    # Kids (under 13) need permission (any day)\n    pass\n\n# Test cases\ncan_play_game(20, False, False)\nprint('---')\ncan_play_game(15, True, True)\nprint('---')\ncan_play_game(15, True, False)\nprint('---')\ncan_play_game(10, True, False)\nprint('---')\ncan_play_game(10, False, True)",
-      },
-      testCases: [
-        {
-          input: [20, false, false],
-          expected: "You can play!",
-          description: "Adult can always play",
-        },
-        {
-          input: [15, true, true],
-          expected: "You can play!",
-          description: "Teen with permission on weekend",
-        },
-        {
-          input: [15, true, false],
-          expected: "Not right now",
-          description: "Teen with permission on weekday",
-        },
-        {
-          input: [10, true, false],
-          expected: "You can play!",
-          description: "Kid with permission any day",
-        },
-        {
-          input: [10, false, true],
-          expected: "Not right now",
-          description: "Kid without permission",
-        },
-      ],
-      testMode: "procedure",
-      functionToTest: "can_play_game",
-    } as TestingSectionData,
-    {
       kind: "Reflection",
       id: "boolean-reflection" as SectionId,
       title: "Boolean Operators Reflection",
@@ -326,7 +280,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Boolean operators (`and`, `or`, `not`) let you combine simple conditions into complex decisions. With `and`, all conditions must be True. With `or`, at least one must be True. With `not`, you flip the value.\n\nCreate a function using at least one `and` and one `or` to make a complex decision. Explain how the Boolean operators work together in your example. Remember to use the phrase "as seen in the example".',
+            'Boolean operators (e.g., `and` / `or`) let you combine simple conditions into complex decisions. With `and`, all conditions must be True. With `or`, at least one must be True.\n\nCreate a function using at least one `and` and one `or` to make a complex decision. Explain how the Boolean operators work together in your example. Remember to use the phrase "as seen in the example".',
         },
       ],
       topic: "How Boolean Operators Combine Conditions",
@@ -337,6 +291,18 @@ const lessonData: Lesson = {
         "Explain how your Boolean operators create the logic (3-4 sentences)",
       isExplanationPredefined: false,
     } as ReflectionSectionData,
+    {
+      kind: "Information",
+      id: "boolean-conclusion",
+      title: "Conclusion",
+      content: [
+        {
+          kind: "text",
+          value:
+            "Excellent work! You've learned how to combine conditions using Boolean operators:\n\n- `and` requires BOTH conditions to be True\n- `or` requires AT LEAST ONE condition to be True\n\nThese operators let you express complex real-world rules: ride requirements, discount eligibility, access control, and more.\n\nIn the next lesson, you'll put everything together in a unit challenge that mixes conditionals with all the concepts you've learned so far!",
+        },
+      ],
+    } as InformationSectionData,
   ],
 };
 

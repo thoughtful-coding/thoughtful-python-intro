@@ -150,7 +150,7 @@ const lessonData: Lesson = {
       example: {
         visualization: "console",
         initialCode:
-          'def check_student(answer):\n    if answer.lower() = "yes":\n        print("Good luck on your tests!")\n        else:\n        print("Pay your rent!")\n\ncheck_student("yes")\nprint("---")\ncheck_student("no")',
+          'def check_student(answer):\n    if answer = "yes":\n        print("Good luck on your tests!")\n        else:\n        print("Pay your rent!")\n\ncheck_student("yes")\nprint("---")\ncheck_student("no")',
       },
       testCases: [
         {
@@ -234,7 +234,7 @@ const lessonData: Lesson = {
       prompts: [
         { "if age >= 18:": "else handles anyone under 18" },
         { "if name == 'Alice':": "else handles any name that isn't Alice" },
-        { "if score > 90:": "else handles scores 90 and below" },
+        { "if score > 90:": "else handles scores 90 and lower" },
         {
           "if password.lower() == 'secret':":
             "else handles any password that isn't 'secret' (case-insensitive)",
@@ -260,7 +260,7 @@ const lessonData: Lesson = {
       example: {
         visualization: "console",
         initialCode:
-          'def temperature_advice(temp):\n    # Check if temp < 50\n    # Print appropriate advice\n    pass\n\n# Test your function\ntemperature_advice(45)\nprint("---")\ntemperature_advice(50)\nprint("---")\ntemperature_advice(65)',
+          'def temperature_advice(temp):\n    # Check if temp < 50\n    # Print appropriate advice\n    pass\n\n# Test your function\ntemperature_advice(49)\nprint("---")\ntemperature_advice(50)\nprint("---")\ntemperature_advice(65)',
       },
       testCases: [
         {
@@ -309,7 +309,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Great work! You've learned how if/else creates two mutually exclusive paths through your code. You discovered:\n- `else` runs when the `if` condition is False\n- Every input takes exactly ONE path - never both, never neither\n- The if and else must line up at the same indentation level\n- Testing boundary values (like exactly 18 or exactly 25) is important\n- How to work backwards from desired outputs to inputs\n\nBut what if you have more than two options? What about letter grades (A, B, C, D, F) or traffic lights (red, yellow, green)? That's what we'll learn next with `elif` statements!",
+            "Great work! You've learned how if/else creates two mutually exclusive paths through your code. You discovered:\n- `else` runs when the `if` condition is False\n- Every input takes exactly ONE path - never both, never neither\n- The if and else must line up at the same indentation level\n- Testing boundary values (like exactly 18 or exactly 25) is important\n\nBut what if you have more than two options? What about letter grades (A, B, C, D, F) or traffic lights (red, yellow, green)? That's what we'll learn next with `elif` statements!",
         },
       ],
     } as InformationSectionData,

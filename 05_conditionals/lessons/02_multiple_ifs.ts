@@ -26,7 +26,12 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "In the last lesson, you learned how to use a single `if` statement to add different paths through your functions. When a condition was True, the indented code ran. When it was False, Python skipped the indented code.\n\nBut what if you need to check multiple things? For example, what if you're creating a function that checks whether someone is old enough to vote AND old enough to drive? That's where multiple if statements come in. In this lesson, you'll learn how to use several if statements in a single function to produce more complex and interesting programs.",
+            "In the last lesson, you learned how to use a single `if` statement to add different paths through your functions. When a condition was True, the indented code ran. When it was False, Python skipped the indented code.",
+        },
+        {
+          kind: "text",
+          value:
+            "But what if you need to check multiple things? For example, what if you're creating a function that checks whether someone is old enough to vote AND old enough to drive? That's where multiple if statements come in. In this lesson, you'll learn how to use several if statements in a single function to produce more complex and interesting programs.",
         },
       ],
     } as InformationSectionData,
@@ -86,7 +91,7 @@ const lessonData: Lesson = {
       ],
       options: [
         "2 messages (the first print and 'Done')",
-        "3 messages (all the if statements trigger)",
+        "3 messages (only the messages inside the if statements)",
         "4 messages (first print, two if messages, and 'Done')",
         "5 messages (all prints run)",
       ],
@@ -162,7 +167,7 @@ const lessonData: Lesson = {
       correctAnswers: [0, 2, 3],
       feedback: {
         correct:
-          "Perfect! Each if is independent, so multiple can be True. Python checks them all. Order CAN matter if the if statements modify variables, but that's more advanced. The key is that all if statements get checked.",
+          "Perfect! Each if is independent, so multiple can be True. Python checks them all.",
       },
     } as MultipleSelectionSectionData,
     {

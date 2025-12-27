@@ -28,7 +28,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "In the last lesson, you learned `if`/`else` for choosing between two paths. But life isn't always binary. Think about traffic lights - they're not just red or green, there's yellow too! Or letter grades - you don't just pass or fail; you get A, B, C, D, or F.\n\nThat's where `elif` comes in (short for 'else if'). It lets you check multiple conditions in order, creating as many paths through your code as you need.",
+            "In the last lesson, you learned `if`/`else` for choosing between two paths. But life isn't always binary. Think about traffic lights - they're not just red or green, there's yellow too! Or letter grades - you don't just pass or fail; you get A, B, C, D, or F.\n\nThat's where `elif` comes in (short for \"else if\"). It lets you check multiple conditions in order, creating as many paths through your code as you need.",
         },
       ],
     } as InformationSectionData,
@@ -40,7 +40,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Below is a traffic light function with three possible messages. Notice the new `elif` keyword (short for 'else if'). Step through the code slowly and watch which path the computer takes for each color.\n\nPay special attention to:\n- How Python checks the conditions in order\n- Which blocks of code get skipped\n- What happens with 'purple' which isn't red or yellow",
+            'Below is a traffic light function with three possible messages. Notice the new `elif` keyword (short for \'else if\'). Step through the code slowly and watch which path the computer takes for each color.\n\nPay special attention to:\n- How Python checks the conditions in order\n- Which blocks of code get skipped\n- What happens with `"purple"` which isn\'t `"red"` or `"yellow"`',
         },
       ],
       example: {
@@ -62,14 +62,14 @@ const lessonData: Lesson = {
       ],
       options: [
         "There is no difference - they do the same thing",
-        "elif checks a condition, else catches everything remaining",
-        "else checks a condition, elif catches everything remaining",
-        "elif can only be used once, else can be used many times",
+        "`elif` checks a condition, else catches everything remaining",
+        "`else` checks a condition, elif catches everything remaining",
+        "`elif` can only be used once, else can be used many times",
       ],
       correctAnswer: 1,
       feedback: {
         correct:
-          "Correct! elif requires a condition to check (like `elif color == 'yellow'`), while else catches everything that didn't match previous conditions. You can have many elifs but only one else!",
+          'Correct! `elif` requires a condition to check (like `elif color == "yellow"`), while `else` catches everything that didn\'t match previous conditions. You can have many `elif`s but only one `else`!',
       },
     } as MultipleChoiceSectionData,
     {
@@ -80,7 +80,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "The traffic light had three paths, but you can have as many as you need! Below is a grading system with FIVE different paths. This example introduces a crucial concept: **the order of your conditions matters**.\n\nThink about this carefully: if a student scores 85, that score is greater than or equal to 90? No. Greater than or equal to 80? Yes! Python stops checking as soon as it finds the first True condition. This means the order you write your elif statements determines which path gets taken.\n\nPredict what will happen for each score:",
+            "The traffic light had three paths, but you can have as many as you need! Below is a grading system with FIVE different paths. This example introduces a crucial concept: **the order of your conditions matters**.\n\nThink about this carefully: if a student scores `85`, that score is greater than or equal to `90`? No. Greater than or equal to `80`? Yes! Python stops checking as soon as it finds the first True condition. This means the order you write your `elif` statements determines which path gets taken.\n\nPredict what will happen for each score:",
         },
       ],
       example: {
@@ -89,9 +89,9 @@ const lessonData: Lesson = {
           'def get_grade(score):\n    if score >= 90:\n        print("A")\n    elif score >= 80:\n        print("B")\n    elif score >= 70:\n        print("C")\n    elif score >= 60:\n        print("D")\n    else:\n        print("F")\n\nget_grade(95)\nprint("---")\nget_grade(85)\nprint("---")\nget_grade(55)',
       },
       predictPrompt:
-        "Why do we check >= 90 BEFORE >= 80? What would happen if we checked >= 60 first and a student scored 85?",
+        "Why do we check `score >= 90` BEFORE `score >= 80`? What would happen if we checked `score >= 60` first and a student scored `85`?",
       conclusion:
-        "Order is crucial! If we checked >= 60 first, a score of 85 would match that condition and print 'D' instead of 'B'. Python stops at the FIRST True condition. For number ranges, always check from most extreme to least extreme (highest to lowest, or lowest to highest).",
+        'Order is crucial! If we checked `>= 60` first, a score of `85` would match that condition and print `"D"` instead of `"B"`. Python stops at the FIRST True condition. For number ranges, always check from most extreme to least extreme (highest to lowest, or lowest to highest).',
     } as PRIMMSectionData,
     {
       kind: "MultipleSelection",
@@ -101,7 +101,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "The grading system above showed that Python stops at the first True condition. If score = 85, which conditions does Python actually check? Select all that apply.",
+            "The grading system above showed that Python stops at the first True condition. If `score = 85`, which of the following `if`, `elif`, and `else` statements will Python check? Select all that apply.",
         },
         {
           kind: "code",
@@ -110,15 +110,15 @@ const lessonData: Lesson = {
         },
       ],
       options: [
-        "score >= 90 (checked, result: False)",
-        "score >= 80 (checked, result: True, then stops)",
-        "score >= 70 (never checked because >= 80 was True)",
-        "The else (never reached because >= 80 was True)",
+        "`if score >= 90`",
+        "`elif score >= 80`",
+        "`elif score >= 70`",
+        "`else`",
       ],
-      correctAnswers: [0, 1, 2, 3],
+      correctAnswers: [0, 1],
       feedback: {
         correct:
-          "Perfect! Python checks >= 90 (False), then >= 80 (True), prints 'B', and stops. The >= 70 and else are never even evaluated. This is why order matters!",
+          'Perfect! Python checks >= 90 (False), then >= 80 (True), prints `"B"`, and stops. The >= 70 and else are never even evaluated. This is why order matters!',
       },
     } as MultipleSelectionSectionData,
     {
@@ -129,7 +129,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Now that you understand how elif works, predict which grade each score will receive:",
+            "Now that you understand how `elif` works, predict which grade each score will receive:",
         },
       ],
       example: {
@@ -158,7 +158,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "So far, you've been predicting outputs given inputs. Now let's flip it around and work backwards: given a desired output, what input would produce it?\n\nThis is a valuable debugging skill. When your program isn't working correctly, you need to think: 'What input would make it go down this path?' Understanding the boundaries between conditions (like the difference between 9 and 10, or 19 and 20) is crucial.\n\nProvide measurements that will produce each size category:",
+            "So far, you've been predicting outputs given inputs. Now let's flip it around and work backwards: given a desired output, what input would produce it?\n\nThis is a valuable debugging skill. When your program isn't working correctly, you need to think: \"What input would make it go down this path?\" Understanding the boundaries between conditions (like the difference between 9 and 10, or 19 and 20) is crucial.\n\nProvide measurements that will produce each size category:",
         },
       ],
       example: {
@@ -207,7 +207,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Create a function `temperature_advice(temp)` with four temperature categories:\n1. If temp < 0: prints 'Freezing! Stay inside!'\n2. Elif temp < 15: prints 'Cold - wear a coat'\n3. Elif temp < 25: prints 'Nice weather!'\n4. Else: prints 'Hot - stay hydrated'\n\nRemember: order matters! Check from most specific to least specific.",
+            'Create a function `temperature_advice(temp)` with four temperature categories:\n1. If temp < 0: prints `"Freezing! Stay inside!"`\n2. Elif temp < 15: prints `"Cold - wear a coat"`\n3. Elif temp < 25: prints `"Nice weather!"`\n4. Else: prints `"Hot - stay hydrated"`\n\nRemember: order matters! Check from most specific to least specific.',
         },
       ],
       example: {
@@ -252,14 +252,14 @@ const lessonData: Lesson = {
         },
       ],
       prompts: [
-        { First: "if score >= 90:" },
-        { Second: "elif score >= 80:" },
-        { Third: "elif score >= 70:" },
+        { First: "`if score >= 90:`" },
+        { Second: "`elif score >= 80:`" },
+        { Third: "`elif score >= 70:`" },
         { Fourth: "else:" },
       ],
       feedback: {
         correct:
-          "Correct! You must check from highest to lowest score, with else catching everything below 70. This ensures an 85 gets a B (matching >= 80) rather than incorrectly matching a lower threshold first.",
+          "Correct! You must check from highest to lowest score, with `else` catching everything below 70. This ensures an 85 gets a B (matching >= 80) rather than incorrectly matching a lower threshold first.",
       },
     } as MatchingSectionData,
     {
@@ -270,17 +270,17 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Create a function `select_difficulty(choice)` that handles four difficulty levels:\n1. If choice is 'easy' (case-insensitive): prints 'You have 10 lives'\n2. Elif choice is 'medium': prints 'You have 5 lives'\n3. Elif choice is 'hard': prints 'You have 3 lives'\n4. Elif choice is 'extreme': prints 'You have 1 life - good luck!'\n5. Else: prints 'Invalid choice'\n\nUse .lower() to handle any capitalization!",
+            'Create a function `select_difficulty(choice)` that handles four difficulty levels:\n1. If choice is `"easy"`: prints `"You have 10 lives"`\n2. Elif choice is `"medium"`: prints `"You have 5 lives"`\n3. Elif choice is `"hard"`: prints `"You have 3 lives"`\n4. Elif choice is `"extreme"`: prints `"You have 1 life - good luck!"`\n5. Else: prints `"Invalid choice"`',
         },
       ],
       example: {
         visualization: "console",
         initialCode:
-          "def select_difficulty(choice):\n    # Convert to lowercase\n    # Check each difficulty level\n    # Handle invalid input\n    pass\n\n# Test your function\nselect_difficulty('EASY')\nprint('---')\nselect_difficulty('Medium')\nprint('---')\nselect_difficulty('hard')\nprint('---')\nselect_difficulty('nightmare')",
+          "def select_difficulty(choice):\n    # Convert to lowercase\n    # Check each difficulty level\n    # Handle invalid input\n    pass\n\n# Test your function\nselect_difficulty('easy')\nprint('---')\nselect_difficulty('medium')\nprint('---')\nselect_difficulty('hard')\nprint('---')\nselect_difficulty('nightmare')",
       },
       testCases: [
         {
-          input: ["EASY"],
+          input: ["easy"],
           expected: "You have 10 lives",
           description: "Test easy",
         },
@@ -290,9 +290,14 @@ const lessonData: Lesson = {
           description: "Test medium",
         },
         {
-          input: ["Hard"],
+          input: ["hard"],
           expected: "You have 3 lives",
           description: "Test hard",
+        },
+        {
+          input: ["extreme"],
+          expected: "You have 1 life - good luck!",
+          description: "Test extreme",
         },
         {
           input: ["nightmare"],
@@ -311,7 +316,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            '`elif` statements let you create multiple paths through your code. Python checks each condition in order and runs the FIRST one that\'s True, then skips the rest.\n\nCreate a function with at least 3 different paths (`if`, at least one `elif`, and `else`) and explain how the order of conditions matters. Remember to use the phrase "as seen in the example".',
+            '`elif` statements let you create multiple paths through your code. Python checks each condition in order and runs the **first one** that\'s True, then skips the rest.\n\nCreate a function with at least 3 different paths (`if`, at least one `elif`, and `else`) and explain how the order of conditions matters. Remember to use the phrase "as seen in the example".',
         },
       ],
       topic: "How `elif` Creates Multiple Branches",
@@ -330,7 +335,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Excellent work! You've learned how to create functions with multiple paths using `elif`. Key takeaways:\n- `elif` creates additional paths between if and else\n- Python checks conditions from top to bottom\n- The FIRST True condition wins - all others are skipped\n- Order matters! Check more specific or extreme conditions first\n- You can have as many `elif` statements as needed\n- Every input takes exactly ONE path through your code\n\nYou can now handle any number of choices: two paths (`if`/`else`), three paths (`if`/`elif`/`else`), or many paths (`if`/`elif`/`elif`.../`else`).\n\nIn the next lesson, you'll learn about Boolean operators that let you check multiple things at once - like requiring BOTH a password AND permission, or offering discounts to students OR seniors.",
+            "Excellent work! You've learned how to create functions with multiple paths using `elif`. Key takeaways:\n- `elif` creates additional paths between if and else\n- Python checks conditions from top to bottom\n- The FIRST True condition wins - all others are skipped\n- You can have as many `elif` statements as needed\n- Every input takes exactly ONE path through your code\n\nYou can now handle any number of choices: two paths (`if`/`else`), or many paths (`if`/`elif`/`elif`.../`else`).\n\nIn the next lesson, you'll learn about Boolean operators that let you check multiple things at once - like requiring BOTH a password AND permission, or offering discounts to students OR seniors.",
         },
       ],
     } as InformationSectionData,
