@@ -24,7 +24,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "In the previous lesson, you learned how loops eliminate repetitive code. By identifying patterns, you can write more efficient programs. In this lesson, you'll practice creating different shapes, work with function inputs in loops, and discover some creative patterns.\n\nBy the end, you'll be ready to combine multiple loops to create complex designs.",
+            "In the previous lesson, you learned how loops eliminate repetitive code. By identifying patterns, you can write more efficient programs. In this lesson, you'll practice creating different shapes, combine loops and functions, and discover some creative patterns.\n\nBy the end, you'll be ready to combine multiple loops to create complex designs.",
         },
       ],
     } as InformationSectionData,
@@ -41,7 +41,7 @@ const lessonData: Lesson = {
         {
           kind: "code",
           value:
-            "import turtle\n\ndef draw_shape():\n  for i range(4):\n  turtle.forward(100)\n  turtle.right(120)\n\ndraw_shape()",
+            "import turtle\n\ndef draw_shape():\n    for i range(4):\n    turtle.forward(100)\n    turtle.right(120)\n\ndraw_shape()",
         },
       ],
       options: [
@@ -54,7 +54,7 @@ const lessonData: Lesson = {
       correctAnswers: [0, 3, 4],
       feedback: {
         correct:
-          "Excellent! A triangle has 3 sides (not 4), the for loop needs `in` (`for i in range(3):`), and the turtle commands must be indented to be inside the loop.",
+          "Excellent! A triangle has 3 sides (not 4), the `for` loop needs `in` (`for i in range(3):`), and the turtle commands must be indented to be inside the loop.",
       },
     } as MultipleSelectionSectionData,
     {
@@ -65,7 +65,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Now it's time to see if you can create a shape of your own without any hints! You goal is to a hexagon: a shape with 6 sides. To accomplish this goal, do the following:\n- Create a function called `make_hexagon()` that takes no inputs\n- Inside the function, use a loop to draw a six-sided figure that has **side length of 50**.",
+            "Now it's time to see if you can create a shape of your own without any hints! You goal is to draw a hexagon: a shape with 6 sides. To accomplish this goal, do the following:\n- Create a function called `make_hexagon()` that takes no inputs\n- Inside the function, use a loop to draw a six-sided figure that has **side length of 50**.",
         },
       ],
       example: {
@@ -85,6 +85,34 @@ const lessonData: Lesson = {
         },
       ],
     } as TestingSectionData,
+    {
+      kind: "MultipleChoice",
+      id: "hexagon-flexibility",
+      title: "Making Shapes Flexible",
+      content: [
+        {
+          kind: "text",
+          value:
+            "Looking at your hexagon code, imagine you wanted to draw hexagons of different sizes—some small, some large. What would you need to change each time?",
+        },
+        {
+          kind: "code",
+          value:
+            "def make_hexagon():\n    for i in range(6):\n        turtle.forward(50)\n        turtle.right(60)",
+        },
+      ],
+      options: [
+        "The number inside `range()`",
+        "The angle passed to `turtle.right()`",
+        "The value passed to `turtle.forward()`",
+        "The name of the function",
+      ],
+      correctAnswer: 2,
+      feedback: {
+        correct:
+          "Correct! The value in `turtle.forward()` controls the side length. Changing `range()` would change the number of sides, and changing the angle would distort the shape.",
+      },
+    } as MultipleChoiceSectionData,
     {
       kind: "Testing",
       id: "octagon-testing" as SectionId,
@@ -127,7 +155,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "See if you can create a star like the image below. To accomplish this goal, do the following:\n- Create a function called `make_star()` that takes a single input: size\n- Inside the function, use a loop to draw a five-sided figure\n-Call the `make_star()` function with an input of 55.\n\nHint: the angle is greater than 120 degrees.",
+            "See if you can create a star like the image below. To accomplish this goal, do the following:\n- Create a function called `make_star()` that takes a single input: size\n- Inside the function, use a loop to draw a five-sided figure\n- Call the `make_star()` function with an input of 55\n\nHint: the angle is greater than 120 degrees.",
         },
         {
           kind: "image",
@@ -170,7 +198,7 @@ const lessonData: Lesson = {
         {
           kind: "code",
           value:
-            "def make_octagon(size):\n  for i in range(8):\n    turtle.forward(size)\n    turtle.right(45)",
+            "def make_octagon(size):\n    for i in range(8):\n        turtle.forward(size)\n        turtle.right(45)",
         },
         {
           kind: "text",
@@ -203,12 +231,12 @@ const lessonData: Lesson = {
       example: {
         visualization: "turtle",
         initialCode:
-          "import turtle\n\ndef make_pattern():\n  for i in range(12):\n    turtle.forward(80)\n    turtle.backward(80)\n    turtle.right(30)\n\nmake_pattern()",
+          "import turtle\n\ndef make_pattern():\n    for i in range(12):\n        turtle.forward(80)\n        turtle.backward(80)\n        turtle.right(30)\n\nmake_pattern()",
       },
       predictPrompt:
-        "The turtle moves forward 80, backward 80 (returning to center), then turns 30°. What will this create after 12 repetitions?",
+        "The turtle moves forward 80, backward 80 (returning to center), then turns 30 degrees. What will this create after 12 repetitions?",
       conclusion:
-        "This creates a sunburst pattern! The turtle draws 12 lines radiating from the center. The pattern is: 12 repetitions × 30° = 360° (one complete rotation).",
+        "This creates a sunburst pattern! The turtle draws 12 lines radiating from the center. The pattern is: 12 (loops) x 30 (degrees) = 360 (degrees).",
     } as PRIMMSectionData,
     {
       kind: "Observation",
@@ -224,7 +252,7 @@ const lessonData: Lesson = {
       example: {
         visualization: "turtle",
         initialCode:
-          "import turtle\n\nturtle.speed(0)  # Fastest speed\n\ndef make_spiral():\n  for i in range(600):\n    turtle.forward(i / 3)  # Distance increases each time\n    turtle.left(59)\n\nmake_spiral()",
+          "import turtle\n\nturtle.speed(0)    # Fastest speed\n\ndef make_spiral():\n    for i in range(600):\n        turtle.forward(300)\n        turtle.left(121)\n\nmake_spiral()",
       },
     } as ObservationSectionData,
     {
@@ -260,7 +288,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Excellent work! You've practiced creating various shapes, learned to use function parameters inside loops, and discovered creative patterns beyond simple polygons.\n\nYou've mastered:\n- Creating regular polygons using the 360° rule\n- Passing inputs to functions and using them in loops\n- Creating open patterns (like sunbursts) in addition to closed shapes\n- Understanding that the same loop structure can produce different results\n\nIn the next lesson, you'll take the final step: using multiple loops together to create complex, layered designs. Get ready to combine everything you've learned!",
+            "Excellent work! You've practiced creating various shapes, learned to use function parameters inside loops, and discovered creative patterns beyond simple polygons.\n\nYou've mastered:\n- Creating regular polygons using the 360 degree rule\n- Passing inputs to functions and using them in loops\n- Creating open patterns (like sunbursts) in addition to closed shapes\n- Understanding that the same loop structure can produce different results\n\nIn the next lesson, you'll take the final step: using multiple loops together to create complex, layered designs. Get ready to combine everything you've learned!",
         },
       ],
     } as InformationSectionData,

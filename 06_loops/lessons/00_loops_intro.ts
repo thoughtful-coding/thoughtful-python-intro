@@ -25,7 +25,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "At this point you've covered data types, variables, functions, and conditionals. There's only one more thing you need to learn to be considered a competent, beginner programmer: **loops**. Loops let you repeat actions without writing the same code multiple times.\n\nRemember programming the turtle to draw a triangle? You wrote `forward(100)` and `right(120)` three separate times. For a triangle this gets repetitive, but imagine how annoying it would be if you wanted to draw a shape with 100 sides. That's where loops come in.\n\nLoops are powerful because they let you tell the computer to repeat actions without having to write the same code multiple times. They turn you from someone who types instructions into someone who describes patterns.",
+            "At this point you've covered data types, variables, functions, and conditionals. There's only one more thing you need to learn to complete this introductory course: **loops**. Loops let you repeat actions without writing the same code multiple times.\n\nRemember programming the turtle to draw a triangle? You wrote `turtle.forward(100)` and `turtle.right(120)` three separate times. For a triangle this gets repetitive, but imagine how annoying it would be if you wanted to draw a shape with 100 sides. That's where loops come in.\n\nLoops are powerful because they let you tell the computer to repeat actions without having to write the same code multiple times. They turn you from someone who types instructions into someone who describes patterns.",
         },
       ],
     } as InformationSectionData,
@@ -43,7 +43,7 @@ const lessonData: Lesson = {
       example: {
         visualization: "turtle",
         initialCode:
-          "import turtle\n\ndef make_shape():\n  turtle.forward(100)\n  turtle.left(90)\n  turtle.forward(100)\n  turtle.left(90)\n  turtle.forward(100)\n  turtle.left(90)\n  turtle.forward(100)\n  turtle.left(90)\n\nmake_shape()\n",
+          "import turtle\n\ndef make_shape():\n    turtle.forward(100)\n    turtle.left(90)\n    turtle.forward(100)\n    turtle.left(90)\n    turtle.forward(100)\n    turtle.left(90)\n    turtle.forward(100)\n    turtle.left(90)\n\nmake_shape()\n",
       },
       predictPrompt: "What shape will this draw?",
       conclusion: "Four right angles add up to a square.",
@@ -62,7 +62,7 @@ const lessonData: Lesson = {
       example: {
         visualization: "turtle",
         initialCode:
-          "import turtle\n\n# Draw the shape using a loop\ndef make_shape():\n  for i in range(4):\n    turtle.forward(100)\n    turtle.left(90)\n\nmake_shape()\n",
+          "import turtle\n\n# Draw the shape using a loop\ndef make_shape():\n    for i in range(4):\n        turtle.forward(100)\n        turtle.left(90)\n\nmake_shape()\n",
       },
     } as ObservationSectionData,
     {
@@ -73,12 +73,12 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "The code above had a lot of indentations. The `turtle.forward()` and the `turtle.left()` are actually indented twice. Why is that?",
+            "The code above had a lot of indentations. The `turtle.forward()` and the `turtle.left()` are actually indented with eight total spaces. Why is that?",
         },
       ],
       options: [
-        'Functions require a minimum of two spaces for all the code "inside" them',
-        "Each new line should be indented by two spaces",
+        'Functions require exactly eight spaces for all the code "inside" them',
+        "Each new line should be indented by an even number of spaces",
         "Each `turtle` command is required to be at a unique level from the code above",
         'The turtle code is "inside" a loop which is "inside" a function',
       ],
@@ -111,6 +111,49 @@ const lessonData: Lesson = {
       },
     } as MultipleChoiceSectionData,
     {
+      kind: "PRIMM",
+      id: "loop-mystery" as SectionId,
+      title: "Loop Mysteries",
+      content: [
+        {
+          kind: "text",
+          value:
+            'Now that you know how `for` loops work, let\'s see if you can figure out what the program below will do. Look at this code and predict what will happen, paying special attention to the number of times we loop and the angle used "within" the loop.',
+        },
+      ],
+      example: {
+        visualization: "turtle",
+        initialCode:
+          "import turtle\n\n# Draw the shape\ndef make_shape():\n    for i in range(10):\n        turtle.forward(20)\n        turtle.right(36)\n\nmake_shape()\n",
+      },
+      predictPrompt: "What do you think will be the output of the program?",
+      conclusion:
+        "The pattern is 10 (loops) * 36 (degrees) = 360 (degrees)! This works for any regular polygon because the turtle makes one complete turn (360 degrees) by the time it returns to the start.",
+    } as PRIMMSectionData,
+    {
+      kind: "MultipleChoice",
+      id: "loop-counting",
+      title: "Counting Loop Iterations",
+      content: [
+        {
+          kind: "text",
+          value:
+            "If there weren't loops in the program above, how many lines of code would be required to create the same shape?",
+        },
+      ],
+      options: [
+        "2 lines of code",
+        "10 lines of code",
+        "15 lines of code",
+        "20 lines of code",
+      ],
+      correctAnswer: 3,
+      feedback: {
+        correct:
+          "Correct! The two lines of code inside the loop are run 10 times which means 20 lines of code.",
+      },
+    } as MultipleChoiceSectionData,
+    {
       kind: "Testing",
       id: "pentagon-builder" as SectionId,
       title: "Challenge: Pentagon Builder",
@@ -123,18 +166,18 @@ const lessonData: Lesson = {
         {
           kind: "code",
           value:
-            "import turtle\n\ndef make_shape():\n  turtle.forward(80)\n  turtle.right(72)\n  turtle.forward(80)\n  turtle.right(72)\n  turtle.forward(80)\n  turtle.right(72)\n  turtle.forward(80)\n  turtle.right(72)\n  turtle.forward(80)\n  turtle.right(72)\n\nmake_shape()\n",
+            "import turtle\n\ndef make_shape():\n    turtle.forward(80)\n    turtle.right(72)\n    turtle.forward(80)\n    turtle.right(72)\n    turtle.forward(80)\n    turtle.right(72)\n    turtle.forward(80)\n    turtle.right(72)\n    turtle.forward(80)\n    turtle.right(72)\n\nmake_shape()\n",
         },
         {
           kind: "text",
           value:
-            "See if you can use a loop to rewrite the program more efficiently. Your loop should draw the exact same pentagon use only 3 lines of code (not counting the `import` or function definition).",
+            "See if you can use a loop to rewrite this program more efficiently. You should only need to add **three lines of code**.",
         },
       ],
       example: {
         visualization: "turtle",
         initialCode:
-          "import turtle\n\ndef make_shape():\n  # Your code here converting the code above to a loop\n\n\nmake_shape()",
+          "import turtle\n\ndef make_shape():\n    # Your code here converting the code above to a loop\n\n\nmake_shape()",
       },
       testMode: "procedure",
       functionToTest: "__main__",
@@ -172,49 +215,6 @@ const lessonData: Lesson = {
           "Excellent! You understand that loops are a general programming concept for eliminating repetition, not just for turtle graphics.",
       },
     } as MultipleSelectionSectionData,
-    {
-      kind: "PRIMM",
-      id: "loop-mystery" as SectionId,
-      title: "Loop Mysteries",
-      content: [
-        {
-          kind: "text",
-          value:
-            'Now let\'s explore a crazy shape. Look at this code and predict what will happen, paying special attention to the number of times we loop and the angle used "within" the loop.',
-        },
-      ],
-      example: {
-        visualization: "turtle",
-        initialCode:
-          "import turtle\n\n# Draw the shape\ndef make_shape():\n  for i in range(36):\n    turtle.forward(15)\n    turtle.right(10)\n\nmake_shape()\n",
-      },
-      predictPrompt: "What do you think will be the output of the program?",
-      conclusion:
-        "The pattern is 36 (loops) * 10 (angle) = 360°! This works for any regular polygon because the turtle makes one complete turn (360°) by the time it returns to the start.",
-    } as PRIMMSectionData,
-    {
-      kind: "MultipleChoice",
-      id: "loop-counting",
-      title: "Counting Loop Iterations",
-      content: [
-        {
-          kind: "text",
-          value:
-            "If there weren't loops in the program above, how many lines of code would be required to create the same shape?",
-        },
-      ],
-      options: [
-        "20 lines of code",
-        "36 lines of code",
-        "55 lines of code",
-        "72 lines of code",
-      ],
-      correctAnswer: 3,
-      feedback: {
-        correct:
-          "Correct! The two lines of code inside the loop are run 36 times which means 72 lines of code.",
-      },
-    } as MultipleChoiceSectionData,
     {
       kind: "Reflection",
       id: "loop-patterns-reflection" as SectionId,

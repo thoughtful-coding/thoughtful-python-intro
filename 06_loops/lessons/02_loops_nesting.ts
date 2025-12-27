@@ -43,12 +43,12 @@ const lessonData: Lesson = {
       example: {
         visualization: "turtle",
         initialCode:
-          "import turtle\n\n# Outer loop: repeat 6 times\nfor i in range(6):\n    # Inner loop: repeat 4 times\n    for j in range(4):\n        turtle.forward(50)\n        turtle.right(90)\n    \n    # After inner loop completed, rotate\n    turtle.right(60)",
+          "import turtle\n\n# Outer loop: repeat 6 times\ndef make_shape():\n    for i in range(6):\n        # Inner loop: repeat 4 times\n        for j in range(4):\n            turtle.forward(50)\n            turtle.right(90)\n\n        # After inner loop completed, rotate\n        turtle.right(60)\n\nmake_shape()\n",
       },
       predictPrompt:
-        "The inner loop draws a shape. The outer loop repeats this shape several times, rotating 60° each time. What pattern will this create?",
+        "The inner loop draws a shape. The outer loop repeats this shape several times, rotating 60 degrees each time. What pattern will this create?",
       conclusion:
-        "The inner loop completes a full square, then the turtle rotates 60°, and the process repeats. Since 60° x 6 = 360°, the squares form a complete circle.",
+        "The inner loop completes a full square, then the turtle rotates 60 degrees, and the process repeats. Since 6 (loops) x 60 (degrees) = 360 (degrees), the squares form a complete circle.",
     } as PRIMMSectionData,
     {
       kind: "MultipleChoice",
@@ -58,12 +58,12 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'Loops are "nested" when one loop is "inside" another. Nested loops can do very complex things because there is a multiplicative effect. For example, in the program above there are two loops: the outer loop runs six times and the inner loop runs 4 times. This means that the code "within" the inner loop runs 6 x 4 = 24 times.\n\nNow that you know about the multiplicative effort, look at the program below. Given that the `forward` is inside two loops - one nested inside the other - how many times total does the `forward()` function get called?',
+            'Loops are "nested" when one loop is "inside" another. Nested loops can do very complex things because there is a multiplicative effect. For example, in the program above there are two loops: the outer loop runs six times and the inner loop runs 4 times. This means that the code "within" the inner loop runs 6 x 4 = 24 times.\n\nNow that you know about the multiplicative effect, look at the program below. Given that the `turtle.forward` is inside two loops - one nested inside the other - how many times total does the `turtle.forward()` function get called?',
         },
         {
           kind: "code",
           value:
-            "for i in range(3):\n  for j in range(4):\n    turtle.forward(50)",
+            "import turtle\ndef make_shape():\n    for i in range(3):\n        for j in range(4):\n            turtle.forward(50)",
         },
       ],
       options: ["3 times", "4 times", "7 times", "12 times"],
@@ -87,7 +87,7 @@ const lessonData: Lesson = {
       example: {
         visualization: "console",
         initialCode:
-          'print("About to start program")\n\nfor i in range(2):\n    print("About to run inner loop")\n    for j in range(3):\n        print("Hi from the inner loop")\n    print("Done inner loop")\n\nprint("All done program")',
+          'def run_loops():\n    print("About to start program")\n\n    for i in range(2):\n        print("About to run inner loop")\n        for j in range(3):\n            print("Hi from the inner loop")\n        print("Done inner loop")\n\n    print("All done program")\n\nrun_loops()',
       },
     } as DebuggerSectionData,
     {
@@ -98,24 +98,24 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Look at this code carefully. Why is `turtle.forward(60)` indented twice?",
+            "Look at this code carefully. Why is `turtle.forward(60)` indented three times?",
         },
         {
           kind: "code",
           value:
-            "for i in range(12):\n    for j in range(4):\n        turtle.forward(60)\n        turtle.right(90)\n    turtle.right(30)",
+            "def make_shape():\n    for i in range(12):\n        for j in range(4):\n            turtle.forward(60)\n            turtle.right(90)\n        turtle.right(30)",
         },
       ],
       options: [
         "Python requires double indentation for code not in a function",
         "The forward command is inside both loops",
         "Double indentation makes the turtle go faster",
-        "It's a mistake—it should only be indented once",
+        "It's a mistake — it should only be indented once",
       ],
       correctAnswer: 1,
       feedback: {
         correct:
-          'Exactly! Each level of indentation shows code is "inside" another structure. The `forward(60)` is inside the inner loop, which is inside the outer loop.',
+          'Exactly! Each level of indentation shows code is "inside" another structure. The forward(60) is inside the inner loop, which is inside the outer loop, which is inside the function—three levels total.',
       },
     } as MultipleChoiceSectionData,
     {
@@ -132,7 +132,7 @@ const lessonData: Lesson = {
       example: {
         visualization: "turtle",
         initialCode:
-          "import turtle\n\nturtle.speed(0)\n\n# Draw a flower with 12 petals\nfor i in range(12):\n    # Draw one petal (square)\n    for j in range(4):\n        turtle.forward(60)\n        turtle.right(90)\n\n    # Rotate for next petal\n    turtle.right(30)  # 360/12 = 30\n\n# Try changing 12 to 8 and 30 to 45!",
+          "import turtle\n\nturtle.speed(0)\n\ndef draw_flower():\n    for i in range(12):\n        # Draw one petal (square)\n        for j in range(4):\n            turtle.forward(60)\n            turtle.right(90)\n\n        # Rotate for next petal\n        turtle.right(30)  # 360/12 = 30\n\ndraw_flower()\n",
       },
     } as ObservationSectionData,
     {
@@ -143,7 +143,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Create a ring of shapes using nested loops:\n\n1. Draw 8 triangles arranged in a circle\n2. Each triangle should have sides of 30 pixels\n3. Remember: triangles use 120° exterior angles\n4. The triangles should be evenly spaced (360° ÷ 8 = 45°)",
+            "Create a ring of shapes using nested loops:\n\n1. Draw 8 triangles arranged in a circle\n2. Each triangle should have sides of 30 pixels\n3. Remember: triangles use 120 degree exterior angles\n4. The triangles should be evenly spaced: 360 (degrees) / 8 (loops) = 45 (degrees)",
         },
       ],
       example: {
@@ -176,12 +176,11 @@ const lessonData: Lesson = {
       ],
       options: [
         "The inner loop completes all its iterations before the outer loop continues",
-        "You can have loops inside loops inside loops (triple nesting)",
-        "The code inside the inner loop runs (outer × inner) times",
+        "The code inside the inner loop runs (outer x inner) times",
         "Nested loops can only be used for drawing shapes",
         "Indentation shows which loop is inside which",
       ],
-      correctAnswers: [0, 1, 2, 4],
+      correctAnswers: [0, 1, 3],
       feedback: {
         correct:
           "Perfect! Nested loops are powerful tools for creating patterns within patterns. They work for any repetitive task, not just drawing.",
@@ -195,7 +194,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Now create a more complex flower pattern:\n\n1. Draw a flower with 5 pentagon petals\n2. Each pentagon should have 5 sides of 40 pixels each\n3. Remember: pentagons turn 72° at each corner\n4. The petals should be evenly spaced around the center (360° ÷ 5 = 72°)\n\nHint: You'll need a loop inside a loop — the outer loop arranges the petals and the inner loop draws each pentagon.",
+            "Now create a more complex flower pattern:\n\n1. Draw a flower with 5 pentagon petals\n2. Each pentagon should have 5 sides of 40 pixels each\n3. Remember: pentagons turn 72° at each corner\n4. The petals should be evenly spaced around the center: 360 (degrees) / 5 (loops) = 72 (degrees)\n\nHint: You'll need a loop inside a loop — the outer loop arranges the petals and the inner loop draws each pentagon.",
         },
       ],
       example: {
@@ -229,39 +228,38 @@ const lessonData: Lesson = {
       example: {
         visualization: "turtle",
         initialCode:
-          "import turtle\n\nturtle.speed(0)\n\nfor rotation in range(8):\n    # Draw one square\n    for side in range(4):\n        turtle.forward(70)\n        turtle.right(90)\n    \n    # Rotate slightly for next square\n    turtle.right(45)  # 360/8 = 45",
+          "import turtle\n\ndef make_flower():\n    turtle.speed(0)\n\n    for i in range(8):\n        # Draw one square\n        for j in range(4):\n            turtle.forward(70)\n            turtle.right(90)\n\n        # Rotate slightly for next square\n        turtle.right(45)  # 360 / 8 = 45\n\nmake_flower()",
       },
       predictPrompt:
-        "Each iteration draws a complete square, then rotates 45°. With 8 iterations and 45° each time, what will the final pattern look like?",
+        "Each iteration draws a complete square, then rotates 45 degrees. With 8 iterations and 45 degrees each time, what will the final pattern look like?",
       conclusion:
         "It creates a beautiful rotating square pattern! The squares overlap to create an 8-pointed star design. This technique of slight rotations can create amazing geometric art.",
     } as PRIMMSectionData,
     {
       kind: "Testing",
       id: "custom-mandala" as SectionId,
-      title: "Challenge: Create a Mandala",
+      title: "Challenge: Create a Snowflake",
       content: [
         {
           kind: "text",
           value:
-            "Time to create your own mandala (circular pattern) using nested loops! Requirements:\n\n1. Use at least two levels of nesting (a loop inside a loop)\n2. The outer loop should run at least 6 times\n3. Include rotation to create a circular pattern\n4. Use at least one shape from previous lessons (triangle, square, pentagon, hexagon, etc.)\n5. Make it beautiful!\n\nBe creative—combine what you've learned about shapes, patterns, and rotation. There's no single right answer!",
+            "Time to create your own snowflake using nested loops! Requirements:\n\n1. A big 8-armed starburst drawn by the outer loop (100 pixels)\n2. Smaller 6-sided starbursts at the end of every arm (20 pixels)\n\nIt's best to think of solving this problem in two stages. First, try and get the outer loops with its eight arms working. Then, worry about the inner loop.",
         },
       ],
       example: {
         visualization: "turtle",
         initialCode:
-          "import turtle\n\nturtle.speed(0)\n\n# Create your mandala here\n# Remember: outer loop for rotation, inner loop(s) for shapes\n",
+          "import turtle\n\nturtle.speed(0)\n\n# Create your snowflake here\n",
       },
       testMode: "procedure",
       functionToTest: "__main__",
-      visualThreshold: 0.95,
+      visualThreshold: 0.999,
       testCases: [
         {
-          description:
-            "A circular pattern created with nested loops (at least 6 shapes)",
+          description: "8-armed snowflake with 6-sided starbursts at each tip",
           input: [],
           expected: null,
-          referenceImage: "images/turtle_mandala_example.png",
+          referenceImage: "images/turtle_snowflake_example.png",
         },
       ],
     } as TestingSectionData,
@@ -273,7 +271,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Amazing work! You've unlocked the power of nested loops and discovered how patterns within patterns create complexity from simplicity. You learned:\n- Inner loops complete fully before outer loops continue\n- Two loops multiply their repetitions (outer × inner total iterations)\n- Rotation in the outer loop + shapes in the inner loop = circular patterns\n- Nested loops can create flowers, mandalas, geometric art, and more\n\nIn the next lesson, you'll explore a different kind of pattern: what if shapes need to be arranged in rows and columns instead of circles? You'll learn how to position shapes in grids and create even more complex designs.",
+            "Amazing work! You've unlocked the power of nested loops and discovered how patterns within patterns create complexity from simplicity. You learned:\n- Inner loops complete fully before outer loops continue\n- Two loops multiply their repetitions (outer x inner total iterations)\n- Rotation in the outer loop + shapes in the inner loop = circular patterns\n\nIn the next lesson, you'll explore a different kind of pattern: what if shapes need to be arranged in rows and columns instead of circles? You'll learn how to position shapes in grids and create even more complex designs.",
         },
       ],
     } as InformationSectionData,
