@@ -28,7 +28,7 @@ const lessonData: Lesson = {
         },
         {
           kind: "image",
-          src: "data/02_strings/images/mad_libs.png",
+          src: "images/mad_libs.png",
           maxWidthPercentage: 60,
           alt: "Mad Libs example",
         },

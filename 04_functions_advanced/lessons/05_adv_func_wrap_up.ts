@@ -133,7 +133,7 @@ const lessonData: Lesson = {
         },
         {
           kind: "image",
-          src: "data/06_advanced_funcs/images/turtle_boats_waves.png",
+          src: "images/turtle_boats_waves.png",
           alt: "Diagram of triangle boats floating on rows of sine-wave water",
         },
       ],

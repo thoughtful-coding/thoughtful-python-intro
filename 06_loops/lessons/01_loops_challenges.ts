@@ -159,7 +159,7 @@ const lessonData: Lesson = {
         },
         {
           kind: "image",
-          src: "data/05_loops/images/turtle-star.png",
+          src: "images/turtle-star.png",
         },
       ],
       example: {
