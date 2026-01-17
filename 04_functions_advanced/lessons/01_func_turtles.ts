@@ -69,11 +69,11 @@ const lessonData: Lesson = {
       ],
       options: [
         "Moves the turtle 90 pixels to the right",
-        "Rotates the turtle 90 degrees to the right",
         "Draws a line 90 pixels long",
         "Makes the turtle face right on the screen",
+        "Rotates the turtle 90 degrees to the right",
       ],
-      correctAnswer: 1,
+      correctAnswer: 3,
       feedback: {
         correct:
           "Correct! The turtle rotates 90 degrees to the right. Think of it like making a right-angle turn.",
@@ -130,7 +130,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Now it's your turn! Write a program that draws an equilateral triangle (all sides the same length). Since this is your first time creating a turtle program from scratch, we've provided all the code for you; you just need to place the blocks in the right order. If you're confused about exactly what commands to use, look at the programs above for inspiration.\n\nHint: The exterior angles add up to 360 degrees.",
+            "Now it's your turn! Write a program that draws an equilateral triangle (all sides the same length). Since this is your first time creating a turtle program from scratch, we've provided all the code for you; you just need to place the blocks in the right order. If you're confused about exactly what commands to use, look at the programs above for inspiration.",
         },
       ],
       puzzle: {

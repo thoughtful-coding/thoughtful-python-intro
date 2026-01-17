@@ -43,9 +43,9 @@ const lessonData: Lesson = {
       example: {
         visualization: "turtle",
         initialCode:
-          "import turtle\nimport thoughtful_code\n\nthoughtful_code.draw_house()\nturtle.forward(70)\nturtle.left(90)\n\nthoughtful_code.draw_house()\nturtle.forward(70)\n\nturtle.left(90)\n\nthoughtful_code.draw_house()",
+          "import turtle\nimport thoughtful_code\n\nthoughtful_code.draw_house()\n\nturtle.forward(70)\nturtle.left(90)\n\nthoughtful_code.draw_house()\n\nturtle.forward(70)\nturtle.left(90)\n\nthoughtful_code.draw_house()",
         libraryCode:
-          "import turtle\ndef draw_square(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(4):\n        turtle.forward(size)\n        turtle.right(90)\n    turtle.end_fill()\n\ndef draw_triangle(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(3):\n        turtle.forward(size)\n        turtle.left(120)\n    turtle.end_fill()\ndef draw_rectangle(width, height, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(2):\n        turtle.forward(width)\n        turtle.right(90)\n        turtle.forward(height)\n        turtle.right(90)\n    turtle.end_fill()\ndef draw_house():\n    draw_square(50, 'yellow')\n    turtle.forward(50)\n    turtle.right(90)\n    draw_triangle(50, 'black')\n    turtle.right(90)\n    turtle.forward(50)\n    turtle.left(90)",
+          "import turtle\ndef draw_square_right(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(4):\n        turtle.forward(size)\n        turtle.right(90)\n    turtle.end_fill()\n\ndef draw_triangle_left(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(3):\n        turtle.forward(size)\n        turtle.left(120)\n    turtle.end_fill()\ndef draw_rectangle(width, height, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(2):\n        turtle.forward(width)\n        turtle.right(90)\n        turtle.forward(height)\n        turtle.right(90)\n    turtle.end_fill()\ndef draw_house():\n    draw_square_right(50, 'yellow')\n    turtle.forward(50)\n    turtle.right(90)\n    draw_triangle_left(50, 'black')\n    turtle.right(90)\n    turtle.forward(50)\n    turtle.left(90)",
       },
       predictPrompt: "Will the houses be stacked? In a row? Overlapping?",
       conclusion:
@@ -59,37 +59,61 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'The `draw_house()` function inside the `thoughful_code` library creates houses that are 50 pixels wide. It is now your goal to create your own "street" of 3 houses. The difference between this "street" and the "street" above is that your houses should be a bit closer. \n\n1. Use the provided `draw_house()` function.\n2. Space them out so they\'re exactly 10 pixels apart (each house is 50 pixels wide).',
+            'The `draw_house()` function inside the `thoughtful_code` library creates houses that are 50 pixels wide. It is now your goal to create your own "street" of 3 houses. The difference between this "street" and the "street" above is that your houses should be a bit closer. \n\n1. Use the provided `draw_house()` function.\n2. Space them out so they\'re exactly 10 pixels apart (each house is 50 pixels wide).',
         },
       ],
       example: {
         visualization: "turtle",
         initialCode:
           "import turtle\nimport thoughtful_code\n# thoughtful_code.draw_house() is provided\n\n# House 1\n\n# Move to next spot\n\n# House 2\n\n# Move to next spot\n\n# House 3",
+        libraryCode:
+          "import turtle\ndef draw_square_right(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(4):\n        turtle.forward(size)\n        turtle.right(90)\n    turtle.end_fill()\n\ndef draw_triangle_left(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(3):\n        turtle.forward(size)\n        turtle.left(120)\n    turtle.end_fill()\ndef draw_rectangle(width, height, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(2):\n        turtle.forward(width)\n        turtle.right(90)\n        turtle.forward(height)\n        turtle.right(90)\n    turtle.end_fill()\ndef draw_house():\n    draw_square_right(50, 'yellow')\n    turtle.forward(50)\n    turtle.right(90)\n    draw_triangle_left(50, 'black')\n    turtle.right(90)\n    turtle.forward(50)\n    turtle.left(90)",
       },
       testMode: "procedure",
       functionToTest: "__main__",
       visualThreshold: 0.9,
       testCases: [
         {
-          input: [null],
-          expected: "SHAPE:three_houses_row",
-          description: "Draw 3 houses in a line",
+          description: "The suburbs",
+          input: [],
+          expected: null,
+          referenceImage: "images/turtle_suburbs_60.png",
         },
       ],
     } as TestingSectionData,
     {
-      kind: "Information",
-      id: "random-color-intro",
-      title: "Updating the Function",
+      kind: "PRIMM",
+      id: "random-house-primm5" as SectionId,
+      title: "Randomizing the House",
       content: [
         {
           kind: "text",
           value:
-            "That neighborhoods looks a bit boring - all the houses are yellow. We want to paint them random colors.\n\nInstead of changing the code for House 1, then House 2, then House 3, we can just change the `draw_house` function *definition*. This is the power of abstraction: Change the rule in one place, and it applies everywhere.",
+            "That neighborhood looks a bit boring - all the houses are yellow. We can easily make a much more interesting row of houses by making a small change to the `draw_house` function. This is the power of abstraction: Change the rule in one place, and it applies everywhere.\n\nWe've updated the `draw_house` function inside the `thoughtful_code` library to use `turtle.random_color()` (a special helper we made) for the body color. You can see the exact code below:",
+        },
+        {
+          kind: "code",
+          value:
+            'def draw_house():\n    color = thoughtful_code.get_random_color()\n    thoughtful_code.draw_square_right(50, color)\n    turtle.forward(50)\n    turtle.right(30)\n    thoughtful_code.draw_triangle_left(50, "black")',
+        },
+        {
+          kind: "text",
+          value:
+            "Predict what will happen when we run the EXACT same street code from before.",
         },
       ],
-    } as InformationSectionData,
+      example: {
+        visualization: "turtle",
+        initialCode:
+          "import turtle\nimport thoughtful_code\n\nthoughtful_code.draw_house()\nturtle.forward(70)\nturtle.left(90)\n\nthoughtful_code.draw_house()\nturtle.forward(70)\n\nturtle.left(90)\n\nthoughtful_code.draw_house()",
+        libraryCode:
+          "import turtle\nimport random\ndef get_random_color():\n    return random.choice(['blue', 'green', 'yellow', 'red'])\ndef draw_square_right(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(4):\n        turtle.forward(size)\n        turtle.right(90)\n    turtle.end_fill()\n\ndef draw_triangle_left(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(3):\n        turtle.forward(size)\n        turtle.left(120)\n    turtle.end_fill()\ndef draw_rectangle(width, height, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(2):\n        turtle.forward(width)\n        turtle.right(90)\n        turtle.forward(height)\n        turtle.right(90)\n    turtle.end_fill()\ndef draw_house():\n    color = get_random_color()\n    draw_square_right(50, color)\n    turtle.forward(50)\n    turtle.right(90)\n    draw_triangle_left(50, 'black')\n    turtle.right(90)\n    turtle.forward(50)\n    turtle.left(90)",
+      },
+      predictPrompt:
+        "Will the houses be the same color? Will they change every time you run it?",
+      conclusion:
+        "Every house is now a different random color! We updated the function definition' so every function call got the upgrade.",
+    } as PRIMMSectionData,
     {
       kind: "MultipleChoice",
       id: "abstraction-benefit-quiz",
@@ -98,68 +122,21 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Imagine you drew 50 houses manually (without a function). Now your boss says 'Make all the roofs red instead of black.' How many lines of code would you have to change?",
+            "Imagine that instead of using functions you drew 50 houses manually. How many lines of code would you have to change if afterwards you decided you actually wanted to make all the roofs red instead of black?",
         },
       ],
       options: [
+        "0 lines (The computer knows what you want)",
         "1 line (The definition)",
         "50 lines (Every single house)",
-        "0 lines (The computer knows what you want)",
+        "350 lines (Every single line in the drawing)",
       ],
-      correctAnswer: 1,
+      correctAnswer: 2,
       feedback: {
         correct:
           "Exactly! Without functions, you'd have to edit 50 places. With functions, you edit the definition once, and all 50 houses update.",
       },
     } as MultipleChoiceSectionData,
-    {
-      kind: "PRIMM",
-      id: "random-house-primm" as SectionId,
-      title: "Randomizing the House",
-      content: [
-        {
-          kind: "text",
-          value:
-            "We've updated the `draw_house` function to use `turtle.random_color()` (a special helper we made) for the body color. Predict what will happen when we run the EXACT same street code from before.",
-        },
-      ],
-      example: {
-        visualization: "turtle",
-        initialCode:
-          "import turtle\n\ndef draw_house():\n    # Now uses a random color!\n    color = turtle.random_color()\n    draw_square(100, color)\n    # ... rest of house code ...\n\n# The street code hasn't changed:\ndraw_house()\nturtle.penup(); turtle.forward(150); turtle.pendown()\ndraw_house()\nturtle.penup(); turtle.forward(150); turtle.pendown()\ndraw_house()",
-      },
-      predictPrompt:
-        "Will the houses be the same color? Will they change every time you run it?",
-      conclusion:
-        "Every house is now a different random color! We updated the 'Definition' so every 'Call' got the upgrade.",
-    } as PRIMMSectionData,
-    {
-      kind: "Testing",
-      id: "random-neighborhood-challenge" as SectionId,
-      title: "Challenge: The Colorful Street",
-      content: [
-        {
-          kind: "text",
-          value:
-            "We have provided a function `get_random_color()` that returns a color string. Update the `draw_house` function to use a random color for the body AND a random color for the roof.\n\nThen draw the row of 3 houses again to see your colorful neighborhood.",
-        },
-      ],
-      example: {
-        visualization: "turtle",
-        initialCode:
-          "import turtle\nimport random\n\ndef draw_house():\n    # 1. Get random color for body\n    body_col = get_random_color()\n    draw_square(100, body_col)\n    \n    # ... move to roof ...\n    \n    # 2. Get random color for roof\n    roof_col = get_random_color()\n    draw_triangle(100, roof_col)\n\n# Draw 3 houses\n",
-      },
-      testMode: "procedure",
-      functionToTest: "__main__",
-      visualThreshold: 0.85, // Lower threshold for randomness
-      testCases: [
-        {
-          input: [null],
-          expected: "SHAPE:three_random_houses",
-          description: "Draw 3 random houses",
-        },
-      ],
-    } as TestingSectionData,
     {
       kind: "Matching",
       id: "abstraction-levels-match" as SectionId,
@@ -173,7 +150,7 @@ const lessonData: Lesson = {
       ],
       prompts: [
         { "`turtle.forward(10)`": "Low Level (Tiny Details)" },
-        { "`draw_square(50)`": "Mid Level (Building Blocks)" },
+        { "`draw_square_right(50)`": "Mid Level (Building Blocks)" },
         { "`draw_neighborhood()`": "High Level (Big Picture)" },
       ],
       feedback: {
@@ -212,12 +189,12 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Think back on the process you went through to build this neighborhood. You didn't start by trying to draw a whole street at once.\n\n1. **Turtle**: You started with basic lines and turns (`forward`, `right`).\n2. **Shapes**: You organized those lines into reusable shapes (`draw_square`).\n3. **House**: You combined those shapes to define a complex object (`draw_house`).\n4. **Neighborhood**: You used that object to build a larger system.\n\nEach step created a new 'layer' of abstraction that hid the details of the step below it.",
+            "Think back on the process you went through to build this neighborhood. You didn't start by trying to draw a whole street at once.\n\n1. **Turtle**: You started with basic lines and turns (`forward`, `right`).\n2. **Shapes**: You organized those lines into reusable shapes (`draw_square_right`).\n3. **House**: You combined those shapes to define a complex object (`draw_house`).\n4. **Neighborhood**: You used that object to build a larger system.\n\nEach step created a new 'layer' of abstraction that hid the details of the step below it.",
         },
       ],
       topic: "Layers of Abstraction",
       isTopicPredefined: true,
-      code: "# Level 1: Basic Moves\nturtle.forward(10)\n\n# Level 2: Simple Shapes\ndraw_square(50)\n\n# Level 3: Complex Objects\ndraw_house()\n\n# Level 4: Systems\ndraw_street()",
+      code: "# Level 1: Basic Moves\nturtle.forward(10)\n\n# Level 2: Simple Shapes\ndraw_square_right(50)\n\n# Level 3: Complex Objects\ndraw_house()\n\n# Level 4: Systems\ndraw_street()",
       isCodePredefined: true,
       explanation:
         "Explain why building in 'layers' makes it easier to write (and fix) large programs compared to using only basic turtle commands.",

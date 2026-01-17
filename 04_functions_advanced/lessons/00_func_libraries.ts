@@ -23,7 +23,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "In the previous unit you learned how to create and use your own functions, but you've actually been **using functions from the very beginning**: namely `print()`. The `print()` function's job is to display the arguments passed to it on the computer screen. \"Inside\" the `print()` function there's a lot of code, including calls to sub-functions that in turn call their own sub-sub-functions. In practice, a single call to `print()` is an incredible cascade; layers upon layers of functions are used to interact with the deepest parts of the computer to change all the right pixels on your monitor.",
+            "In the previous unit you learned how to create and use your own functions, but you've actually been **using functions from the very beginning**: namely `print()`. The `print()` function's job is to display the arguments passed to it on the computer screen. \"Inside\" the `print()` function there's a lot of code, including calls to sub-functions that in turn call their own sub-sub-functions. In practice, a single call to `print()` results in millions of lines of code being run; layers upon layers of functions interact with the deepest parts of the computer to change individual pixels on your monitor.",
         },
       ],
     } as InformationSectionData,
@@ -58,7 +58,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'In addition to `print()`, Python provides hundreds of other functions. They are packaged into "libraries". You can think of these libraries as specialized skillsets holding the skills that the computer knows how to do.\n\nThere are two steps in using a function (skill) from a library (skillset):\n1. **Import** the library so its functions are available to use\n2. **Use** one of the functions in the library',
+            'In addition to `print()`, Python provides hundreds of other functions. They are packaged into "libraries". You can think of libraries as specialized skillsets holding the skills that the computer knows how to do.\n\nThere are two steps in using a function (skill) from a library (skillset):\n1. **Import** the library so its functions are available to use\n2. **Use** one of the functions in the library',
         },
       ],
     } as InformationSectionData,
@@ -70,7 +70,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "The first library we're going to experiment with is the `random` library. Randomness is a really common requirement in programming, which is why Python has a several different random functions in the `random` library.\n\nThe first function from the `random` library we're going to use is the `randint()` function. Read the code below carefully and pay close attention to how the `random` library's `randint()` function is used. Then, run the code **several times** to see how a new, random integer is generated every time.",
+            "The first library we're going to experiment with is the `random` library. Randomness is a really common requirement in programming, which is why Python has many different random functions in the `random` library.\n\nThe first function from the `random` library we're going to use is the `randint()` function. Read the code below carefully and pay close attention to how the `random` library's `randint()` function is used. Then, run the code **several times** to see how a new, random integer is generated every time.",
         },
       ],
       example: {
@@ -109,7 +109,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Based on what you saw in the program above, how many arguments does the `random.randint()` function require?",
+            "Based on what you saw in the program above, how many arguments does the `random.randint()` function take?",
         },
       ],
       options: ["0", "1", "2", "3"],
@@ -127,7 +127,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "The `random` library has more functions than just `randint()` in it. Below is a program that uses a different random function called `choice()`. Predict what you think the code will output, then run it several times to check your prediction.",
+            "The `random` library has more functions than just `randint()`. Below is a program that uses a different random function called `choice()`. Predict what you think the code will output, then run it several times to check your prediction.",
         },
       ],
       example: {
