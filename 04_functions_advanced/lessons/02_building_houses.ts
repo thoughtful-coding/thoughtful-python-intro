@@ -69,6 +69,7 @@ const lessonData: Lesson = {
           'import turtle\nimport thoughtful_code\n\nthoughtful_code.draw_square_right(100, "green")\nthoughtful_code.draw_triangle_left(90, "yellow")\nthoughtful_code.draw_square_right(70, "blue")\nthoughtful_code.draw_triangle_left(50, "red")\n',
         libraryCode:
           "import turtle\ndef draw_square_right(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(4):\n        turtle.forward(size)\n        turtle.right(90)\n    turtle.end_fill()\n\ndef draw_triangle_left(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(3):\n        turtle.forward(size)\n        turtle.left(120)\n    turtle.end_fill()\n",
+        allowImageDownload: true,
       },
     } as ObservationSectionData,
     {
