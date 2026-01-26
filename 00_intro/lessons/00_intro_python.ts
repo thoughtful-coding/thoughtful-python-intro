@@ -54,7 +54,7 @@ const lessonData: Lesson = {
       example: {
         visualization: "console",
         initialCode:
-          'print("Hello, World!")\nprint("Can I call myself a programmer now?")\n',
+          'print("Hello, World!")\nprint("Am I a programmer now?")\n',
       },
     } as ObservationSectionData,
     {
@@ -71,7 +71,7 @@ const lessonData: Lesson = {
       example: {
         visualization: "console",
         initialCode:
-          'print("Hello, World!")\nprint("Can I call myself a programmer now?")\n',
+          'print("Hello, World!")\nprint("Am I a programmer now?")\n',
       },
     } as DebuggerSectionData,
     {
@@ -135,7 +135,7 @@ const lessonData: Lesson = {
       example: {
         visualization: "console",
         initialCode:
-          'print("Hello, World!")\nprint()\nprint()\nprint()\nprint("Can I call myself a programmer now?")\n',
+          'print("Hello, World!")\nprint()\nprint()\nprint()\nprint("Am I a programmer now?")\n',
       },
       predictPrompt:
         "What do you think the computer will output for the given program?",
@@ -156,7 +156,7 @@ const lessonData: Lesson = {
       example: {
         visualization: "console",
         initialCode:
-          'print("Hello, World!")\nprint()\nprint()\nprint()\nprint("Can I call myself a programmer now?")\n',
+          'print("Hello, World!")\nprint()\nprint()\nprint()\nprint("Am I a programmer now?")\n',
       },
     } as DebuggerSectionData,
     {
