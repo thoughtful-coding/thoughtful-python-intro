@@ -3,7 +3,6 @@ import type {
   Lesson,
   LessonId,
   SectionId,
-  ObservationSectionData,
   PRIMMSectionData,
   TestingSectionData,
   MultipleChoiceSectionData,
@@ -53,25 +52,61 @@ const lessonData: Lesson = {
       },
     } as MultipleSelectionSectionData,
     {
-      kind: "Observation",
-      id: "observe-helpers" as SectionId,
+      kind: "MultipleChoice",
+      id: "library-reveal-mc",
+      title: "Peeking Inside the Library",
+      content: [
+        {
+          kind: "text",
+          value:
+            "We're going to illustrate abstraction using turtles. To do this, you're going to use functions that are similar to the ones you analyzed and created in the previous lesson. The functions are `draw_square_right(size, color)` and `draw_triangle_left(size, color)`.\n\nWhat's important to understand is that these functions don't exist in the turtle library. Instead, programmers at _Thoughtful Coding_ created these functions and put them into our own library called `thoughtful_code`.\n\nBelow is one of the functions that we wrote and put in the library. You might notice commands you haven't learned yet, like `turtle.begin_fill()` and `turtle.end_fill()`. **This is the power of abstraction.** The programmer who wrote the library figured out how to fill shapes with color so that you don't have to. You just use their function!",
+        },
+        {
+          kind: "code",
+          value:
+            "def draw_square_right(size, color):\n    # New concepts handled for you:\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    \n    # Familiar concepts you already know:\n    turtle.forward(size)\n    turtle.right(90)\n    turtle.forward(size)\n    turtle.right(90)\n    turtle.forward(size)\n    turtle.right(90)\n    turtle.forward(size)\n    turtle.right(90)\n        \n    turtle.end_fill()",
+        },
+        {
+          kind: "text",
+          value:
+            "Based on the code above, what does this function allow us to do?",
+        },
+      ],
+      options: [
+        "It defines a function that draws a black square in the center of the canvas",
+        "It defines a function that draws a colored square at the turtle's position",
+        "It changes the square color based on what its previous value was",
+        "It imports a square image from the internet and puts it into the canvas",
+      ],
+      correctAnswer: 1,
+      feedback: {
+        correct:
+          "Correct! Even though it uses advanced commands like `begin_fill` inside, you can use it just like any other function.",
+      },
+    } as MultipleChoiceSectionData,
+    {
+      kind: "PRIMM",
+      id: "observe-helpers-primm",
       title: "Testing the Tools",
       content: [
         {
           kind: "text",
           value:
-            "We're going to illustrate abstraction using turtles. To do this, you're going to use functions that are similar to the ones you analyzed and created in the previous lesson. The functions are `draw_square_right(size, color)` and `draw_triangle_left(size, color)`.\n\nWhat's important to understand is that these functions don't exist in the turtle library. Instead, programmers at _Thoughtful Coding_ created these functions and put them into a library called `thoughtful_code`.\n\nIn the next few sections, you will use the `thoughful_code.draw_square_right()` and `thoughtful_code.draw_triangle_left()` functions. In each case, you provide the arguments (size and color), and the code hidden inside the two functions handles the details. Setting things up this way allows you to focus on high-level goal rather than the lower-level details.\n\nBelow is an small example program that uses these functions. Pay careful attention to how we can ignore the details of the `draw_square_right` and `draw_triangle_left` functions and simply _use_ them to draw interesting shapes.",
+            "Now that you've seen how the `thoughtful_code.draw_square_right` function was defined, let's use it. The program below imports the `thoughtful_code` library and uses the function you just analyzed plus the `thoughtful_code.draw_triangle_left` function.\n\nNotice that we can simply **use** the functions by passing arguments (size and color). Predict what will appear on the screen.",
         },
       ],
       example: {
         visualization: "turtle",
         initialCode:
-          'import turtle\nimport thoughtful_code\n\nthoughtful_code.draw_square_right(100, "green")\nthoughtful_code.draw_triangle_left(90, "yellow")\nthoughtful_code.draw_square_right(70, "blue")\nthoughtful_code.draw_triangle_left(50, "red")\n',
+          'import turtle\nimport thoughtful_code\n\n# We use the tool we just looked at\nthoughtful_code.draw_square_right(100, "green")\n\n# We use another tool from the same library\nthoughtful_code.draw_triangle_left(90, "yellow")\n\nthoughtful_code.draw_square_right(70, "blue")\nthoughtful_code.draw_triangle_left(50, "red")\n',
         libraryCode:
           "import turtle\ndef draw_square_right(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(4):\n        turtle.forward(size)\n        turtle.right(90)\n    turtle.end_fill()\n\ndef draw_triangle_left(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(3):\n        turtle.forward(size)\n        turtle.left(120)\n    turtle.end_fill()\n",
-        allowImageDownload: true,
       },
-    } as ObservationSectionData,
+      predictPrompt:
+        "How many shapes will be drawn, and what colors will they be?",
+      conclusion:
+        "It draws four shapes! Because the complexity is hidden inside the library functions, the main program is short and easy to read.",
+    } as PRIMMSectionData,
     {
       kind: "MultipleChoice",
       id: "abstraction-check",
@@ -84,9 +119,9 @@ const lessonData: Lesson = {
         },
       ],
       options: [
-        "Because the computer forgot them",
+        "Because the computer forgot about them",
         "Because `draw_square_right` is a built-in Python command like `print`",
-        'Because the detailed code is "hidden" inside the function definition provided by the library',
+        'Because the detailed code is "hidden" inside the functions provided by the library',
         "Because `draw_square_right` uses magic, not code",
       ],
       correctAnswer: 2,
@@ -131,13 +166,13 @@ const lessonData: Lesson = {
     } as MultipleChoiceSectionData,
     {
       kind: "PRIMM",
-      id: "house-logic-primm8",
+      id: "house-logic-primm",
       title: "The Architect's Plan",
       content: [
         {
           kind: "text",
           value:
-            'The code below attempts to make a very simple "house" by putting a black triangular roof on top of a yellow room. Read the code below. We have all the pieces we need, but there is a problem with the positioning. Predict what it will look like:',
+            'The code below attempts to make a very simple "house". We have all the pieces we need (a square and a triangle), but there is a problem with the result. Predict what the house will look like:',
         },
       ],
       example: {
@@ -150,7 +185,7 @@ const lessonData: Lesson = {
       predictPrompt:
         "The code draws a square, then immediately draws a triangle. What shape will this produce?",
       conclusion:
-        "The triangle draws right on top of the square's bottom line! This is because the turtle ended at the bottom-left corner after the square.",
+        "The house is on its side! Because the turtle starts facing UP, the 'floor' of the house was drawn as a vertical wall.",
     } as PRIMMSectionData,
     {
       kind: "Testing",
@@ -160,7 +195,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Now you will build your own house from scratch. Create the `draw_house()` function using the components from the `thoughtful_code` library.\n\n1. Draw a yellow square (size 50)\n2. Move the turtle to the top-left corner and face right\n3. Draw a black triangle (size 50) for the roof.",
+            "Now you will build your own house from that is standing upright. Create the `draw_house()` function using the components from the `thoughtful_code` library.\n\n1. Draw a yellow square (size 50)\n2. Move the turtle to the top-left corner and face right\n3. Draw a black triangle (size 50) for the roof.",
         },
       ],
       example: {
@@ -175,7 +210,7 @@ const lessonData: Lesson = {
       visualThreshold: 0.999,
       testCases: [
         {
-          description: "The house",
+          description: "The upright house",
           input: [],
           expected: null,
           referenceImage: "images/turtle_color_house_50.png",

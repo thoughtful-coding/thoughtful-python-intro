@@ -45,7 +45,7 @@ const lessonData: Lesson = {
         initialCode:
           "import turtle\nimport thoughtful_code\n\nthoughtful_code.draw_house()\n\nturtle.forward(70)\nturtle.left(90)\n\nthoughtful_code.draw_house()\n\nturtle.forward(70)\nturtle.left(90)\n\nthoughtful_code.draw_house()",
         libraryCode:
-          "import turtle\ndef draw_square_right(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(4):\n        turtle.forward(size)\n        turtle.right(90)\n    turtle.end_fill()\n\ndef draw_triangle_left(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(3):\n        turtle.forward(size)\n        turtle.left(120)\n    turtle.end_fill()\ndef draw_rectangle(width, height, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(2):\n        turtle.forward(width)\n        turtle.right(90)\n        turtle.forward(height)\n        turtle.right(90)\n    turtle.end_fill()\ndef draw_house():\n    draw_square_right(50, 'yellow')\n    turtle.forward(50)\n    turtle.right(90)\n    draw_triangle_left(50, 'black')\n    turtle.right(90)\n    turtle.forward(50)\n    turtle.left(90)",
+          "import turtle\ndef draw_square_right(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(4):\n        turtle.forward(size)\n        turtle.right(90)\n    turtle.end_fill()\n\ndef draw_triangle_left(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(3):\n        turtle.forward(size)\n        turtle.left(120)\n    turtle.end_fill()\ndef draw_house():\n    draw_square_right(50, 'yellow')\n    turtle.forward(50)\n    turtle.right(90)\n    draw_triangle_left(50, 'black')\n    turtle.right(90)\n    turtle.forward(50)\n    turtle.left(90)",
       },
       predictPrompt: "Will the houses be stacked? In a row? Overlapping?",
       conclusion:
@@ -67,7 +67,7 @@ const lessonData: Lesson = {
         initialCode:
           "import turtle\nimport thoughtful_code\n# thoughtful_code.draw_house() is provided\n\n# House 1\n\n# Move to next spot\n\n# House 2\n\n# Move to next spot\n\n# House 3",
         libraryCode:
-          "import turtle\ndef draw_square_right(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(4):\n        turtle.forward(size)\n        turtle.right(90)\n    turtle.end_fill()\n\ndef draw_triangle_left(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(3):\n        turtle.forward(size)\n        turtle.left(120)\n    turtle.end_fill()\ndef draw_rectangle(width, height, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(2):\n        turtle.forward(width)\n        turtle.right(90)\n        turtle.forward(height)\n        turtle.right(90)\n    turtle.end_fill()\ndef draw_house():\n    draw_square_right(50, 'yellow')\n    turtle.forward(50)\n    turtle.right(90)\n    draw_triangle_left(50, 'black')\n    turtle.right(90)\n    turtle.forward(50)\n    turtle.left(90)",
+          "import turtle\ndef draw_square_right(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(4):\n        turtle.forward(size)\n        turtle.right(90)\n    turtle.end_fill()\n\ndef draw_triangle_left(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(3):\n        turtle.forward(size)\n        turtle.left(120)\n    turtle.end_fill()\ndef draw_house():\n    draw_square_right(50, 'yellow')\n    turtle.forward(50)\n    turtle.right(90)\n    draw_triangle_left(50, 'black')\n    turtle.right(90)\n    turtle.forward(50)\n    turtle.left(90)",
       },
       testMode: "procedure",
       functionToTest: "__main__",
@@ -89,7 +89,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "That neighborhood looks a bit boring - all the houses are yellow. We can easily make a much more interesting row of houses by making a small change to the `draw_house` function. This is the power of abstraction: Change the rule in one place, and it applies everywhere.\n\nWe've updated the `draw_house` function inside the `thoughtful_code` library to use `turtle.random_color()` (a special helper we made) for the body color. You can see the exact code below:",
+            "That neighborhood looks a bit boring - all the houses are yellow. We can easily make a much more interesting row of houses by making a small change to the `draw_house` function. This is the power of abstraction: change the rule in one place, and it applies everywhere.\n\nWe've updated the `draw_house` function inside the `thoughtful_code` library to use a new library function: `thoughtful_code.get_random_color()` for the body color. You can see the exact code below:",
         },
         {
           kind: "code",
@@ -107,7 +107,7 @@ const lessonData: Lesson = {
         initialCode:
           "import turtle\nimport thoughtful_code\n\nthoughtful_code.draw_house()\nturtle.forward(70)\nturtle.left(90)\n\nthoughtful_code.draw_house()\nturtle.forward(70)\n\nturtle.left(90)\n\nthoughtful_code.draw_house()",
         libraryCode:
-          "import turtle\nimport random\ndef get_random_color():\n    return random.choice(['blue', 'green', 'yellow', 'red'])\ndef draw_square_right(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(4):\n        turtle.forward(size)\n        turtle.right(90)\n    turtle.end_fill()\n\ndef draw_triangle_left(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(3):\n        turtle.forward(size)\n        turtle.left(120)\n    turtle.end_fill()\ndef draw_rectangle(width, height, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(2):\n        turtle.forward(width)\n        turtle.right(90)\n        turtle.forward(height)\n        turtle.right(90)\n    turtle.end_fill()\ndef draw_house():\n    color = get_random_color()\n    draw_square_right(50, color)\n    turtle.forward(50)\n    turtle.right(90)\n    draw_triangle_left(50, 'black')\n    turtle.right(90)\n    turtle.forward(50)\n    turtle.left(90)",
+          "import turtle\nimport random\ndef get_random_color():\n    return random.choice(['blue', 'green', 'yellow', 'red'])\ndef draw_square_right(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(4):\n        turtle.forward(size)\n        turtle.right(90)\n    turtle.end_fill()\n\ndef draw_triangle_left(size, color):\n    turtle.fillcolor(color)\n    turtle.begin_fill()\n    for i in range(3):\n        turtle.forward(size)\n        turtle.left(120)\n    turtle.end_fill()\ndef draw_house():\n    color = get_random_color()\n    draw_square_right(50, color)\n    turtle.forward(50)\n    turtle.right(90)\n    draw_triangle_left(50, 'black')\n    turtle.right(90)\n    turtle.forward(50)\n    turtle.left(90)",
       },
       predictPrompt:
         "Will the houses be the same color? Will they change every time you run it?",
