@@ -24,7 +24,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "In the previous lessons, you built shapes into houses into neighborhoods. Now you're going to do the same thing in a different domain: bricks into rows into walls. This pattern — simple pieces combining into complex structures — is how all large programs are built.\n\nBrick walls are strong because the bricks are offset. One row starts with a full brick, the next starts with a half-brick. To draw this, we need different types of rows. Instead of writing one giant script, we will build a hierarchy of functions:\n1. **Low Level:** `small_brick` and `big_brick`\n2. **Mid Level:** `draw_row_a` and `draw_row_b`\n3. **High Level:** `draw_wall`\n\nThis exercise is inspired by UC Berkeley's CS10 course. Computer Science has a culture of sharing — just as functions let you reuse code, CS educators share lessons and ideas freely. You're benefiting from that tradition right now.",
+            "In the previous lessons, you built shapes into houses into neighborhoods. Now you're going to do the same thing in a different domain: bricks into rows into walls. This pattern — simple pieces combining into complex structures — is how all large programs are built.\n\nBrick walls are strong because the bricks are offset. One row starts with a full brick, the next starts with a half-brick. To draw this, we need different types of rows. Instead of writing one giant script, we will build a hierarchy of functions:\n1. **Low Level:** `small_brick` and `big_brick`\n2. **Mid Level:** `draw_row_big_start` and `draw_row_small_start`\n3. **High Level:** `draw_wall`\n\nThis exercise is inspired by UC Berkeley's CS10 course. Computer Science has a culture of sharing — just as functions let you reuse code, CS educators share lessons and ideas freely. You're benefiting from that tradition right now.",
         },
       ],
     } as InformationSectionData,
@@ -70,10 +70,12 @@ const lessonData: Lesson = {
         },
       ],
       prompts: [
-        { big_start_row: "Big, Big, Big, Small (ends with half brick)" },
-        { small_start_row: "Small, Big, Big, Big (starts with half brick)" },
+        { draw_row_big_start: "Big, Big, Big, Small (ends with half brick)" },
         {
-          wall: "Stack of alternating rows: big_start_row, small_start_row, ...",
+          draw_row_small_start: "Small, Big, Big, Big (starts with half brick)",
+        },
+        {
+          wall: "Stack of alternating rows: `draw_row_big_start`, `draw_row_small_start`, ...",
         },
       ],
       feedback: {
@@ -84,30 +86,30 @@ const lessonData: Lesson = {
     {
       kind: "Testing",
       id: "create-big-start-row" as SectionId,
-      title: "Step 2: Define `big_start_row()`",
+      title: "Step 2: Define `draw_row_big_start()`",
       content: [
         {
           kind: "text",
           value:
-            "Define `big_start_row()`. It should draw **3 Big Bricks** followed by **1 Small Brick**. The total width will be 175 pixels (50 + 50 + 50 + 25). Remember: each brick function leaves the turtle ready for the next brick.",
+            "Define `draw_row_big_start()`. It should draw **3 Big Bricks** followed by **1 Small Brick**. The total width will be 175 pixels (50 + 50 + 50 + 25). Remember: each brick function leaves the turtle ready for the next brick.",
         },
       ],
       example: {
         visualization: "turtle",
         initialCode:
-          "import turtle\n# Helpers provided: small_brick(), big_brick()\n\ndef draw_row_a():\n    # Big, Big, Big, Small\n    pass\n\ndraw_row_a()",
+          "import turtle\n# Helpers provided: small_brick(), big_brick()\n\ndef draw_row_big_start():\n    # Big, Big, Big, Small\n\ndraw_row_big_start()",
         libraryCode:
           "import turtle\ndef goto_start():\n    turtle.penup()\n    turtle.backward(100)\n    turtle.right(90)\n    turtle.backward(100)\n    turtle.pendown()\ndef small_brick():\n    turtle.fillcolor('red')\n    turtle.begin_fill()\n    for i in range(2):\n        turtle.forward(25)\n        turtle.left(90)\n        turtle.forward(20)\n        turtle.left(90)\n    turtle.end_fill()\n    turtle.forward(25)\n\ndef big_brick():\n    turtle.fillcolor('red')\n    turtle.begin_fill()\n    for i in range(2):\n        turtle.forward(50)\n        turtle.left(90)\n        turtle.forward(20)\n        turtle.left(90)\n    turtle.end_fill()\n    turtle.forward(50)\n",
       },
       testMode: "procedure",
-      functionToTest: "draw_row_a",
+      functionToTest: "draw_row_big_start",
       visualThreshold: 0.95,
       testCases: [
         {
-          description: "Draw `big_brick_row`",
+          description: "Draw `draw_row_big_start`",
           input: [],
           expected: null,
-          referenceImage: "images/turtle_big_brick_row",
+          referenceImage: "images/turtle_big_brick_row.png",
         },
       ],
     } as TestingSectionData,
@@ -119,25 +121,25 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Now define `small_brick_row()`. It should start with **1 Small Brick**, followed by **3 Big Bricks**. This row is also 175 pixels wide (25 + 50 + 50 + 50).",
+            "Now define `draw_row_small_start()`. It should start with **1 Small Brick**, followed by **3 Big Bricks**. This row is also 175 pixels wide (25 + 50 + 50 + 50).",
         },
       ],
       example: {
         visualization: "turtle",
         initialCode:
-          "import turtle\n# Helpers provided: small_brick(), big_brick()\n\ndef draw_row_b():\n    # Small, Big, Big, Big\n    pass\n\ndraw_row_b()",
+          "import turtle\n# Helpers provided: small_brick(), big_brick()\n\ndef draw_row_small_start():\n    # Small, Big, Big, Big\n\ndraw_row_small_start()",
         libraryCode:
           "import turtle\ndef goto_start():\n    turtle.penup()\n    turtle.backward(100)\n    turtle.right(90)\n    turtle.backward(100)\n    turtle.pendown()\ndef small_brick():\n    turtle.fillcolor('red')\n    turtle.begin_fill()\n    for i in range(2):\n        turtle.forward(25)\n        turtle.left(90)\n        turtle.forward(20)\n        turtle.left(90)\n    turtle.end_fill()\n    turtle.forward(25)\n\ndef big_brick():\n    turtle.fillcolor('red')\n    turtle.begin_fill()\n    for i in range(2):\n        turtle.forward(50)\n        turtle.left(90)\n        turtle.forward(20)\n        turtle.left(90)\n    turtle.end_fill()\n    turtle.forward(50)\n",
       },
       testMode: "procedure",
-      functionToTest: "draw_row_b",
+      functionToTest: "draw_row_small_start",
       visualThreshold: 0.95,
       testCases: [
         {
-          description: "Draw `small_brick_row`",
+          description: "Draw `draw_row_small_start`",
           input: [],
           expected: null,
-          referenceImage: "images/turtle_small_brick_row",
+          referenceImage: "images/turtle_small_brick_row.png",
         },
       ],
     } as TestingSectionData,
@@ -153,8 +155,8 @@ const lessonData: Lesson = {
         },
       ],
       options: [
-        "`draw_row_a`",
-        "`draw_row_b`",
+        "`draw_row_big_start`",
+        "`draw_row_small_start`",
         "`small_brick`",
         "`turtle.forward`",
       ],
@@ -172,24 +174,25 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Finally, create the `draw_wall` function. It should stack three rows in the Running Bond pattern: `big_brick_row()`, then `small_brick_row(), then `big_brick_row().\n\nAfter drawing each row, the turtle is at the right end. To start the next row, you need to:\n1. Go backward 175 pixels (the row width) to return to the left edge\n2. Turn left 90 degrees to face up\n3. Go forward 20 pixels (one brick height)\n4. Turn right 90 degrees to face right again\n\nWe've provided the movement code for the first transition. Follow the pattern for the second.",
+            'Finally, create the `draw_wall` function. It should stack four rows: `draw_row_big_start()`, then `draw_row_small_start()`, then `draw_row_big_start()` then `draw_row_small_start()`.\n\nAfter drawing each row, the turtle is at the right end. To start the next row, you need to reset by:\n1. Going backward 175 pixels (the row width) to return to the left edge\n2. Turning left 90 degrees to face up\n3. Going forward 20 pixels (one brick height)\n4. Turning right 90 degrees to face right again.\n\nHint: You can make the "reset logic" its own function',
         },
       ],
       example: {
         visualization: "turtle",
         initialCode:
-          "import turtle\n# Row functions provided: draw_row_a(), draw_row_b()\n\ndef draw_wall():\n    # Row A\n    draw_row_a()\n    \n    # Move to start of next row\n    turtle.backward(175)\n    turtle.left(90)\n    turtle.forward(20)\n    turtle.right(90)\n    \n    # Row B\n    draw_row_b()\n    \n    # Move to start of next row (follow the pattern above)\n    \n    # Row A\n\ndraw_wall()",
+          "import turtle\n# Row functions provided: draw_row_big_start(), draw_row_small_start()\n\ndef draw_wall():\n    # Row A\n    # Reset\n    # Row B\n\ndraw_wall()",
         libraryCode:
-          "import turtle\ndef goto_start():\n    turtle.penup()\n    turtle.backward(100)\n    turtle.right(90)\n    turtle.backward(100)\n    turtle.pendown()\ndef small_brick():\n    turtle.fillcolor('red')\n    turtle.begin_fill()\n    for i in range(2):\n        turtle.forward(25)\n        turtle.left(90)\n        turtle.forward(20)\n        turtle.left(90)\n    turtle.end_fill()\n    turtle.forward(25)\n\ndef big_brick():\n    turtle.fillcolor('red')\n    turtle.begin_fill()\n    for i in range(2):\n        turtle.forward(50)\n        turtle.left(90)\n        turtle.forward(20)\n        turtle.left(90)\n    turtle.end_fill()\n    turtle.forward(50)\n",
+          "import turtle\ndef goto_start():\n    turtle.penup()\n    turtle.backward(100)\n    turtle.right(90)\n    turtle.backward(100)\n    turtle.pendown()\ndef small_brick():\n    turtle.fillcolor('red')\n    turtle.begin_fill()\n    for i in range(2):\n        turtle.forward(25)\n        turtle.left(90)\n        turtle.forward(20)\n        turtle.left(90)\n    turtle.end_fill()\n    turtle.forward(25)\n\ndef big_brick():\n    turtle.fillcolor('red')\n    turtle.begin_fill()\n    for i in range(2):\n        turtle.forward(50)\n        turtle.left(90)\n        turtle.forward(20)\n        turtle.left(90)\n    turtle.end_fill()\n    turtle.forward(50)\n\n# --- HIDDEN HELPER ROWS ---\ndef draw_row_big_start():\n    big_brick()\n    big_brick()\n    big_brick()\n    small_brick()\n\ndef draw_row_small_start():\n    small_brick()\n    big_brick()\n    big_brick()\n    big_brick()\n",
       },
       testMode: "procedure",
       functionToTest: "draw_wall",
       visualThreshold: 0.9,
       testCases: [
         {
-          input: [null],
-          expected: "SHAPE:full_wall",
           description: "Draw the stacked wall",
+          input: [],
+          expected: null,
+          referenceImage: "images/turtle_full_wall.png",
         },
       ],
     } as TestingSectionData,
@@ -206,7 +209,7 @@ const lessonData: Lesson = {
       ],
       options: [
         "In `draw_wall` (because it draws the wall)",
-        "In `draw_row_a` and `draw_row_b` (because they draw lines of bricks)",
+        "In `draw_row_big_start` and `draw_row_small_start` (because they draw lines of bricks)",
         "In `small_brick` and `big_brick` (because they define the brick shape)",
         "In every single function",
       ],
@@ -224,7 +227,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            'You just built a wall using a hierarchy: `draw_wall` calls `big_brick_row` and `small_brick_row`, which call `small_brick` and `big_brick`, which call `turtle.forward` and other turtle commands.\n\nImagine you built this wall without any functions — just 100 lines of `turtle.forward` and `turtle.left` commands. Now imagine you need to make two changes: (1) make all bricks 30 pixels tall instead of 20, and (2) add a fourth row to the wall.\n\nCompare how hard these changes would be in the "100 lines of turtle commands" version versus the hierarchical version you just built. Use this comparison to explain why breaking code into layers matters. Use the phrase "as seen in the example above."',
+            'You just built a wall using a hierarchy: `draw_wall` calls `draw_row_big_start` and `draw_row_small_start`, which call `small_brick` and `big_brick`, which call `turtle.forward` and other turtle commands.\n\nImagine you built this wall without any functions — just 100 lines of `turtle.forward` and `turtle.left` commands. Now imagine you need to make two changes: (1) make all bricks 30 pixels tall instead of 20, and (2) add a fourth row to the wall.\n\nCompare how hard these changes would be in the "100 lines of turtle commands" version versus the hierarchical version you just built. Use this comparison to explain why breaking code into layers matters. Use the phrase "as seen in the example above."',
         },
       ],
       topic: "Hierarchical Abstraction",
