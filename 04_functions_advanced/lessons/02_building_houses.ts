@@ -13,7 +13,7 @@ import type {
 
 const lessonData: Lesson = {
   title: "Building a House",
-  guid: "advanced-func-house-uuid" as LessonId,
+  guid: "b11ee608-1e24-44dd-9488-b26690b1c8d2" as LessonId,
   description:
     "Learn to combine existing functions to create complex objects, the first step in abstraction.",
   sections: [
@@ -80,7 +80,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "In the example above, you used `draw_square_right` and `draw_triangle_left`. Why don't you see `turtle.forward` or `turtle.right` anywhere in the program?",
+            "In the example above, a turtle drew a very interesting shape. Why don't you see `turtle.forward` or `turtle.right` anywhere in the program?",
         },
       ],
       options: [
@@ -103,7 +103,7 @@ const lessonData: Lesson = {
         {
           kind: "text",
           value:
-            "Now that you understand the concept, let's look at a useful analogy: building a house. In the real world, construction workers don't bake their own bricks or plane their own boards; they use materials provided by a factory. This is an example of abstraction.\n\nIn the remainder of the lesson, we're going to build on this analogy to use the `draw_square_right()` and `draw_triangle_left()` functions to draw a house. This is exactly like building a home. We don't worry about the low-level details (`turtle.move` or turning trees into boards). Instead we use higher-level concepts (`draw_square_right` and bricks) to create what we want.",
+            "Now that you understand the concept, let's look at a useful analogy: building a house. In the real world, construction workers don't bake their own bricks or plane their own boards; they use materials provided by a factory. This is an example of abstraction. They don't need to worry about how the materials are made; they just use them.\n\nIn the remainder of the lesson, we're going to build on this analogy to use the `draw_square_right()` and `draw_triangle_left()` functions to draw a house. This is exactly like building a home. We don't worry about the low-level details (`turtle.move` or turning trees into boards). Instead we use higher-level concepts (`thoughtful_code.draw_square_right` and bricks) to create what we want.",
         },
       ],
     } as InformationSectionData,

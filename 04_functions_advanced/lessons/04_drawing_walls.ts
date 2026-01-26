@@ -12,7 +12,7 @@ import type {
 
 const lessonData: Lesson = {
   title: "The Brick Wall",
-  guid: "advanced-func-wall-uuid" as LessonId,
+  guid: "e31932b3-cfc5-4f7c-8e65-b0fc0a01a367" as LessonId,
   description:
     "Build a complex structure by creating a hierarchy of functions: Bricks make Rows, Rows make Walls.",
   sections: [

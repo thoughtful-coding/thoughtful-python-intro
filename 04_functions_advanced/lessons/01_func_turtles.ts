@@ -8,6 +8,7 @@ import type {
   PRIMMSectionData,
   ReflectionSectionData,
   ParsonsSectionData,
+  TestingSectionData,
 } from "../../../../src/types/data";
 
 const lessonData: Lesson = {
@@ -160,6 +161,34 @@ const lessonData: Lesson = {
         },
       ],
     } as ParsonsSectionData,
+    {
+      kind: "Testing",
+      id: "small-steps-tests" as SectionId,
+      title: "Challenge: A Few Small Steps",
+      content: [
+        {
+          kind: "text",
+          value:
+            'Now that you used the blocks to create a triangle, let\'s see if you can write a program all by yourself. Your goal is to create a drawing that looks like two steps as seen in the "Target Drawing". The lines of each step should be 50 pixels long and you should only turn at right (90 degree) angles. You need to write 8 lines of code to fill in the blanks: 1 import line at the top, and 7 turtle command lines inside the function.\n\nHint: if you get confused, look at the program you created to draw a triangle.',
+        },
+      ],
+      example: {
+        visualization: "turtle",
+        initialCode:
+          "# 1 line of code here\n\ndef draw_stairs():\n    # 7 lines of code here\n\ndraw_stairs()",
+      },
+      testMode: "procedure",
+      functionToTest: "draw_stairs",
+      visualThreshold: 0.999,
+      testCases: [
+        {
+          description: "Two small steps",
+          input: [],
+          expected: null,
+          referenceImage: "images/turtle_two_steps_50.png",
+        },
+      ],
+    } as TestingSectionData,
     {
       kind: "Reflection",
       id: "library-reflection" as SectionId,

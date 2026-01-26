@@ -169,12 +169,41 @@ const lessonData: Lesson = {
       ],
       example: {
         visualization: "console",
-        initialCode: "import math\n\nprint(math.ceil(4.2))",
+        initialCode:
+          'import math\n\nprint("Calculating the result of math.ceil(4.2)")\nprint(math.ceil(4.2))',
       },
       predictPrompt: "What do you think this program does?",
       conclusion:
         "The `math.ceil()` function takes a number with a decimal point and rounds up to the nearest integer.",
     } as PRIMMSectionData,
+    {
+      kind: "MultipleChoice",
+      id: "missing-import-predict",
+      title: "The Missing Import",
+      content: [
+        {
+          kind: "text",
+          value:
+            "The program below is a version of the program you analyzed in the previous section, but the programmer **forgot** to write `import math` at the top. What will happen when you run this code?",
+        },
+        {
+          kind: "code",
+          value:
+            'print("Calculating the result of math.ceil(4.2)")\nprint(math.ceil(4.2))',
+        },
+      ],
+      options: [
+        "It will crash immediately and print nothing",
+        'It will print the `"Calculating"` string, then crash',
+        'It will print the `"Calculating"` string, then print `5`',
+        'It will print the `"Calculating"` string, then print `4.2`',
+      ],
+      correctAnswer: 1,
+      feedback: {
+        correct:
+          "Correct! Python runs line-by-line. Line 1 prints successfully. Line 2 causes a crash because the computer doesn't know what 'math' is without an import.",
+      },
+    } as MultipleChoiceSectionData,
     {
       kind: "Information",
       id: "library-conclusion",

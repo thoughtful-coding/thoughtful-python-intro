@@ -13,7 +13,7 @@ import type {
 
 const lessonData: Lesson = {
   title: "The Neighborhood",
-  guid: "advanced-func-neighborhood-uuid" as LessonId,
+  guid: "32f661bf-0a48-4d1f-a8fe-15cf346c7776" as LessonId,
   description:
     "Use your house function to build a street, and learn how changing the underlying function updates the whole town.",
   sections: [
